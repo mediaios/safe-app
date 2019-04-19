@@ -10,6 +10,10 @@
 		AA7DF5D12269BF3600C29D8D /* MISafeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7DF5C72269BF3600C29D8D /* MISafeApp.framework */; };
 		AA7DF5D62269BF3600C29D8D /* MISafeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF5D52269BF3600C29D8D /* MISafeAppTests.m */; };
 		AA7DF5D82269BF3600C29D8D /* MISafeApp.h in Headers */ = {isa = PBXBuildFile; fileRef = AA7DF5CA2269BF3600C29D8D /* MISafeApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA7DF5E32269CCCD00C29D8D /* NSArray+MiSafe.h in Headers */ = {isa = PBXBuildFile; fileRef = AA7DF5E12269CCCD00C29D8D /* NSArray+MiSafe.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA7DF5E42269CCCD00C29D8D /* NSArray+MiSafe.m in Headers */ = {isa = PBXBuildFile; fileRef = AA7DF5E22269CCCD00C29D8D /* NSArray+MiSafe.m */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA7DF5E82269CDF000C29D8D /* NSObject+MiSafe.h in Headers */ = {isa = PBXBuildFile; fileRef = AA7DF5E62269CDF000C29D8D /* NSObject+MiSafe.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA7DF5E92269CDF000C29D8D /* NSObject+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF5E72269CDF000C29D8D /* NSObject+MiSafe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		AA7DF5D02269BF3600C29D8D /* MISafeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MISafeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7DF5D52269BF3600C29D8D /* MISafeAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MISafeAppTests.m; sourceTree = "<group>"; };
 		AA7DF5D72269BF3600C29D8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA7DF5E12269CCCD00C29D8D /* NSArray+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+MiSafe.h"; sourceTree = "<group>"; };
+		AA7DF5E22269CCCD00C29D8D /* NSArray+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MiSafe.m"; sourceTree = "<group>"; };
+		AA7DF5E62269CDF000C29D8D /* NSObject+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+MiSafe.h"; sourceTree = "<group>"; };
+		AA7DF5E72269CDF000C29D8D /* NSObject+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MiSafe.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,8 @@
 		AA7DF5C92269BF3600C29D8D /* MISafeApp */ = {
 			isa = PBXGroup;
 			children = (
+				AA7DF5EA2269CDFC00C29D8D /* common */,
+				AA7DF5E52269CCD200C29D8D /* container */,
 				AA7DF5CA2269BF3600C29D8D /* MISafeApp.h */,
 				AA7DF5CB2269BF3600C29D8D /* Info.plist */,
 			);
@@ -86,6 +96,24 @@
 			path = MISafeAppTests;
 			sourceTree = "<group>";
 		};
+		AA7DF5E52269CCD200C29D8D /* container */ = {
+			isa = PBXGroup;
+			children = (
+				AA7DF5E12269CCCD00C29D8D /* NSArray+MiSafe.h */,
+				AA7DF5E22269CCCD00C29D8D /* NSArray+MiSafe.m */,
+			);
+			path = container;
+			sourceTree = "<group>";
+		};
+		AA7DF5EA2269CDFC00C29D8D /* common */ = {
+			isa = PBXGroup;
+			children = (
+				AA7DF5E62269CDF000C29D8D /* NSObject+MiSafe.h */,
+				AA7DF5E72269CDF000C29D8D /* NSObject+MiSafe.m */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -93,6 +121,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA7DF5E42269CCCD00C29D8D /* NSArray+MiSafe.m in Headers */,
+				AA7DF5E32269CCCD00C29D8D /* NSArray+MiSafe.h in Headers */,
+				AA7DF5E82269CDF000C29D8D /* NSObject+MiSafe.h in Headers */,
 				AA7DF5D82269BF3600C29D8D /* MISafeApp.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA7DF5E92269CDF000C29D8D /* NSObject+MiSafe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +426,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.MISafeAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -411,6 +444,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.MISafeAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

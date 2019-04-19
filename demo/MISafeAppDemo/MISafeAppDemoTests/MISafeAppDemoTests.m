@@ -1,19 +1,18 @@
 //
-//  MISafeAppTests.m
-//  MISafeAppTests
+//  MISafeAppDemoTests.m
+//  MISafeAppDemoTests
 //
-//  Created by mediaios on 2019/4/19.
-//  Copyright © 2019 mediaios. All rights reserved.
+//  Created by ethan on 2019/4/19.
+//  Copyright © 2019 ucloud. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
-#import <MISafeApp/MISafeApp.h>
 
-@interface MISafeAppTests : XCTestCase
+@interface MISafeAppDemoTests : XCTestCase
 
 @end
 
-@implementation MISafeAppTests
+@implementation MISafeAppDemoTests
 
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,16 +20,11 @@
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
-   
 }
 
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    
-    NSArray *array = @[@"a",@"b",@"c"];
-    NSLog(@"array元素：%@",[array objectAtIndex:10]);
-    
 }
 
 - (void)testPerformanceExample {
