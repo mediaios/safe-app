@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA0BB943226DAFE60057DD77 /* NSDictionary+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB942226DAFE60057DD77 /* NSDictionary+MiSafe.m */; };
 		AA7DF5FF2269DC2500C29D8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */; };
 		AA7DF6022269DC2500C29D8D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF6012269DC2500C29D8D /* ViewController.m */; };
 		AA7DF6052269DC2500C29D8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7DF6032269DC2500C29D8D /* Main.storyboard */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA0BB941226DAFE60057DD77 /* NSDictionary+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MiSafe.h"; sourceTree = "<group>"; };
+		AA0BB942226DAFE60057DD77 /* NSDictionary+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MiSafe.m"; sourceTree = "<group>"; };
 		AA7DF5FA2269DC2500C29D8D /* MISafeAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MISafeAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7DF5FD2269DC2500C29D8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 			children = (
 				AA7DF6312269DC5100C29D8D /* NSArray+MiSafe.h */,
 				AA7DF6302269DC5100C29D8D /* NSArray+MiSafe.m */,
+				AA0BB941226DAFE60057DD77 /* NSDictionary+MiSafe.h */,
+				AA0BB942226DAFE60057DD77 /* NSDictionary+MiSafe.m */,
 			);
 			path = container;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA7DF6022269DC2500C29D8D /* ViewController.m in Sources */,
+				AA0BB943226DAFE60057DD77 /* NSDictionary+MiSafe.m in Sources */,
 				AA7DF60D2269DC2600C29D8D /* main.m in Sources */,
 				AA7DF5FF2269DC2500C29D8D /* AppDelegate.m in Sources */,
 				AA7DF6362269DC6300C29D8D /* NSObject+MiSafe.m in Sources */,

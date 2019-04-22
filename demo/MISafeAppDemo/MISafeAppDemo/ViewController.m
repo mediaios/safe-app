@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self test_mutableArray];
+    [self test];
 }
 
 - (void)test_array
@@ -145,6 +145,27 @@
     NSArray *arr = @[@"a",@"b",@"c",@"d",@"e",@"f"];
     NSLog(@"atIndex方式： %@",[arr objectAtIndex:10]);
     NSLog(@"下标方式: %@",arr[10]);
+}
+
+#pragma mark -NSMutableDictionary
+- (void)test
+{
+    NSString *a  = nil;
+    NSDictionary *dict1 = @{@"key1":@"value1",@"key2":@"value2",@"key3":a};
+    NSLog(@"初始化NSDictionary----dict1: %@",dict1);
+    
+    NSArray *array = @[@"a",@"b"];
+    NSArray *key = @[@"key1",@"key2",@"key3",@"key4"];
+    NSMutableDictionary *mutaDict1 = [[NSMutableDictionary alloc] initWithObjects:array forKeys:key];
+    NSLog(@"mutaDict1: %@",mutaDict1);
+    
+    [mutaDict1 setObject:nil forKey:@"key3"];
+    NSLog(@"mutaDict1: %@",mutaDict1);
+    
+    [mutaDict1 removeObjectForKey:a];
+    
+    NSLog(@"取mutaDict1的第五个元素：%@",mutaDict1);
+    
 }
 
 
