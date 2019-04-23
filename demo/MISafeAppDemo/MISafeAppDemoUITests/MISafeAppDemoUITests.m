@@ -2,8 +2,8 @@
 //  MISafeAppDemoUITests.m
 //  MISafeAppDemoUITests
 //
-//  Created by ethan on 2019/4/19.
-//  Copyright © 2019 ucloud. All rights reserved.
+//  Created by iosmediadev@gmail.com on 2019/4/19.
+//  Copyright © 2019 mediaios. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

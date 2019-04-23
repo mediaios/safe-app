@@ -1,8 +1,8 @@
 //
-//  NSDictionary+MiSafe.h
+//  NSAttributedString+MiSafe.h
 //  MISafeAppDemo
 //
-//  Created by iosmediadev@gmail.com on 2019/4/22.
+//  Created by iosmediadev@gmail.com on 2019/4/23.
 //  Copyright © 2019 mediaios. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSDictionary (MiSafe)
+@interface NSAttributedString (MiSafe)
 
 @end
 

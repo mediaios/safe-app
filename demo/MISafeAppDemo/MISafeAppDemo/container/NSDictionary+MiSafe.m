@@ -2,8 +2,8 @@
 //  NSDictionary+MiSafe.m
 //  MISafeAppDemo
 //
-//  Created by ethan on 2019/4/22.
-//  Copyright © 2019 ucloud. All rights reserved.
+//  Created by iosmediadev@gmail.com on 2019/4/22.
+//  Copyright © 2019 mediaios. All rights reserved.
 //
 
 #import "NSDictionary+MiSafe.h"

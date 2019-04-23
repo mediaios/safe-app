@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AA0BB943226DAFE60057DD77 /* NSDictionary+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB942226DAFE60057DD77 /* NSDictionary+MiSafe.m */; };
+		AA0BB948226EC4FE0057DD77 /* NSAttributedString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB947226EC4FE0057DD77 /* NSAttributedString+MiSafe.m */; };
+		AA0BB94B226EF3720057DD77 /* NSString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB94A226EF3720057DD77 /* NSString+MiSafe.m */; };
+		AA0BB94E226F23FC0057DD77 /* NSMutableString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB94D226F23FC0057DD77 /* NSMutableString+MiSafe.m */; };
 		AA7DF5FF2269DC2500C29D8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */; };
 		AA7DF6022269DC2500C29D8D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF6012269DC2500C29D8D /* ViewController.m */; };
 		AA7DF6052269DC2500C29D8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7DF6032269DC2500C29D8D /* Main.storyboard */; };
@@ -40,6 +43,12 @@
 /* Begin PBXFileReference section */
 		AA0BB941226DAFE60057DD77 /* NSDictionary+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MiSafe.h"; sourceTree = "<group>"; };
 		AA0BB942226DAFE60057DD77 /* NSDictionary+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MiSafe.m"; sourceTree = "<group>"; };
+		AA0BB946226EC4FE0057DD77 /* NSAttributedString+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+MiSafe.h"; sourceTree = "<group>"; };
+		AA0BB947226EC4FE0057DD77 /* NSAttributedString+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+MiSafe.m"; sourceTree = "<group>"; };
+		AA0BB949226EF3720057DD77 /* NSString+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MiSafe.h"; sourceTree = "<group>"; };
+		AA0BB94A226EF3720057DD77 /* NSString+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+MiSafe.m"; sourceTree = "<group>"; };
+		AA0BB94C226F23FC0057DD77 /* NSMutableString+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+MiSafe.h"; sourceTree = "<group>"; };
+		AA0BB94D226F23FC0057DD77 /* NSMutableString+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+MiSafe.m"; sourceTree = "<group>"; };
 		AA7DF5FA2269DC2500C29D8D /* MISafeAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MISafeAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7DF5FD2269DC2500C29D8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -87,6 +96,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA0BB945226EC4BC0057DD77 /* string */ = {
+			isa = PBXGroup;
+			children = (
+				AA0BB946226EC4FE0057DD77 /* NSAttributedString+MiSafe.h */,
+				AA0BB947226EC4FE0057DD77 /* NSAttributedString+MiSafe.m */,
+				AA0BB949226EF3720057DD77 /* NSString+MiSafe.h */,
+				AA0BB94A226EF3720057DD77 /* NSString+MiSafe.m */,
+				AA0BB94C226F23FC0057DD77 /* NSMutableString+MiSafe.h */,
+				AA0BB94D226F23FC0057DD77 /* NSMutableString+MiSafe.m */,
+			);
+			path = string;
+			sourceTree = "<group>";
+		};
 		AA7DF5F12269DC2500C29D8D = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +132,8 @@
 		AA7DF5FC2269DC2500C29D8D /* MISafeAppDemo */ = {
 			isa = PBXGroup;
 			children = (
-				AA7DF6332269DC5800C29D8D /* New Group */,
+				AA0BB945226EC4BC0057DD77 /* string */,
+				AA7DF6332269DC5800C29D8D /* common */,
 				AA7DF62F2269DC3C00C29D8D /* container */,
 				AA7DF5FD2269DC2500C29D8D /* AppDelegate.h */,
 				AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */,
@@ -154,13 +177,13 @@
 			path = container;
 			sourceTree = "<group>";
 		};
-		AA7DF6332269DC5800C29D8D /* New Group */ = {
+		AA7DF6332269DC5800C29D8D /* common */ = {
 			isa = PBXGroup;
 			children = (
 				AA7DF6352269DC6300C29D8D /* NSObject+MiSafe.h */,
 				AA7DF6342269DC6300C29D8D /* NSObject+MiSafe.m */,
 			);
-			path = "New Group";
+			path = common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,7 +320,10 @@
 				AA0BB943226DAFE60057DD77 /* NSDictionary+MiSafe.m in Sources */,
 				AA7DF60D2269DC2600C29D8D /* main.m in Sources */,
 				AA7DF5FF2269DC2500C29D8D /* AppDelegate.m in Sources */,
+				AA0BB94E226F23FC0057DD77 /* NSMutableString+MiSafe.m in Sources */,
+				AA0BB94B226EF3720057DD77 /* NSString+MiSafe.m in Sources */,
 				AA7DF6362269DC6300C29D8D /* NSObject+MiSafe.m in Sources */,
+				AA0BB948226EC4FE0057DD77 /* NSAttributedString+MiSafe.m in Sources */,
 				AA7DF6322269DC5100C29D8D /* NSArray+MiSafe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +498,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CFP9KY4MGC;
 				INFOPLIST_FILE = MISafeAppDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,6 +516,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CFP9KY4MGC;
 				INFOPLIST_FILE = MISafeAppDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
