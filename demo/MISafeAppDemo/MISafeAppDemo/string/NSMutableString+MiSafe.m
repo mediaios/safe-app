@@ -9,42 +9,54 @@
 #import "NSMutableString+MiSafe.h"
 #import "NSObject+MiSafe.h"
 #import <objc/runtime.h>
+#import "MiSafeApp.h"
 @implementation NSMutableString (MiSafe)
 
 + (void)load
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        Class strClass = NSClassFromString(@"__NSCFString");
-        Class placeholderStrClass = NSClassFromString(@"NSPlaceholderMutableString");
-        
-        [NSObject miSwizzleInstanceMethod:placeholderStrClass
+        Class mutaPlaceHolder = objc_getClass("NSPlaceholderMutableString");
+        [NSObject miSwizzleInstanceMethod:mutaPlaceHolder
                                  swizzSel:@selector(initWithString:)
                             toSwizzledSel:@selector(miInitWithString:)];
+        [NSObject miSwizzleInstanceMethod:mutaPlaceHolder
+                                 swizzSel:@selector(initWithCString:encoding:)
+                            toSwizzledSel:@selector(miInitWithCString:encoding:)];
+        [NSObject miSwizzleInstanceMethod:mutaPlaceHolder
+                                 swizzSel:@selector(initWithUTF8String:)
+                            toSwizzledSel:@selector(miInitWithUTF8String:)];
+        
+        
+        
+        Class strClass = NSClassFromString(@"__NSCFString");
         [NSObject miSwizzleInstanceMethod:strClass
                                  swizzSel:@selector(hasPrefix:)
-                            toSwizzledSel:@selector(miHasPrefix:)];
+                            toSwizzledSel:@selector(miCFStrHasPrefix:)];
         [NSObject miSwizzleInstanceMethod:strClass
                                  swizzSel:@selector(hasSuffix:)
-                            toSwizzledSel:@selector(miHasSuffix:)];
+                            toSwizzledSel:@selector(miCFStrHasSuffix:)];
         [NSObject miSwizzleInstanceMethod:strClass
                                  swizzSel:@selector(substringFromIndex:)
-                            toSwizzledSel:@selector(miSubstringFromIndex:)];
+                            toSwizzledSel:@selector(miCFStrSubstringFromIndex:)];
         [NSObject miSwizzleInstanceMethod:strClass
                                  swizzSel:@selector(substringToIndex:)
-                            toSwizzledSel:@selector(miSubstringToIndex:)];
+                            toSwizzledSel:@selector(miCFStrSubstringToIndex:)];
         [NSObject miSwizzleInstanceMethod:strClass
                                  swizzSel:@selector(substringWithRange:)
-                            toSwizzledSel:@selector(miSubstringWithRange:)];
+                            toSwizzledSel:@selector(miCFStrSubstringWithRange:)];
+        
+        
         [NSObject miSwizzleInstanceMethod:strClass
                                  swizzSel:@selector(characterAtIndex:)
-                            toSwizzledSel:@selector(miCharacterAtIndex:)];
+                            toSwizzledSel:@selector(miCFStrCharacterAtIndex:)];
         [NSObject miSwizzleInstanceMethod:strClass
                                  swizzSel:@selector(stringByReplacingOccurrencesOfString:withString:options:range:)
-                            toSwizzledSel:@selector(miStringByReplacingOccurrencesOfString:withString:options:range:)];
+                            toSwizzledSel:@selector(miCFStrStringByReplacingOccurrencesOfString:withString:options:range:)];
         [NSObject miSwizzleInstanceMethod:strClass
                                  swizzSel:@selector(stringByReplacingCharactersInRange:withString:)
-                            toSwizzledSel:@selector(miStringByReplacingCharactersInRange:withString:)];
+                            toSwizzledSel:@selector(miCFStrStringByReplacingCharactersInRange:withString:)];
+        
         [NSObject miSwizzleInstanceMethod:strClass
                                  swizzSel:@selector(replaceCharactersInRange:withString:)
                             toSwizzledSel:@selector(miReplaceCharactersInRange:withString:)];
@@ -73,7 +85,7 @@
         instance = [self miInitWithString:aString];
     }
     @catch (NSException *exception) {
-        
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
     }
     @finally {
         return instance;
@@ -81,41 +93,42 @@
 }
 
 
--(BOOL)miHasPrefix:(NSString *)str
+-(BOOL)miCFStrHasPrefix:(NSString *)str
 {
     BOOL has = NO;
     @try {
-        has = [self miHasPrefix:str];
+        has = [self miCFStrHasPrefix:str];
     }
     @catch (NSException *exception) {
-        
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
     }
     @finally {
         return has;
     }
 }
 
--(BOOL)miHasSuffix:(NSString *)str
+-(BOOL)miCFStrHasSuffix:(NSString *)str
 {
     BOOL has = NO;
     @try {
-        has = [self miHasSuffix:str];
+        has = [self miCFStrHasSuffix:str];
     }
     @catch (NSException *exception) {
-        
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
     }
     @finally {
         return has;
     }
 }
 
-- (NSString *)miSubstringFromIndex:(NSUInteger)from {
+- (NSString *)miCFStrSubstringFromIndex:(NSUInteger)from {
     
     NSString *subString = nil;
     @try {
-        subString = [self miSubstringFromIndex:from];
+        subString = [self miCFStrSubstringFromIndex:from];
     }
     @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
         subString = nil;
     }
     @finally {
@@ -123,14 +136,15 @@
     }
 }
 
-- (NSString *)miSubstringToIndex:(NSUInteger)index {
+- (NSString *)miCFStrSubstringToIndex:(NSUInteger)index {
     
     NSString *subString = nil;
     
     @try {
-        subString = [self miSubstringToIndex:index];
+        subString = [self miCFStrSubstringToIndex:index];
     }
     @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
         subString = nil;
     }
     @finally {
@@ -138,14 +152,14 @@
     }
 }
 
-- (NSString *)miSubstringWithRange:(NSRange)range {
+- (NSString *)miCFStrSubstringWithRange:(NSRange)range {
     
     NSString *subString = nil;
     @try {
-        subString = [self miSubstringWithRange:range];
+        subString = [self miCFStrSubstringWithRange:range];
     }
     @catch (NSException *exception) {
-       
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
         subString = nil;
     }
     @finally {
@@ -153,14 +167,14 @@
     }
 }
 
-- (unichar)miCharacterAtIndex:(NSUInteger)index {
-    
+- (unichar)miCFStrCharacterAtIndex:(NSUInteger)index {
+
     unichar characteristic;
     @try {
-        characteristic = [self miCharacterAtIndex:index];
+        characteristic = [self miCFStrCharacterAtIndex:index];
     }
     @catch (NSException *exception) {
-       
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
     }
     @finally {
         return characteristic;
@@ -168,15 +182,15 @@
 }
 
 
-- (NSString *)miStringByReplacingOccurrencesOfString:(NSString *)target withString:(NSString *)replacement options:(NSStringCompareOptions)options range:(NSRange)searchRange {
+- (NSString *)miCFStrStringByReplacingOccurrencesOfString:(NSString *)target withString:(NSString *)replacement options:(NSStringCompareOptions)options range:(NSRange)searchRange {
     
     NSString *newStr = nil;
     
     @try {
-        newStr = [self miStringByReplacingOccurrencesOfString:target withString:replacement options:options range:searchRange];
+        newStr = [self miCFStrStringByReplacingOccurrencesOfString:target withString:replacement options:options range:searchRange];
     }
     @catch (NSException *exception) {
-        
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
         newStr = nil;
     }
     @finally {
@@ -185,19 +199,55 @@
 }
 
 
-- (NSString *)miStringByReplacingCharactersInRange:(NSRange)range withString:(NSString *)replacement {
+- (NSString *)miCFStrStringByReplacingCharactersInRange:(NSRange)range withString:(NSString *)replacement {
     
     NSString *newStr = nil;
-    
     @try {
-        newStr = [self miStringByReplacingCharactersInRange:range withString:replacement];
+        newStr = [self miCFStrStringByReplacingCharactersInRange:range withString:replacement];
     }
     @catch (NSException *exception) {
-        
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
         newStr = nil;
     }
     @finally {
         return newStr;
+    }
+}
+
+#pragma mark - NSPlaceholderMutableString
+//- (instancetype)miInitWithString:(NSString *)aString
+//{
+//    id str = nil;
+//    @try {
+//        str = [self miInitWithString:aString];
+//    } @catch (NSException *exception) {
+//        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+//    } @finally {
+//        return str;
+//    }
+//}
+
+- (instancetype)miInitWithUTF8String:(const char *)nullTerminatedCString
+{
+    id str = nil;
+    @try {
+        str = [self miInitWithUTF8String:nullTerminatedCString];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+    } @finally {
+        return str;
+    }
+}
+
+- (instancetype)miInitWithCString:(const char *)nullTerminatedCString encoding:(NSStringEncoding)encoding
+{
+    id str = nil;
+    @try {
+        str = [self miInitWithCString:nullTerminatedCString encoding:encoding];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+    } @finally {
+        return str;
     }
 }
 
@@ -209,7 +259,7 @@
         [self miReplaceCharactersInRange:range withString:aString];
     }
     @catch (NSException *exception) {
-        
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
     }
     @finally {
     }
@@ -223,7 +273,7 @@
         index= [self miReplaceOccurrencesOfString:target withString:replacement options:options range:searchRange];
     }
     @catch (NSException *exception) {
-        
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
     }
     @finally {
         return index;
@@ -238,7 +288,7 @@
         [self miInsertString:aString atIndex:loc];
     }
     @catch (NSException *exception) {
-        
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
     }
     @finally {
     }
@@ -251,7 +301,7 @@
         [self miDeleteCharactersInRange:range];
     }
     @catch (NSException *exception) {
-        
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
     }
     @finally {
     }
@@ -264,7 +314,7 @@
         [self miAppendString:aString];
     }
     @catch (NSException *exception) {
-        
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
     }
     @finally {
     }
@@ -276,7 +326,7 @@
         [self miSetString:aString];
     }
     @catch (NSException *exception) {
-        
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
     }
     @finally {
     }

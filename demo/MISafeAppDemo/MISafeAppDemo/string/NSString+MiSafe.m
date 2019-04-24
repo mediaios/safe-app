@@ -9,6 +9,7 @@
 #import "NSString+MiSafe.h"
 #import "NSObject+MiSafe.h"
 #import <objc/runtime.h>
+#import "MiSafeApp.h"
 
 @implementation NSString (MiSafe)
 
@@ -56,18 +57,38 @@
 
 - (NSString *)miSubstringFromIndex:(NSUInteger)from
 {
-    if (from >= self.length) {
-        return nil;
+    NSString *str = nil;
+    @try {
+        str = [self miSubstringFromIndex:from];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        str = nil;
+    } @finally {
+        return str;
     }
-    return [self miSubstringFromIndex:from];
+    
+//    if (from >= self.length) {
+//        return nil;
+//    }
+//    return [self miSubstringFromIndex:from];
 }
 
 - (instancetype)miInitWithString:(NSString *)aString
 {
-    if (!aString) {
-        return nil;
+    id str = nil;
+    @try {
+        str = [self miInitWithString:aString];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+    } @finally {
+        return str;
     }
-    return [self miInitWithString:aString];
+    
+    
+//    if (!aString) {
+//        return nil;
+//    }
+//    return [self miInitWithString:aString];
 }
 
 - (NSString *)miSubstringToIndex:(NSUInteger)to
@@ -90,10 +111,23 @@
 
 - (unichar)miCharacterAtIndex:(NSUInteger)index
 {
-    if (index >= self.length) {
-        return 0;
+    
+    unichar characteristic;
+    @try {
+        characteristic = [self miCharacterAtIndex:index];
     }
-    return [self miCharacterAtIndex:index];
+    @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    }
+    @finally {
+        return characteristic;
+    }
+    
+    
+//    if (index >= self.length) {
+//        return 0;
+//    }
+//    return [self miCharacterAtIndex:index];
 }
 
 - (NSString *)miStringByReplacingOccurrencesOfString:(NSString *)target withString:(NSString *)replacement options:(NSStringCompareOptions)options range:(NSRange)searchRange
@@ -125,7 +159,7 @@
     if (!str) {
         return NO;
     }
-    return [self hasPrefix:str];
+    return [self miHasPrefix:str];
 }
 
 - (BOOL)miHasSuffix:(NSString *)str
@@ -135,6 +169,90 @@
     }
     return [self miHasSuffix:str];
 }
+
+#pragma mark - NSMutableString特有的
+
+-(void)miReplaceCharactersInRange:(NSRange)range withString:(NSString *)aString
+{
+    @try {
+        [self miReplaceCharactersInRange:range withString:aString];
+    }
+    @catch (NSException *exception) {
+        
+    }
+    @finally {
+    }
+}
+
+
+-(NSUInteger)miReplaceOccurrencesOfString:(NSString *)target withString:(NSString *)replacement options:(NSStringCompareOptions)options range:(NSRange)searchRange
+{
+    NSUInteger index=0;
+    @try {
+        index= [self miReplaceOccurrencesOfString:target withString:replacement options:options range:searchRange];
+    }
+    @catch (NSException *exception) {
+        
+    }
+    @finally {
+        return index;
+    }
+}
+
+
+
+-(void)miInsertString:(NSString *)aString atIndex:(NSUInteger)loc
+{
+    @try {
+        [self miInsertString:aString atIndex:loc];
+    }
+    @catch (NSException *exception) {
+        
+    }
+    @finally {
+    }
+}
+
+
+-(void)miDeleteCharactersInRange:(NSRange)range
+{
+    @try {
+        [self miDeleteCharactersInRange:range];
+    }
+    @catch (NSException *exception) {
+        
+    }
+    @finally {
+    }
+}
+
+
+-(void)miAppendString:(NSString *)aString
+{
+    @try {
+        [self miAppendString:aString];
+    }
+    @catch (NSException *exception) {
+        
+    }
+    @finally {
+    }
+}
+
+-(void)miSetString:(NSString *)aString
+{
+    @try {
+        [self miSetString:aString];
+    }
+    @catch (NSException *exception) {
+        
+    }
+    @finally {
+    }
+}
+
+
+
 
 
 

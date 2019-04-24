@@ -10,7 +10,10 @@
 		AA0BB943226DAFE60057DD77 /* NSDictionary+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB942226DAFE60057DD77 /* NSDictionary+MiSafe.m */; };
 		AA0BB948226EC4FE0057DD77 /* NSAttributedString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB947226EC4FE0057DD77 /* NSAttributedString+MiSafe.m */; };
 		AA0BB94B226EF3720057DD77 /* NSString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB94A226EF3720057DD77 /* NSString+MiSafe.m */; };
-		AA0BB94E226F23FC0057DD77 /* NSMutableString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB94D226F23FC0057DD77 /* NSMutableString+MiSafe.m */; };
+		AA0BB952226FF1900057DD77 /* MiSafeApp.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB951226FF1900057DD77 /* MiSafeApp.m */; };
+		AA0BB955226FFE670057DD77 /* MiSafeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB954226FFE670057DD77 /* MiSafeModel.m */; };
+		AA0BB959227045B30057DD77 /* StringVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB958227045B30057DD77 /* StringVC.m */; };
+		AA0BB95B2270601E0057DD77 /* NSMutableString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB95A2270601E0057DD77 /* NSMutableString+MiSafe.m */; };
 		AA7DF5FF2269DC2500C29D8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */; };
 		AA7DF6022269DC2500C29D8D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF6012269DC2500C29D8D /* ViewController.m */; };
 		AA7DF6052269DC2500C29D8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7DF6032269DC2500C29D8D /* Main.storyboard */; };
@@ -47,8 +50,15 @@
 		AA0BB947226EC4FE0057DD77 /* NSAttributedString+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+MiSafe.m"; sourceTree = "<group>"; };
 		AA0BB949226EF3720057DD77 /* NSString+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MiSafe.h"; sourceTree = "<group>"; };
 		AA0BB94A226EF3720057DD77 /* NSString+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+MiSafe.m"; sourceTree = "<group>"; };
-		AA0BB94C226F23FC0057DD77 /* NSMutableString+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+MiSafe.h"; sourceTree = "<group>"; };
-		AA0BB94D226F23FC0057DD77 /* NSMutableString+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+MiSafe.m"; sourceTree = "<group>"; };
+		AA0BB950226FF1900057DD77 /* MiSafeApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiSafeApp.h; sourceTree = "<group>"; };
+		AA0BB951226FF1900057DD77 /* MiSafeApp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiSafeApp.m; sourceTree = "<group>"; };
+		AA0BB953226FFE670057DD77 /* MiSafeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiSafeModel.h; sourceTree = "<group>"; };
+		AA0BB954226FFE670057DD77 /* MiSafeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiSafeModel.m; sourceTree = "<group>"; };
+		AA0BB956227015D00057DD77 /* MiSafeAppHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiSafeAppHelper.h; sourceTree = "<group>"; };
+		AA0BB957227045B30057DD77 /* StringVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringVC.h; sourceTree = "<group>"; };
+		AA0BB958227045B30057DD77 /* StringVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringVC.m; sourceTree = "<group>"; };
+		AA0BB95A2270601E0057DD77 /* NSMutableString+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+MiSafe.m"; sourceTree = "<group>"; };
+		AA0BB95C227060460057DD77 /* NSMutableString+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+MiSafe.h"; sourceTree = "<group>"; };
 		AA7DF5FA2269DC2500C29D8D /* MISafeAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MISafeAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7DF5FD2269DC2500C29D8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,10 +113,22 @@
 				AA0BB947226EC4FE0057DD77 /* NSAttributedString+MiSafe.m */,
 				AA0BB949226EF3720057DD77 /* NSString+MiSafe.h */,
 				AA0BB94A226EF3720057DD77 /* NSString+MiSafe.m */,
-				AA0BB94C226F23FC0057DD77 /* NSMutableString+MiSafe.h */,
-				AA0BB94D226F23FC0057DD77 /* NSMutableString+MiSafe.m */,
+				AA0BB95C227060460057DD77 /* NSMutableString+MiSafe.h */,
+				AA0BB95A2270601E0057DD77 /* NSMutableString+MiSafe.m */,
 			);
 			path = string;
+			sourceTree = "<group>";
+		};
+		AA0BB94F226FF1700057DD77 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				AA0BB950226FF1900057DD77 /* MiSafeApp.h */,
+				AA0BB951226FF1900057DD77 /* MiSafeApp.m */,
+				AA0BB953226FFE670057DD77 /* MiSafeModel.h */,
+				AA0BB954226FFE670057DD77 /* MiSafeModel.m */,
+				AA0BB956227015D00057DD77 /* MiSafeAppHelper.h */,
+			);
+			path = core;
 			sourceTree = "<group>";
 		};
 		AA7DF5F12269DC2500C29D8D = {
@@ -132,6 +154,7 @@
 		AA7DF5FC2269DC2500C29D8D /* MISafeAppDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AA0BB94F226FF1700057DD77 /* core */,
 				AA0BB945226EC4BC0057DD77 /* string */,
 				AA7DF6332269DC5800C29D8D /* common */,
 				AA7DF62F2269DC3C00C29D8D /* container */,
@@ -139,6 +162,8 @@
 				AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */,
 				AA7DF6002269DC2500C29D8D /* ViewController.h */,
 				AA7DF6012269DC2500C29D8D /* ViewController.m */,
+				AA0BB957227045B30057DD77 /* StringVC.h */,
+				AA0BB958227045B30057DD77 /* StringVC.m */,
 				AA7DF6032269DC2500C29D8D /* Main.storyboard */,
 				AA7DF6062269DC2600C29D8D /* Assets.xcassets */,
 				AA7DF6082269DC2600C29D8D /* LaunchScreen.storyboard */,
@@ -317,13 +342,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA7DF6022269DC2500C29D8D /* ViewController.m in Sources */,
+				AA0BB95B2270601E0057DD77 /* NSMutableString+MiSafe.m in Sources */,
+				AA0BB959227045B30057DD77 /* StringVC.m in Sources */,
 				AA0BB943226DAFE60057DD77 /* NSDictionary+MiSafe.m in Sources */,
+				AA0BB952226FF1900057DD77 /* MiSafeApp.m in Sources */,
 				AA7DF60D2269DC2600C29D8D /* main.m in Sources */,
 				AA7DF5FF2269DC2500C29D8D /* AppDelegate.m in Sources */,
-				AA0BB94E226F23FC0057DD77 /* NSMutableString+MiSafe.m in Sources */,
 				AA0BB94B226EF3720057DD77 /* NSString+MiSafe.m in Sources */,
 				AA7DF6362269DC6300C29D8D /* NSObject+MiSafe.m in Sources */,
 				AA0BB948226EC4FE0057DD77 /* NSAttributedString+MiSafe.m in Sources */,
+				AA0BB955226FFE670057DD77 /* MiSafeModel.m in Sources */,
 				AA7DF6322269DC5100C29D8D /* NSArray+MiSafe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

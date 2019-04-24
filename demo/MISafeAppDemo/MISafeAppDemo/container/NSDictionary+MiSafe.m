@@ -9,6 +9,7 @@
 #import "NSDictionary+MiSafe.h"
 #import "NSObject+MiSafe.h"
 #import <objc/runtime.h>
+#import "MiSafeApp.h"
 
 @implementation NSDictionary (MiSafe)
 
@@ -45,81 +46,102 @@
 
 - (instancetype)miInitWithObjects:(NSArray *)objects forKeys:(NSArray<id<NSCopying>> *)keys
 {
-    if (!objects || !keys) {
-        return nil;
-    }
-    
-    NSUInteger count = objects.count >= keys.count ? keys.count : objects.count;
-    NSMutableArray *new_objs = [NSMutableArray array];
-    NSMutableArray *new_keys = [NSMutableArray array];
-    for (int i = 0; i < count; i++) {
-        if (objects[i] && keys[i]) {
-            [new_objs addObject:objects[i]];
-            [new_keys addObject:keys[i]];
+    id dict = nil;
+    @try {
+        dict = [self miInitWithObjects:objects forKeys:keys];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_InitDictRemoveNil];
+        if (objects && keys) {
+            NSUInteger count = objects.count >= keys.count ? keys.count : objects.count;
+            NSMutableArray *new_objs = [NSMutableArray array];
+            NSMutableArray *new_keys = [NSMutableArray array];
+            for (int i = 0; i < count; i++) {
+                if (objects[i] && keys[i]) {
+                    [new_objs addObject:objects[i]];
+                    [new_keys addObject:keys[i]];
+                }
+            }
+            dict = [self miInitWithObjects:new_objs forKeys:new_keys];
         }
+    } @finally {
+        return dict;
     }
-    return [self miInitWithObjects:new_objs forKeys:new_keys];
 }
 
 - (instancetype)miInitWithObjects:(const id [])objects forKeys:(const id<NSCopying> [])keys count:(NSUInteger)cnt
 {
-    id tempObjects[cnt];
-    id tempKeys[cnt];
-    NSUInteger validCount = 0;
-    for (NSUInteger i = 0; i < cnt; i++) {
-        id key = keys[i];
-        id obj = objects[i];
-        if (!key || !obj) {
-            continue;
+    id dict = nil;
+    @try {
+        dict = [self miInitWithObjects:objects forKeys:keys count:cnt];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_InitDictRemoveNil];
+        id tempObjects[cnt];
+        id tempKeys[cnt];
+        NSUInteger validCount = 0;
+        for (NSUInteger i = 0; i < cnt; i++) {
+            id key = keys[i];
+            id obj = objects[i];
+            if (!key || !obj) {
+                continue;
+            }
+            if (!obj) {
+                obj = [NSNull null];
+            }
+            tempKeys[validCount] = key;
+            tempObjects[validCount] = obj;
+            validCount++;
         }
-        if (!obj) {
-            obj = [NSNull null];
-        }
-        tempKeys[validCount] = key;
-        tempObjects[validCount] = obj;
-        validCount++;
+        dict = [self miInitWithObjects:tempObjects forKeys:tempKeys count:validCount];
+    } @finally {
+        return dict;
     }
-    return [self miInitWithObjects:tempObjects forKeys:tempKeys count:validCount];
 }
 
 - (void)miSetObject:(id)anObject forKey:(id <NSCopying>)aKey
 {
-    if (!anObject || !aKey) {
-        return;
-    }
-    [self miSetObject:anObject forKey:aKey];
+    @try {
+        [self miSetObject:anObject forKey:aKey];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
 }
 
 - (void)miSetObject:(id)obj forKeyedSubscript:(id <NSCopying>)key
 {
-    if (!key) {
-        return;
-    }
-    [self miSetObject:obj forKeyedSubscript:key];
+    @try {
+        [self miSetObject:obj forKeyedSubscript:key];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
+    
 }
 
 - (void)miRemoveObjectForKey:(id)key
 {
-    if (!key) {
-        return;
-    }
-    [self miRemoveObjectForKey:key];
+    @try {
+        [self miRemoveObjectForKey:key];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
 }
 
 - (void)miSetCFDictObject:(id)anObject forKey:(id<NSCopying>)aKey
 {
-    if (!anObject || !aKey) {
-        return;
-    }
-    [self miSetCFDictObject:anObject forKey:aKey];
+    @try {
+        [self miSetCFDictObject:anObject forKey:aKey];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
 }
 
 - (void)miRemoveCFDictObjectForKey:(id)key
 {
-    if (!key) {
-        return;
-    }
-    [self miRemoveCFDictObjectForKey:key];
+    @try {
+        [self miRemoveCFDictObjectForKey:key];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
+    
 }
 
 

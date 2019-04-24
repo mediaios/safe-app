@@ -9,6 +9,7 @@
 #import "NSArray+MiSafe.h"
 #import <objc/runtime.h>
 #import "NSObject+MiSafe.h"
+#import "MiSafeApp.h"
 
 @implementation NSArray (MiSafe)
 
@@ -79,132 +80,189 @@
 - (id)miInitWithObjects:(const id _Nonnull __unsafe_unretained *)objects
                   count:(NSUInteger)cnt
 {
-    
-    BOOL hasNilObject = NO;
-    for (NSUInteger i = 0; i < cnt; i++) {
-        if ([objects[i] isKindOfClass:[NSArray class]]) {
-            NSLog(@"%@", objects[i]);
-        }
-        if (objects[i] == nil) {
-            hasNilObject = YES;
-        }
-    }
-    
-    // 因为有值为nil的元素，那么我们可以过滤掉值为nil的元素
-    if (hasNilObject) {
-        id __unsafe_unretained newObjects[cnt];
-        NSUInteger index = 0;
-        for (NSUInteger i = 0; i < cnt; ++i) {
-            if (objects[i] != nil) {
-                newObjects[index++] = objects[i];
+    id array = nil;
+    @try {
+        array = [self miInitWithObjects:objects count:cnt];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_InitArrayRemoveNil];
+        BOOL hasNilObject = NO;
+        for (NSUInteger i = 0; i < cnt; i++) {
+            if ([objects[i] isKindOfClass:[NSArray class]]) {
+                NSLog(@"%@", objects[i]);
+            }
+            if (objects[i] == nil) {
+                hasNilObject = YES;
             }
         }
-        return [self miInitWithObjects:newObjects count:index];
+        // 因为有值为nil的元素，那么我们可以过滤掉值为nil的元素
+        if (hasNilObject) {
+            id __unsafe_unretained newObjects[cnt];
+            NSUInteger index = 0;
+            for (NSUInteger i = 0; i < cnt; ++i) {
+                if (objects[i] != nil) {
+                    newObjects[index++] = objects[i];
+                }
+            }
+            array = [self miInitWithObjects:newObjects count:index];
+        }
+    } @finally {
+        return array;
     }
-    return [self miInitWithObjects:objects count:cnt];
 }
 
 #pragma mark - 从数组中取元素
 - (id)miEmptyObjAtIndex:(NSUInteger)index
 {
-    return nil;
+    
+    id ele = nil;
+    @try {
+        ele = [self miEmptyObjAtIndex:index];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+    } @finally {
+        return ele;
+    }
 }
 
 - (id)miArrObjectAtIndex:(NSUInteger)index
 {
-    if (index >= self.count) {
-        return nil;
+    id ele = nil;
+    @try {
+        ele = [self miArrObjectAtIndex:index];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+    } @finally {
+        return ele;
     }
-    return [self miArrObjectAtIndex:index];
 }
 
 - (id)miMutaArrObjectAtIndex:(NSUInteger)index
 {
-    if (index >= self.count) {
-        return nil;
+    
+    id ele = nil;
+    @try {
+        ele = [self miMutaArrObjectAtIndex:index];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+    } @finally {
+        return ele;
     }
-    return [self miMutaArrObjectAtIndex:index];
 }
 
 - (id)miArrObjectAtIndexSubscript:(NSUInteger)index
 {
-    if (index >= self.count) {
-        return nil;
+    id ele = nil;
+    @try {
+        ele = [self miArrObjectAtIndexSubscript:index];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+    } @finally {
+        return ele;
     }
-    return [self miArrObjectAtIndex:index];
 }
 
 - (id)miMutaArrObjectAtIndexSubscript:(NSUInteger)index
 {
-    if (index >= self.count) {
-        return nil;
+    
+    id ele = nil;
+    @try {
+        ele = [self miMutaArrObjectAtIndex:index];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+    } @finally {
+        return ele;
     }
-    return [self miMutaArrObjectAtIndex:index];
 }
 
 #pragma mark - 插入元素
 - (void)miMutaInsertObject:(id)object atIndex:(NSUInteger)index
 {
-    if (object && index <= self.count) {
-        return [self miMutaInsertObject:object atIndex:index];
-    }
+    @try {
+        [self miMutaInsertObject:object atIndex:index];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        return;
+    } @finally {}
+    
 }
 
 #pragma mark - 删除元素
 - (void)miRemoveObjectsInRange:(NSRange)range
 {
-    if ((NSMaxRange(range) - 1) < self.count) {
+    @try {
         [self miRemoveObjectsInRange:range];
-    }
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
 }
 
 - (void)miRemoveObject:(id)anObject inRange:(NSRange)range
 {
-    if (anObject && (NSMaxRange(range) - 1) < self.count) {
-        [self miRemoveObject:anObject inRange:range];
-    }
+    @try {
+         [self miRemoveObject:anObject inRange:range];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
 }
 
 - (void)miRemoveObjectIdenticalTo:(id)anObject inRange:(NSRange)range
 {
-    if (anObject && (NSMaxRange(range) - 1) < self.count) {
+    @try {
         [self miRemoveObjectIdenticalTo:anObject inRange:range];
-    }
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
 }
 
 #pragma mark - 替换元素
 - (void)miReplaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject
 {
-    if (index < self.count && anObject) {
+    @try {
         [self miReplaceObjectAtIndex:index withObject:anObject];
-    }
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
 }
 
 - (void)miReplaceObjectsInRange:(NSRange)range withObjectsFromArray:(id)otherArray range:(NSRange)otherRange
 {
-    if ((NSMaxRange(range) -1 < self.count) && [otherArray isKindOfClass:[NSArray class]] && (NSMaxRange(otherRange)-1 < ((NSArray *)otherArray).count) ) {
+    @try {
         [self miReplaceObjectsInRange:range withObjectsFromArray:otherArray range:otherRange];
-    }
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
 }
 
 - (void)miReplaceObjectsInRange:(NSRange)range withObjectsFromArray:(id)otherArray
 {
-    if (NSMaxRange(range) -1 < self.count) {
+
+    @try {
         [self miReplaceObjectsInRange:range withObjectsFromArray:otherArray];
-    }
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
 }
 
 #pragma mark - 交换元素
 - (void)miExchangeObjectAtIndex:(NSUInteger)idx1 withObjectAtIndex:(NSUInteger)idx2
 {
-    if (idx1 < self.count && idx2 < self.count) {
+    @try {
         [self miExchangeObjectAtIndex:idx1 withObjectAtIndex:idx2];
-    }
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
 }
 
 - (NSInteger)miIntegerValue
 {
-    return 0;
+    NSInteger iV = 0;
+    @try {
+       iV = [self miIntegerValue];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {
+        return iV;
+    }
 }
 
 

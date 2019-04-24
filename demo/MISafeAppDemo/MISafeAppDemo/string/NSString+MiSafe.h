@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSString+MiSafe.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -9,6 +9,7 @@
 #import "NSAttributedString+MiSafe.h"
 #import "NSObject+MiSafe.h"
 #import <objc/runtime.h>
+#import "MiSafeApp.h"
 
 @implementation NSAttributedString (MiSafe)
 
@@ -49,74 +50,98 @@
 
 - (instancetype)miInitWithString:(NSString *)str
 {
-    if (str) {
-        return [self miInitWithString:str];
+    id instance = nil;
+    @try {
+        instance = [self miInitWithString:str];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        instance = nil;
+    } @finally {
+        return instance;
     }
-    return nil;
 }
 
 - (instancetype)miInitMutaASWithString:(NSString *)str
 {
-    if (str) {
-        return [self miInitMutaASWithString:str];
+    id instance = nil;
+    @try {
+        instance = [self miInitMutaASWithString:str];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        instance = nil;
+    } @finally {
+        return instance;
     }
-    return nil;
 }
 
 - (instancetype)miInitMutaASWithString:(NSString *)str attributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attrs
 {
-    if (str) {
-        return [self miInitMutaASWithString:str attributes:attrs];
+    id instance = nil;
+    @try {
+        instance = [self miInitMutaASWithString:str attributes:attrs];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        instance = nil;
+    } @finally {
+        return instance;
     }
-    return nil;
 }
 
 - (void)miReplaceCharactersInRange:(NSRange)range withString:(NSString *)str
 {
-    if ((range.location + range.length) > self.length) {
-        return;
-    }
-    [self miReplaceCharactersInRange:range withString:str];
+    @try {
+        [self miReplaceCharactersInRange:range withString:str];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
+    
 }
 
 - (void)miSetAttributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attrs range:(NSRange)range
 {
-    if ((range.location + range.length) > self.length) {
-        return;
-    }
-    [self miSetAttributes:attrs range:range];
+    
+    @try{
+        [self miSetAttributes:attrs range:range];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
 }
 
 - (void)miAddAttribute:(NSAttributedStringKey)name value:(id)value range:(NSRange)range
 {
-    if ((range.location + range.length) > self.length) {
-        return;
-    }
-    [self miAddAttribute:name value:value range:range];
+    @try{
+        [self miAddAttribute:name value:value range:range];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
 }
 
 - (void)miAddAttributes:(NSDictionary<NSAttributedStringKey, id> *)attrs range:(NSRange)range
 {
-    if ((range.location + range.length) > self.length) {
-        return;
-    }
-    [self miAddAttributes:attrs range:range];
+    @try{
+        [self miAddAttributes:attrs range:range];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
 }
 
 - (void)miRemoveAttribute:(NSAttributedStringKey)name range:(NSRange)range
 {
-    if ((range.location + range.length) > self.length) {
-        return;
-    }
-    [self miRemoveAttribute:name range:range];
+    @try{
+        [self miRemoveAttribute:name range:range];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
+    
 }
 
 - (void)miReplaceCharactersInRange:(NSRange)range withAttributedString:(NSAttributedString *)attrString
 {
-    if ((range.location + range.length) > self.length || !attrString) {
-        return;
-    }
-    [self miReplaceCharactersInRange:range withAttributedString:attrString];
+    @try{
+        [self miReplaceCharactersInRange:range withAttributedString:attrString];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
 }
 
 
