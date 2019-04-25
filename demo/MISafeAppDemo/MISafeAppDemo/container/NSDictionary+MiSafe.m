@@ -17,23 +17,49 @@
 {
     static dispatch_once_t miOnceToken;
     dispatch_once(&miOnceToken, ^{
-        [NSObject miSwizzleInstanceMethod:objc_getClass("__NSPlaceholderDictionary")
+        /**************************************** 构造字典 ****************************************/
+        // 使用[alloc]方法的初始化只需要hook `__NSPlaceholderDictionary`的init方法即可
+        Class placeHolderDict = objc_getClass("__NSPlaceholderDictionary");
+        [self miSwizzleInstanceMethod:placeHolderDict
                                  swizzSel:@selector(initWithObjects:forKeys:count:)
                             toSwizzledSel:@selector(miInitWithObjects:forKeys:count:)];
-        
-        [NSObject miSwizzleInstanceMethod:objc_getClass("__NSPlaceholderDictionary")
+        [self miSwizzleInstanceMethod:placeHolderDict
                                  swizzSel:@selector(initWithObjects:forKeys:)
                             toSwizzledSel:@selector(miInitWithObjects:forKeys:)];
+        // hook 使用类方法的初始化方式
+        [NSObject miSwizzleClassMethodWithClass:object_getClass(@"NSDictionary")
+                                       swizzSel:@selector(dictionaryWithObjects:forKeys:count:)
+                                  toSwizzledSel:@selector(miDictionaryWithObjects:forKeys:count:)];
         
-        [NSObject miSwizzleInstanceMethod:objc_getClass("__NSDictionaryM")
+        
+        /**************************************** 字典操作 ****************************************/
+//        Class dict0Class = objc_getClass("__NSDictionary0");
+        Class dictOneClass = objc_getClass("__NSSingleEntryDictionaryI");
+//        Class dictClass = objc_getClass("__NSDictionaryI");
+        [self miSwizzleInstanceMethod:dictOneClass
+                             swizzSel:@selector(valueForUndefinedKey:) toSwizzledSel:@selector(miOneEleDictValueForUndefinedKey:)];
+        
+        
+        Class mutaDictClass = objc_getClass("__NSDictionaryM");
+        [self miSwizzleInstanceMethod:mutaDictClass
                                  swizzSel:@selector(setObject:forKey:)
                             toSwizzledSel:@selector(miSetObject:forKey:)];
-        [NSObject miSwizzleInstanceMethod:objc_getClass("__NSDictionaryM")
+        [self miSwizzleInstanceMethod:mutaDictClass
                                  swizzSel:@selector(setObject:forKeyedSubscript:)
                             toSwizzledSel:@selector(miSetObject:forKeyedSubscript:)];
-        [NSObject miSwizzleInstanceMethod:objc_getClass("__NSDictionaryM")
+        [self miSwizzleInstanceMethod:mutaDictClass
                                  swizzSel:@selector(removeObjectForKey:)
                             toSwizzledSel:@selector(miRemoveObjectForKey:)];
+        
+        // 对NSMutableDict做拷贝，拷贝之后字典添加元素会crash.   //待定
+        Class frozenDictClass = objc_getClass("__NSFrozenDictionaryM");
+        [self miSwizzleInstanceMethod:frozenDictClass
+                             swizzSel:@selector(setObject:forKey:)
+                        toSwizzledSel:@selector(miFrozenDictSetObject:forKey:)];
+        [self miSwizzleInstanceMethod:frozenDictClass
+                             swizzSel:@selector(setObject:forKeyedSubscript:)
+                        toSwizzledSel:@selector(miSetFrozenDictSetObject:forKeyedSubscript:)];
+        
         [self miSwizzleInstanceMethod:objc_getClass("__NSCFDictionary")
                              swizzSel:@selector(setObject:forKey:)
                         toSwizzledSel:@selector(miSetCFDictObject:forKey:)];
@@ -97,10 +123,67 @@
     }
 }
 
++ (instancetype)miDictionaryWithObjects:(const id  _Nonnull __unsafe_unretained *)objects forKeys:(const id<NSCopying>  _Nonnull __unsafe_unretained *)keys count:(NSUInteger)cnt
+{
+    id instance = nil;
+    @try {
+        instance = [self miDictionaryWithObjects:objects forKeys:keys count:cnt];
+    }
+    @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_InitArrayRemoveNil];
+        NSUInteger index = 0;
+        id  _Nonnull __unsafe_unretained newObjects[cnt];
+        id  _Nonnull __unsafe_unretained newkeys[cnt];
+        
+        for (int i = 0; i < cnt; i++) {
+            if (objects[i] && keys[i]) {
+                newObjects[index] = objects[i];
+                newkeys[index] = keys[i];
+                index++;
+            }
+        }
+        instance = [self miDictionaryWithObjects:newObjects forKeys:newkeys count:index];
+    }
+    @finally {
+        return instance;
+    }
+}
+
+#pragma mark -字典操作
+- (id)miOneEleDictValueForUndefinedKey:(NSString *)key;
+{
+    id instance = nil;
+    @try {
+        instance = [self miOneEleDictValueForUndefinedKey:key];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+    } @finally {
+        return instance;
+    }
+}
+
 - (void)miSetObject:(id)anObject forKey:(id <NSCopying>)aKey
 {
     @try {
         [self miSetObject:anObject forKey:aKey];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
+}
+
+- (void)miFrozenDictSetObject:(id)anObject forKey:(id <NSCopying>)aKey
+{
+    @try {
+
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
+}
+
+- (void)miSetFrozenDictSetObject:(id)anObject forKeyedSubscript:(id <NSCopying>)aKey
+{
+    @try {
+        
     } @catch (NSException *exception) {
         [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
     } @finally {}

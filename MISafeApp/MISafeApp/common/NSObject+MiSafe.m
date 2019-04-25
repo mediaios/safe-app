@@ -31,4 +31,24 @@
     }
 }
 
++ (void)miSwizzleClassMethodWithClass:(Class)class
+                             swizzSel:(SEL)originSel
+                        toSwizzledSel:(SEL)swizzledSel
+{
+    Method originMethod  = class_getClassMethod(class, originSel);
+    Method swizzledMethod = class_getClassMethod(class, swizzledSel);
+    if (!originMethod || !swizzledMethod) {
+        return;
+    }
+    IMP originImp = method_getImplementation(originMethod);
+    IMP swizzledImp = method_getImplementation(swizzledMethod);
+    const char * originType = method_getTypeEncoding(originMethod);
+    const char * swizzledTye = method_getTypeEncoding(swizzledMethod);
+    
+    // 添加方法到元类中
+    Class metaClass = objc_getMetaClass(class_getName(class));
+    class_replaceMethod(metaClass, swizzledSel, originImp, originType);
+    class_replaceMethod(metaClass, originSel, swizzledImp, swizzledTye);
+}
+
 @end

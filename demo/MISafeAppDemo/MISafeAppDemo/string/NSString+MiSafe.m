@@ -17,7 +17,7 @@
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [NSObject miSwizzleInstanceMethod:objc_getClass("NSPlaceholderString")
+        [self miSwizzleInstanceMethod:objc_getClass("NSPlaceholderString")
                                  swizzSel:@selector(initWithString:)
                             toSwizzledSel:@selector(miInitWithString:)];
         Class class_init =  NSClassFromString(@"__NSCFConstantString");
@@ -29,28 +29,28 @@
 
 + (void)miSwizzleMethods:(Class)class
 {
-    [NSObject miSwizzleInstanceMethod:class
+    [self miSwizzleInstanceMethod:class
                              swizzSel:@selector(substringFromIndex:)
                         toSwizzledSel:@selector(miSubstringFromIndex:)];
-    [NSObject miSwizzleInstanceMethod:class
+    [self miSwizzleInstanceMethod:class
                              swizzSel:@selector(substringToIndex:)
                         toSwizzledSel:@selector(miSubstringToIndex:)];
-    [NSObject miSwizzleInstanceMethod:class
+    [self miSwizzleInstanceMethod:class
                              swizzSel:@selector(substringWithRange:)
                         toSwizzledSel:@selector(miSubstringWithRange:)];
-    [NSObject miSwizzleInstanceMethod:class
+    [self miSwizzleInstanceMethod:class
                              swizzSel:@selector(characterAtIndex:)
                         toSwizzledSel:@selector(miCharacterAtIndex:)];
-    [NSObject miSwizzleInstanceMethod:class
+    [self miSwizzleInstanceMethod:class
                              swizzSel:@selector(stringByReplacingOccurrencesOfString:withString:options:range:)
                         toSwizzledSel:@selector(miStringByReplacingOccurrencesOfString:withString:options:range:)];
-    [NSObject miSwizzleInstanceMethod:class
+    [self miSwizzleInstanceMethod:class
                              swizzSel:@selector(stringByReplacingCharactersInRange:withString:)
                         toSwizzledSel:@selector(miStringByReplacingCharactersInRange:withString:)];
-    [NSObject miSwizzleInstanceMethod:class
+    [self miSwizzleInstanceMethod:class
                              swizzSel:@selector(hasPrefix:)
                         toSwizzledSel:@selector(miHasPrefix:)];
-    [NSObject miSwizzleInstanceMethod:class
+    [self miSwizzleInstanceMethod:class
                              swizzSel:@selector(hasSuffix:)
                         toSwizzledSel:@selector(miHasSuffix:)];
 }

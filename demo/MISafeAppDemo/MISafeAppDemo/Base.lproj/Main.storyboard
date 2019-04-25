@@ -39,6 +39,9 @@
                                             <constraint firstAttribute="width" constant="90" id="w5H-mt-JUh"/>
                                         </constraints>
                                         <state key="normal" title="dictionary"/>
+                                        <connections>
+                                            <segue destination="Dm8-MK-DXZ" kind="push" id="LwW-f0-M2l"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -222,6 +225,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yA4-TY-UTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1606" y="-202"/>
+        </scene>
+        <!--DictVC-->
+        <scene sceneID="5CY-Mi-4Rg">
+            <objects>
+                <viewController id="Dm8-MK-DXZ" customClass="DictVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NfL-8f-5KC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0GO-8R-gFZ">
+                                <rect key="frame" x="67.5" y="177.5" width="240" height="312"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flZ-Lg-26M">
+                                        <rect key="frame" x="69.5" y="0.0" width="101" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="101" id="V20-27-l4s"/>
+                                            <constraint firstAttribute="height" constant="38" id="ybW-Yq-poU"/>
+                                        </constraints>
+                                        <state key="normal" title="NSDictionary"/>
+                                        <connections>
+                                            <action selector="testDict:" destination="Dm8-MK-DXZ" eventType="touchUpInside" id="V2a-1A-xWp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqK-26-Hcz">
+                                        <rect key="frame" x="47" y="274" width="146" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="TRX-AS-cfR"/>
+                                            <constraint firstAttribute="width" constant="146" id="qIQ-tA-kE7"/>
+                                        </constraints>
+                                        <state key="normal" title="NSMutableDictionary"/>
+                                        <connections>
+                                            <action selector="testMutableDict:" destination="Dm8-MK-DXZ" eventType="touchUpInside" id="IWP-I8-Cha"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="312" id="J7R-dN-iuv"/>
+                                    <constraint firstAttribute="width" constant="240" id="O2s-wy-3Vw"/>
+                                    <constraint firstItem="flZ-Lg-26M" firstAttribute="top" secondItem="0GO-8R-gFZ" secondAttribute="top" id="aCB-U3-n1G"/>
+                                    <constraint firstAttribute="bottom" secondItem="vqK-26-Hcz" secondAttribute="bottom" id="bqx-7h-xUo"/>
+                                    <constraint firstItem="flZ-Lg-26M" firstAttribute="centerX" secondItem="0GO-8R-gFZ" secondAttribute="centerX" id="mtp-KN-Iy6"/>
+                                    <constraint firstItem="vqK-26-Hcz" firstAttribute="centerX" secondItem="0GO-8R-gFZ" secondAttribute="centerX" id="vd0-km-ojn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0GO-8R-gFZ" firstAttribute="centerX" secondItem="NfL-8f-5KC" secondAttribute="centerX" id="Uvs-8N-Pwp"/>
+                            <constraint firstItem="0GO-8R-gFZ" firstAttribute="centerY" secondItem="NfL-8f-5KC" secondAttribute="centerY" id="oda-cG-LNK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dxs-IG-D7I"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FVo-Hn-jSn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hmp-7s-nMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1429.5999999999999" y="-12.143928035982009"/>
         </scene>
     </scenes>
 </document>

@@ -51,9 +51,16 @@
 }
 
 - (IBAction)testNSString:(id)sender {
-//    NSString *str = @"hello";
-//    [str substringFromIndex:1000];
+    NSString *str = @"hello";
+    [str substringFromIndex:1000];
 
+    NSString *str_1 = [NSString stringWithFormat:@"1234567890"]; // __NSCFString
+    [str_1 substringFromIndex:1000];
+    
+    NSString *str_2 = [NSString stringWithFormat:@"123"];
+    [str_2 substringFromIndex:1000];
+    
+//    return;
     NSArray *a=@[@"fs",@"s"];
     NSString *s1=@"128943rfsdsfssds";
     NSString *s122=[NSString stringWithFormat:@"fs"];
