@@ -1,8 +1,8 @@
 //
-//  StringVC.h
+//  ArrayVC.h
 //  MISafeAppDemo
 //
-//  Created by iosmediadev@gmail.com on 2019/4/24.
+//  Created by iosmediadev@gmail.com on 2019/4/25.
 //  Copyright © 2019 iosmedia. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface StringVC : UIViewController
+@interface ArrayVC : UIViewController
 
 @end
 

@@ -14,6 +14,8 @@
 		AA0BB955226FFE670057DD77 /* MiSafeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB954226FFE670057DD77 /* MiSafeModel.m */; };
 		AA0BB959227045B30057DD77 /* StringVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB958227045B30057DD77 /* StringVC.m */; };
 		AA0BB95B2270601E0057DD77 /* NSMutableString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB95A2270601E0057DD77 /* NSMutableString+MiSafe.m */; };
+		AA0BB95F2271978D0057DD77 /* ArrayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB95E2271978D0057DD77 /* ArrayVC.m */; };
+		AA0BB9622271979F0057DD77 /* DictVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB9612271979F0057DD77 /* DictVC.m */; };
 		AA7DF5FF2269DC2500C29D8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */; };
 		AA7DF6022269DC2500C29D8D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF6012269DC2500C29D8D /* ViewController.m */; };
 		AA7DF6052269DC2500C29D8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7DF6032269DC2500C29D8D /* Main.storyboard */; };
@@ -59,6 +61,10 @@
 		AA0BB958227045B30057DD77 /* StringVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringVC.m; sourceTree = "<group>"; };
 		AA0BB95A2270601E0057DD77 /* NSMutableString+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+MiSafe.m"; sourceTree = "<group>"; };
 		AA0BB95C227060460057DD77 /* NSMutableString+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+MiSafe.h"; sourceTree = "<group>"; };
+		AA0BB95D2271978D0057DD77 /* ArrayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrayVC.h; sourceTree = "<group>"; };
+		AA0BB95E2271978D0057DD77 /* ArrayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrayVC.m; sourceTree = "<group>"; };
+		AA0BB9602271979F0057DD77 /* DictVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictVC.h; sourceTree = "<group>"; };
+		AA0BB9612271979F0057DD77 /* DictVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictVC.m; sourceTree = "<group>"; };
 		AA7DF5FA2269DC2500C29D8D /* MISafeAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MISafeAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7DF5FD2269DC2500C29D8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -164,6 +170,10 @@
 				AA7DF6012269DC2500C29D8D /* ViewController.m */,
 				AA0BB957227045B30057DD77 /* StringVC.h */,
 				AA0BB958227045B30057DD77 /* StringVC.m */,
+				AA0BB95D2271978D0057DD77 /* ArrayVC.h */,
+				AA0BB95E2271978D0057DD77 /* ArrayVC.m */,
+				AA0BB9602271979F0057DD77 /* DictVC.h */,
+				AA0BB9612271979F0057DD77 /* DictVC.m */,
 				AA7DF6032269DC2500C29D8D /* Main.storyboard */,
 				AA7DF6062269DC2600C29D8D /* Assets.xcassets */,
 				AA7DF6082269DC2600C29D8D /* LaunchScreen.storyboard */,
@@ -341,8 +351,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA0BB9622271979F0057DD77 /* DictVC.m in Sources */,
 				AA7DF6022269DC2500C29D8D /* ViewController.m in Sources */,
 				AA0BB95B2270601E0057DD77 /* NSMutableString+MiSafe.m in Sources */,
+				AA0BB95F2271978D0057DD77 /* ArrayVC.m in Sources */,
 				AA0BB959227045B30057DD77 /* StringVC.m in Sources */,
 				AA0BB943226DAFE60057DD77 /* NSDictionary+MiSafe.m in Sources */,
 				AA0BB952226FF1900057DD77 /* MiSafeApp.m in Sources */,

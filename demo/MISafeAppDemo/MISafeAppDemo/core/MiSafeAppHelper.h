@@ -2,8 +2,8 @@
 //  MiSafeAppHelper.h
 //  MISafeAppDemo
 //
-//  Created by ethan on 2019/4/24.
-//  Copyright © 2019 ucloud. All rights reserved.
+//  Created by iosmediadev@gmail.com on 2019/4/24.
+//  Copyright © 2019 iosmedia. All rights reserved.
 //
 
 #ifndef MiSafeAppHelper_h
