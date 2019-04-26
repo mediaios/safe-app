@@ -14,6 +14,11 @@
 @end
 
 @implementation Person
+- (void)setAge:(int)age
+{
+    _age = age;
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"Person: name=%@, age=%d , male=%d, car: %@",self.name,self->_age,self.male,self.car];

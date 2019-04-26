@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,readonly) NSString *name;
 @property (nonatomic,assign,getter=isMaile) BOOL male;
 @property (nonatomic,strong) Car *car;
+
+- (void)setAge:(int)age;
 @end
 
 NS_ASSUME_NONNULL_END

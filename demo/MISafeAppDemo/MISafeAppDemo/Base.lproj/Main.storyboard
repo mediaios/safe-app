@@ -46,7 +46,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgL-Uk-90J">
                                         <rect key="frame" x="68" y="470" width="90" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="kvc"/>
+                                        <state key="normal" title="kvc&amp;kvo"/>
                                         <connections>
                                             <segue destination="7aQ-2X-00f" kind="push" id="3h1-Zk-NfR"/>
                                         </connections>
@@ -174,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CN5-t8-g0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1607" y="301"/>
+            <point key="canvasLocation" x="1457" y="-227"/>
         </scene>
         <!--ArrayVC-->
         <scene sceneID="enK-mb-p8V">
@@ -232,9 +232,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yA4-TY-UTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1606" y="-202"/>
+            <point key="canvasLocation" x="1970" y="-343"/>
         </scene>
-        <!--TestKVC View Controller-->
+        <!--KVC&KVO-->
         <scene sceneID="Z6N-hk-EXg">
             <objects>
                 <viewController id="7aQ-2X-00f" customClass="TestKVCViewController" sceneMemberID="viewController">
@@ -251,16 +251,29 @@
                                             <constraint firstAttribute="width" constant="94" id="0Gw-jJ-q8F"/>
                                             <constraint firstAttribute="height" constant="42" id="iGx-ww-fFB"/>
                                         </constraints>
-                                        <state key="normal" title="start test"/>
+                                        <state key="normal" title="test KVC"/>
                                         <connections>
                                             <action selector="testKVC:" destination="7aQ-2X-00f" eventType="touchUpInside" id="Pm9-GF-CC0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="put-55-C8b">
+                                        <rect key="frame" x="73" y="203" width="94" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="Xkb-SW-arP"/>
+                                            <constraint firstAttribute="width" constant="94" id="k9c-22-XuU"/>
+                                        </constraints>
+                                        <state key="normal" title="test KVO"/>
+                                        <connections>
+                                            <action selector="testKVO:" destination="7aQ-2X-00f" eventType="touchUpInside" id="S0G-NS-rkB"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="put-55-C8b" secondAttribute="bottom" id="RRp-j4-3o0"/>
                                     <constraint firstAttribute="height" constant="245" id="XGd-5T-L3M"/>
                                     <constraint firstItem="vTO-bf-Gp7" firstAttribute="centerX" secondItem="dXe-mM-xda" secondAttribute="centerX" id="XRe-zs-A7m"/>
+                                    <constraint firstItem="put-55-C8b" firstAttribute="centerX" secondItem="dXe-mM-xda" secondAttribute="centerX" id="Z1h-8c-ixn"/>
                                     <constraint firstAttribute="width" constant="240" id="a9K-X8-FPo"/>
                                     <constraint firstItem="vTO-bf-Gp7" firstAttribute="centerY" secondItem="dXe-mM-xda" secondAttribute="centerY" id="yNb-AU-cKY"/>
                                 </constraints>
@@ -273,11 +286,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ess-SX-Ufd"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Npr-eA-Vvh"/>
+                    <navigationItem key="navigationItem" title="KVC&amp;KVO" id="Npr-eA-Vvh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tn8-55-B3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429.5999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="1142" y="53"/>
         </scene>
         <!--DictVC-->
         <scene sceneID="5CY-Mi-4Rg">
@@ -335,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmp-7s-nMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1429.5999999999999" y="-12.143928035982009"/>
+            <point key="canvasLocation" x="1233" y="-313"/>
         </scene>
     </scenes>
 </document>
