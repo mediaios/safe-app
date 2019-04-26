@@ -8,6 +8,7 @@
 
 #import "NSObject+MiSafe.h"
 #import <objc/runtime.h>
+#import "MiSafeApp.h"
 
 @implementation NSObject (MiSafe)
 
@@ -50,5 +51,65 @@
     class_replaceMethod(metaClass, swizzledSel, originImp, originType);
     class_replaceMethod(metaClass, originSel, swizzledImp, swizzledTye);
 }
+
++ (void)miSwizzleNSObjectMethod
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        /*************** 防止KVC操作crash  ****************/
+        [self miSwizzleInstanceMethod:[self class]
+                             swizzSel:@selector(setValue:forKey:)
+                        toSwizzledSel:@selector(miKVCSetValue:forKey:)];
+        [self miSwizzleInstanceMethod:[self class]
+                             swizzSel:@selector(setValue:forKeyPath:)
+                        toSwizzledSel:@selector(miKVCSetValue:forKeyPath:)];
+        [self miSwizzleInstanceMethod:[self class]
+                             swizzSel:@selector(setValuesForKeysWithDictionary:)
+                        toSwizzledSel:@selector(miKVCSetValuesForKeysWithDictionary:)];
+        [self miSwizzleInstanceMethod:[self class]
+                             swizzSel:@selector(setValue:forUndefinedKey:)
+                        toSwizzledSel:@selector(miKVCSetValue:forUndefinedKey:)];
+    });
+    
+}
+
+#pragma mark -防止KVC操作Crash
+- (void)miKVCSetValue:(id)value forKey:(NSString *)key;
+{
+    @try {
+        [self miKVCSetValue:value forKey:key];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
+}
+
+- (void)miKVCSetValue:(id)value forKeyPath:(NSString *)keyPath
+{
+    @try {
+        [self miKVCSetValue:value forKeyPath:keyPath];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
+}
+
+- (void)miKVCSetValuesForKeysWithDictionary:(NSDictionary<NSString *, id> *)keyedValues
+{
+    @try {
+        [self miKVCSetValuesForKeysWithDictionary:keyedValues];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
+}
+
+- (void)miKVCSetValue:(id)value forUndefinedKey:(NSString *)key
+{
+    @try {
+        [self miKVCSetValue:value forUndefinedKey:key];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
+}
+
+
 
 @end

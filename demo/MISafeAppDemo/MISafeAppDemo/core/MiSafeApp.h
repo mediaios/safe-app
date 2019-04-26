@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSObject+MiSafe.h"
 
 #define key_errorName        @"errorName"
 #define key_errorReason      @"errorReason"
@@ -44,6 +45,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 + (void)showCrashInfoWithException:(NSException *)exception avoidCrashType:(MiSafeAvoidCrashType)acType;
+
++ (void)openKVCSafe;
 
 @end
 

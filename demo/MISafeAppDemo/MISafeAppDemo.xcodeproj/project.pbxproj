@@ -16,6 +16,9 @@
 		AA0BB95B2270601E0057DD77 /* NSMutableString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB95A2270601E0057DD77 /* NSMutableString+MiSafe.m */; };
 		AA0BB95F2271978D0057DD77 /* ArrayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB95E2271978D0057DD77 /* ArrayVC.m */; };
 		AA0BB9622271979F0057DD77 /* DictVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB9612271979F0057DD77 /* DictVC.m */; };
+		AA0BB9662272B05A0057DD77 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB9652272B05A0057DD77 /* Person.m */; };
+		AA0BB9692272B1A30057DD77 /* TestKVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB9682272B1A30057DD77 /* TestKVCViewController.m */; };
+		AA0BB96C2272B5FC0057DD77 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB96B2272B5FC0057DD77 /* Car.m */; };
 		AA7DF5FF2269DC2500C29D8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */; };
 		AA7DF6022269DC2500C29D8D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF6012269DC2500C29D8D /* ViewController.m */; };
 		AA7DF6052269DC2500C29D8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7DF6032269DC2500C29D8D /* Main.storyboard */; };
@@ -65,6 +68,12 @@
 		AA0BB95E2271978D0057DD77 /* ArrayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrayVC.m; sourceTree = "<group>"; };
 		AA0BB9602271979F0057DD77 /* DictVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictVC.h; sourceTree = "<group>"; };
 		AA0BB9612271979F0057DD77 /* DictVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DictVC.m; sourceTree = "<group>"; };
+		AA0BB9642272B05A0057DD77 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		AA0BB9652272B05A0057DD77 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		AA0BB9672272B1A30057DD77 /* TestKVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestKVCViewController.h; sourceTree = "<group>"; };
+		AA0BB9682272B1A30057DD77 /* TestKVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestKVCViewController.m; sourceTree = "<group>"; };
+		AA0BB96A2272B5FC0057DD77 /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		AA0BB96B2272B5FC0057DD77 /* Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		AA7DF5FA2269DC2500C29D8D /* MISafeAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MISafeAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7DF5FD2269DC2500C29D8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -137,6 +146,19 @@
 			path = core;
 			sourceTree = "<group>";
 		};
+		AA0BB9632272AFF10057DD77 /* kvc */ = {
+			isa = PBXGroup;
+			children = (
+				AA0BB9642272B05A0057DD77 /* Person.h */,
+				AA0BB9652272B05A0057DD77 /* Person.m */,
+				AA0BB96A2272B5FC0057DD77 /* Car.h */,
+				AA0BB96B2272B5FC0057DD77 /* Car.m */,
+				AA0BB9672272B1A30057DD77 /* TestKVCViewController.h */,
+				AA0BB9682272B1A30057DD77 /* TestKVCViewController.m */,
+			);
+			path = kvc;
+			sourceTree = "<group>";
+		};
 		AA7DF5F12269DC2500C29D8D = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +196,7 @@
 				AA0BB95E2271978D0057DD77 /* ArrayVC.m */,
 				AA0BB9602271979F0057DD77 /* DictVC.h */,
 				AA0BB9612271979F0057DD77 /* DictVC.m */,
+				AA0BB9632272AFF10057DD77 /* kvc */,
 				AA7DF6032269DC2500C29D8D /* Main.storyboard */,
 				AA7DF6062269DC2600C29D8D /* Assets.xcassets */,
 				AA7DF6082269DC2600C29D8D /* LaunchScreen.storyboard */,
@@ -356,6 +379,7 @@
 				AA0BB95B2270601E0057DD77 /* NSMutableString+MiSafe.m in Sources */,
 				AA0BB95F2271978D0057DD77 /* ArrayVC.m in Sources */,
 				AA0BB959227045B30057DD77 /* StringVC.m in Sources */,
+				AA0BB9692272B1A30057DD77 /* TestKVCViewController.m in Sources */,
 				AA0BB943226DAFE60057DD77 /* NSDictionary+MiSafe.m in Sources */,
 				AA0BB952226FF1900057DD77 /* MiSafeApp.m in Sources */,
 				AA7DF60D2269DC2600C29D8D /* main.m in Sources */,
@@ -363,6 +387,8 @@
 				AA0BB94B226EF3720057DD77 /* NSString+MiSafe.m in Sources */,
 				AA7DF6362269DC6300C29D8D /* NSObject+MiSafe.m in Sources */,
 				AA0BB948226EC4FE0057DD77 /* NSAttributedString+MiSafe.m in Sources */,
+				AA0BB9662272B05A0057DD77 /* Person.m in Sources */,
+				AA0BB96C2272B5FC0057DD77 /* Car.m in Sources */,
 				AA0BB955226FFE670057DD77 /* MiSafeModel.m in Sources */,
 				AA7DF6322269DC5100C29D8D /* NSArray+MiSafe.m in Sources */,
 			);

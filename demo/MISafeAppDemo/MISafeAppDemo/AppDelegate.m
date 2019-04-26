@@ -19,14 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dealwithCrashMessage:) name:AvoidCrashNotification object:nil];
-
+    [MiSafeApp openKVCSafe];
     return YES;
-}
-
-
-- (void)dealwithCrashMessage:(NSNotification *)note {
-    NSLog(@"qizhang----%@",note);
 }
 
 

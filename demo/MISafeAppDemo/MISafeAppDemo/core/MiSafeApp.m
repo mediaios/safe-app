@@ -9,6 +9,7 @@
 #import "MiSafeApp.h"
 #import "MiSafeModel.h"
 
+
 @implementation MiSafeApp
 
 /**
@@ -85,6 +86,11 @@
     
     MiSafeCrashInfo *crashInfo = [MiSafeCrashInfo instanceWithName:exception.name reason:exception.reason location:mainCallStackSymbolMsg avoidCrashDes:avoidCrashDes callSymbolsStack:callStackSymbolsArr];
     NSLog(@"qizhang---debug-----%@",crashInfo);
+}
+
++ (void)openKVCSafe
+{
+    [NSObject miSwizzleNSObjectMethod];
 }
 
 @end
