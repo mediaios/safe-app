@@ -10,6 +10,7 @@
 #import "MiSafeModel.h"
 #import "NSObject+MiSafeKVO.h"
 #import "NSObject+MiSafeKVC.h"
+#import "NSUserDefaults+MiSafe.h"
 
 
 @implementation MiSafeApp
@@ -94,6 +95,7 @@
 {
     [NSObject miOpenKVCMiSafe];
     [NSObject miOpenKVOMiSafe];
+    [NSUserDefaults miOpenUserDefaultsMiSafe];
 }
 
 @end

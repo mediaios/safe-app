@@ -32,6 +32,8 @@
 		AA7DF6362269DC6300C29D8D /* NSObject+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF6342269DC6300C29D8D /* NSObject+MiSafe.m */; };
 		AAFB7F57227549AD00CF84B4 /* NSObject+MiSafeKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F56227549AD00CF84B4 /* NSObject+MiSafeKVO.m */; };
 		AAFB7F5A22754CDF00CF84B4 /* NSObject+MiSafeKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F5922754CDF00CF84B4 /* NSObject+MiSafeKVC.m */; };
+		AAFB7F5D22759A0100CF84B4 /* UserDefaultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F5C22759A0100CF84B4 /* UserDefaultVC.m */; };
+		AAFB7F6122759BFD00CF84B4 /* NSUserDefaults+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F6022759BFD00CF84B4 /* NSUserDefaults+MiSafe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,10 @@
 		AAFB7F56227549AD00CF84B4 /* NSObject+MiSafeKVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MiSafeKVO.m"; sourceTree = "<group>"; };
 		AAFB7F5822754CDF00CF84B4 /* NSObject+MiSafeKVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+MiSafeKVC.h"; sourceTree = "<group>"; };
 		AAFB7F5922754CDF00CF84B4 /* NSObject+MiSafeKVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MiSafeKVC.m"; sourceTree = "<group>"; };
+		AAFB7F5B22759A0100CF84B4 /* UserDefaultVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefaultVC.h; sourceTree = "<group>"; };
+		AAFB7F5C22759A0100CF84B4 /* UserDefaultVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefaultVC.m; sourceTree = "<group>"; };
+		AAFB7F5F22759BFD00CF84B4 /* NSUserDefaults+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+MiSafe.h"; sourceTree = "<group>"; };
+		AAFB7F6022759BFD00CF84B4 /* NSUserDefaults+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+MiSafe.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +199,7 @@
 		AA7DF5FC2269DC2500C29D8D /* MISafeAppDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AAFB7F5E22759BE000CF84B4 /* foundation */,
 				AA0BB94F226FF1700057DD77 /* core */,
 				AA0BB945226EC4BC0057DD77 /* string */,
 				AA7DF6332269DC5800C29D8D /* common */,
@@ -207,6 +214,8 @@
 				AA0BB95E2271978D0057DD77 /* ArrayVC.m */,
 				AA0BB9602271979F0057DD77 /* DictVC.h */,
 				AA0BB9612271979F0057DD77 /* DictVC.m */,
+				AAFB7F5B22759A0100CF84B4 /* UserDefaultVC.h */,
+				AAFB7F5C22759A0100CF84B4 /* UserDefaultVC.m */,
 				AA0BB9632272AFF10057DD77 /* kvckvo */,
 				AA7DF6032269DC2500C29D8D /* Main.storyboard */,
 				AA7DF6062269DC2600C29D8D /* Assets.xcassets */,
@@ -257,6 +266,15 @@
 				AAFB7F5922754CDF00CF84B4 /* NSObject+MiSafeKVC.m */,
 			);
 			path = common;
+			sourceTree = "<group>";
+		};
+		AAFB7F5E22759BE000CF84B4 /* foundation */ = {
+			isa = PBXGroup;
+			children = (
+				AAFB7F5F22759BFD00CF84B4 /* NSUserDefaults+MiSafe.h */,
+				AAFB7F6022759BFD00CF84B4 /* NSUserDefaults+MiSafe.m */,
+			);
+			path = foundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,8 +413,10 @@
 				AA0BB95B2270601E0057DD77 /* NSMutableString+MiSafe.m in Sources */,
 				AA0BB95F2271978D0057DD77 /* ArrayVC.m in Sources */,
 				AA0BB9732272F4080057DD77 /* PersonObserver.m in Sources */,
+				AAFB7F6122759BFD00CF84B4 /* NSUserDefaults+MiSafe.m in Sources */,
 				AA0BB959227045B30057DD77 /* StringVC.m in Sources */,
 				AA0BB9692272B1A30057DD77 /* TestKVCViewController.m in Sources */,
+				AAFB7F5D22759A0100CF84B4 /* UserDefaultVC.m in Sources */,
 				AA0BB943226DAFE60057DD77 /* NSDictionary+MiSafe.m in Sources */,
 				AA0BB952226FF1900057DD77 /* MiSafeApp.m in Sources */,
 				AA7DF60D2269DC2600C29D8D /* main.m in Sources */,
