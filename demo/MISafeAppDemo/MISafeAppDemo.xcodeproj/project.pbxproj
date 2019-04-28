@@ -35,6 +35,7 @@
 		AAFB7F5D22759A0100CF84B4 /* UserDefaultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F5C22759A0100CF84B4 /* UserDefaultVC.m */; };
 		AAFB7F6122759BFD00CF84B4 /* NSUserDefaults+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F6022759BFD00CF84B4 /* NSUserDefaults+MiSafe.m */; };
 		AAFB7F642275A90B00CF84B4 /* NSCache+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F632275A90B00CF84B4 /* NSCache+MiSafe.m */; };
+		AAFB7F672275B6A400CF84B4 /* NSSet+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F662275B6A400CF84B4 /* NSSet+MiSafe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,8 @@
 		AAFB7F6022759BFD00CF84B4 /* NSUserDefaults+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+MiSafe.m"; sourceTree = "<group>"; };
 		AAFB7F622275A90B00CF84B4 /* NSCache+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSCache+MiSafe.h"; sourceTree = "<group>"; };
 		AAFB7F632275A90B00CF84B4 /* NSCache+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSCache+MiSafe.m"; sourceTree = "<group>"; };
+		AAFB7F652275B6A400CF84B4 /* NSSet+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSSet+MiSafe.h"; sourceTree = "<group>"; };
+		AAFB7F662275B6A400CF84B4 /* NSSet+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSSet+MiSafe.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +259,8 @@
 				AA0BB942226DAFE60057DD77 /* NSDictionary+MiSafe.m */,
 				AAFB7F622275A90B00CF84B4 /* NSCache+MiSafe.h */,
 				AAFB7F632275A90B00CF84B4 /* NSCache+MiSafe.m */,
+				AAFB7F652275B6A400CF84B4 /* NSSet+MiSafe.h */,
+				AAFB7F662275B6A400CF84B4 /* NSSet+MiSafe.m */,
 			);
 			path = container;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				AA0BB952226FF1900057DD77 /* MiSafeApp.m in Sources */,
 				AA7DF60D2269DC2600C29D8D /* main.m in Sources */,
 				AA7DF5FF2269DC2500C29D8D /* AppDelegate.m in Sources */,
+				AAFB7F672275B6A400CF84B4 /* NSSet+MiSafe.m in Sources */,
 				AA0BB94B226EF3720057DD77 /* NSString+MiSafe.m in Sources */,
 				AA7DF6362269DC6300C29D8D /* NSObject+MiSafe.m in Sources */,
 				AAFB7F642275A90B00CF84B4 /* NSCache+MiSafe.m in Sources */,

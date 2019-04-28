@@ -2,7 +2,7 @@
 //  UserDefaultVC.m
 //  MISafeAppDemo
 //
-//  Created by ethan on 2019/4/28.
+//  Created by iosmediadev@gmail.com on 2019/4/28.
 //  Copyright © 2019 mediaios. All rights reserved.
 //
 
@@ -49,8 +49,27 @@
 - (IBAction)testCache:(id)sender {
     NSString *key1 = nil;
     [self.cache setObject:key1 forKey:key1];
-    
     [self.cache setObject:@"1111" forKey:key1 cost:10];
+}
+
+
+- (void)testNSSet
+{
+    NSString *key1 = nil;
+//    NSSet *set1 = [[NSSet alloc] initWithObjects:@"1",key1, nil];
+//    NSSet *set2 = [NSSet setWithObjects:key1, nil];
+    
+    // NSSet
+    [NSSet setWithObject:nil];   // crash
+    
+    NSSet *set1 = [[NSSet alloc] initWithObjects:key1,@"11", nil];
+    
+    [NSSet setWithObject:key1];   // crash
+    NSSet *set2 = [NSSet setWithObjects:key1,@"1111",nil];
+    //
+    NSMutableSet *mutaSet1 = [NSMutableSet set];
+    [mutaSet1 addObject:key1];   // crash
+    [mutaSet1 removeObject:key1];
 }
 
 /*

@@ -2,7 +2,7 @@
 //  NSCache+MiSafe.m
 //  MISafeAppDemo
 //
-//  Created by iosmediadev@gmail on 2019/4/28.
+//  Created by iosmediadev@gmail.com on 2019/4/28.
 //  Copyright © 2019 mediaios. All rights reserved.
 //
 
