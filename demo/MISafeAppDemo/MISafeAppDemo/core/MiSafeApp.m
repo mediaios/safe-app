@@ -8,6 +8,8 @@
 
 #import "MiSafeApp.h"
 #import "MiSafeModel.h"
+#import "NSObject+MiSafeKVO.h"
+#import "NSObject+MiSafeKVC.h"
 
 
 @implementation MiSafeApp
@@ -90,7 +92,8 @@
 
 + (void)openKVCSafe
 {
-    [NSObject miSwizzleNSObjectMethod];
+    [NSObject miOpenKVCMiSafe];
+    [NSObject miOpenKVOMiSafe];
 }
 
 @end
