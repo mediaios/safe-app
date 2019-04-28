@@ -72,6 +72,34 @@
     [mutaSet1 removeObject:key1];
 }
 
+- (void)testOrderSet
+{
+    NSString *key1 = nil;
+//    NSOrderedSet *orderSet1 = [NSOrderedSet orderedSetWithObjects:key1,@"111", nil];
+    
+    NSOrderedSet *orderSet2 = [NSOrderedSet orderedSet];
+    orderSet2[500]; //crash:  < __NSOrderedSetI>
+    [[NSOrderedSet alloc] initWithObject:key1]; // crash: __NSPlaceholderOrderedSet
+    NSOrderedSet *orderset3 = nil;
+    [NSOrderedSet orderedSetWithSet:orderset3];
+}
+
+- (void)testMutableOrderSet
+{
+    NSMutableOrderedSet *set = [NSMutableOrderedSet orderedSet];
+    set[100];     // crash
+    [set addObject:nil];     // crash
+    [set insertObject:[NSObject new] atIndex:100];  // crash
+    
+    [set removeObjectAtIndex:10];   // crash
+    
+    [set replaceObjectAtIndex:100 withObject:[NSObject new]];   // crash
+    
+    [[NSMutableOrderedSet alloc]initWithObject:nil];
+    
+    [NSMutableOrderedSet orderedSetWithSet:nil];
+}
+
 /*
 #pragma mark - Navigation
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DC32C9F2275E41800F5D857 /* NSOrderedSet+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC32C9E2275E41800F5D857 /* NSOrderedSet+MiSafe.m */; };
 		AA0BB943226DAFE60057DD77 /* NSDictionary+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB942226DAFE60057DD77 /* NSDictionary+MiSafe.m */; };
 		AA0BB948226EC4FE0057DD77 /* NSAttributedString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB947226EC4FE0057DD77 /* NSAttributedString+MiSafe.m */; };
 		AA0BB94B226EF3720057DD77 /* NSString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB94A226EF3720057DD77 /* NSString+MiSafe.m */; };
@@ -56,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3DC32C9D2275E41800F5D857 /* NSOrderedSet+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOrderedSet+MiSafe.h"; sourceTree = "<group>"; };
+		3DC32C9E2275E41800F5D857 /* NSOrderedSet+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSOrderedSet+MiSafe.m"; sourceTree = "<group>"; };
 		AA0BB941226DAFE60057DD77 /* NSDictionary+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MiSafe.h"; sourceTree = "<group>"; };
 		AA0BB942226DAFE60057DD77 /* NSDictionary+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MiSafe.m"; sourceTree = "<group>"; };
 		AA0BB946226EC4FE0057DD77 /* NSAttributedString+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+MiSafe.h"; sourceTree = "<group>"; };
@@ -261,6 +264,8 @@
 				AAFB7F632275A90B00CF84B4 /* NSCache+MiSafe.m */,
 				AAFB7F652275B6A400CF84B4 /* NSSet+MiSafe.h */,
 				AAFB7F662275B6A400CF84B4 /* NSSet+MiSafe.m */,
+				3DC32C9D2275E41800F5D857 /* NSOrderedSet+MiSafe.h */,
+				3DC32C9E2275E41800F5D857 /* NSOrderedSet+MiSafe.m */,
 			);
 			path = container;
 			sourceTree = "<group>";
@@ -425,6 +430,7 @@
 				AA0BB9732272F4080057DD77 /* PersonObserver.m in Sources */,
 				AAFB7F6122759BFD00CF84B4 /* NSUserDefaults+MiSafe.m in Sources */,
 				AA0BB959227045B30057DD77 /* StringVC.m in Sources */,
+				3DC32C9F2275E41800F5D857 /* NSOrderedSet+MiSafe.m in Sources */,
 				AA0BB9692272B1A30057DD77 /* TestKVCViewController.m in Sources */,
 				AAFB7F5D22759A0100CF84B4 /* UserDefaultVC.m in Sources */,
 				AA0BB943226DAFE60057DD77 /* NSDictionary+MiSafe.m in Sources */,
