@@ -11,6 +11,7 @@
 #import "NSObject+MiSafeKVO.h"
 #import "NSObject+MiSafeKVC.h"
 #import "NSUserDefaults+MiSafe.h"
+#import "NSCache+MiSafe.h"
 
 
 @implementation MiSafeApp
@@ -96,6 +97,7 @@
     [NSObject miOpenKVCMiSafe];
     [NSObject miOpenKVOMiSafe];
     [NSUserDefaults miOpenUserDefaultsMiSafe];
+    [NSCache miOpenNSCacheMiSafe];
 }
 
 @end

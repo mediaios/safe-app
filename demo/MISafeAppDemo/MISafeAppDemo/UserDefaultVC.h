@@ -2,7 +2,7 @@
 //  UserDefaultVC.h
 //  MISafeAppDemo
 //
-//  Created by ethan on 2019/4/28.
+//  Created by iosmediadev@gmail on 2019/4/28.
 //  Copyright © 2019 ucloud. All rights reserved.
 //
 

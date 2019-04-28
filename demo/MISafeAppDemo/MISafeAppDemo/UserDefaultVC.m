@@ -3,7 +3,7 @@
 //  MISafeAppDemo
 //
 //  Created by ethan on 2019/4/28.
-//  Copyright © 2019 ucloud. All rights reserved.
+//  Copyright © 2019 mediaios. All rights reserved.
 //
 
 #import "UserDefaultVC.h"
@@ -11,10 +11,19 @@
 #define MiUserDefaults [NSUserDefaults standardUserDefaults]
 
 @interface UserDefaultVC ()
-
+@property (nonatomic,strong) NSCache *cache;
 @end
 
 @implementation UserDefaultVC
+
+- (NSCache *)cache
+{
+    if (!_cache) {
+        _cache = [[NSCache alloc] init];
+        _cache.totalCostLimit = 5;
+    }
+    return _cache;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,6 +44,13 @@
     [MiUserDefaults doubleForKey:key1];
     [MiUserDefaults boolForKey:key1];
     
+}
+
+- (IBAction)testCache:(id)sender {
+    NSString *key1 = nil;
+    [self.cache setObject:key1 forKey:key1];
+    
+    [self.cache setObject:@"1111" forKey:key1 cost:10];
 }
 
 /*

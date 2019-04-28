@@ -63,12 +63,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHF-CW-cLm">
-                                        <rect key="frame" x="69" y="140" width="102" height="30"/>
+                                        <rect key="frame" x="45" y="140" width="150" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="102" id="TCF-oE-Yj7"/>
+                                            <constraint firstAttribute="width" constant="150" id="TCF-oE-Yj7"/>
                                             <constraint firstAttribute="height" constant="30" id="WoA-n6-hlC"/>
                                         </constraints>
-                                        <state key="normal" title="NSUserDefault"/>
+                                        <state key="normal" title="Defaults&amp;cache"/>
                                         <connections>
                                             <segue destination="UGH-ca-d6O" kind="push" id="iY3-E2-AKz"/>
                                         </connections>
@@ -76,9 +76,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="iHF-CW-cLm" firstAttribute="centerX" secondItem="lMp-ml-3SS" secondAttribute="centerX" id="2aj-cL-K3u"/>
                                     <constraint firstItem="v2W-fg-gjY" firstAttribute="top" secondItem="nvH-g6-3ZV" secondAttribute="bottom" constant="40" id="8KF-jM-liy"/>
                                     <constraint firstAttribute="height" constant="500" id="9wB-0G-all"/>
                                     <constraint firstAttribute="width" constant="240" id="Aie-Qo-0Ua"/>
+                                    <constraint firstItem="iHF-CW-cLm" firstAttribute="centerX" secondItem="lMp-ml-3SS" secondAttribute="centerX" id="ZTL-r5-021"/>
                                     <constraint firstItem="nvH-g6-3ZV" firstAttribute="top" secondItem="lMp-ml-3SS" secondAttribute="top" id="Zl2-Vk-G0w"/>
                                     <constraint firstItem="nvH-g6-3ZV" firstAttribute="centerX" secondItem="lMp-ml-3SS" secondAttribute="centerX" id="cNM-zZ-Ak2"/>
                                     <constraint firstItem="iHF-CW-cLm" firstAttribute="centerX" secondItem="lMp-ml-3SS" secondAttribute="centerX" id="juL-Gm-V46"/>
@@ -305,7 +307,7 @@
             </objects>
             <point key="canvasLocation" x="1609" y="73"/>
         </scene>
-        <!--NSUserDefault-->
+        <!--Default&cache-->
         <scene sceneID="YJh-CH-lgI">
             <objects>
                 <viewController id="UGH-ca-d6O" customClass="UserDefaultVC" sceneMemberID="viewController">
@@ -314,35 +316,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BzB-1j-s5Z">
-                                <rect key="frame" x="67.5" y="269.5" width="240" height="128"/>
+                                <rect key="frame" x="67.5" y="233.5" width="240" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQ8-V1-oPl">
+                                        <rect key="frame" x="76" y="0.0" width="88" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="88" id="YzL-Nb-X4U"/>
+                                            <constraint firstAttribute="height" constant="46" id="sGH-eC-w7q"/>
+                                        </constraints>
+                                        <state key="normal" title="Defaults"/>
+                                        <connections>
+                                            <action selector="testUserDefaults:" destination="UGH-ca-d6O" eventType="touchUpInside" id="0aE-aL-QSh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHi-yT-5EH">
+                                        <rect key="frame" x="76" y="154" width="88" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="Dsk-tb-h3P"/>
+                                            <constraint firstAttribute="width" constant="88" id="XLd-Vr-KPV"/>
+                                        </constraints>
+                                        <state key="normal" title="Cache"/>
+                                        <connections>
+                                            <action selector="testCache:" destination="UGH-ca-d6O" eventType="touchUpInside" id="MSz-gx-lX0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="IQ8-V1-oPl" firstAttribute="centerX" secondItem="BzB-1j-s5Z" secondAttribute="centerX" id="6A5-Gz-mlF"/>
+                                    <constraint firstItem="IQ8-V1-oPl" firstAttribute="top" secondItem="BzB-1j-s5Z" secondAttribute="top" id="7M7-0H-1kd"/>
+                                    <constraint firstAttribute="bottom" secondItem="WHi-yT-5EH" secondAttribute="bottom" id="RXg-kc-I12"/>
                                     <constraint firstAttribute="width" constant="240" id="eqj-R0-pNZ"/>
-                                    <constraint firstAttribute="height" constant="128" id="lVG-5I-BRg"/>
+                                    <constraint firstItem="WHi-yT-5EH" firstAttribute="centerX" secondItem="BzB-1j-s5Z" secondAttribute="centerX" id="gEQ-k7-zn2"/>
+                                    <constraint firstAttribute="height" constant="200" id="lVG-5I-BRg"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQ8-V1-oPl">
-                                <rect key="frame" x="143.5" y="310.5" width="88" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="Wga-SO-fLo"/>
-                                    <constraint firstAttribute="width" constant="88" id="hyR-Xk-CSP"/>
-                                </constraints>
-                                <state key="normal" title="test"/>
-                                <connections>
-                                    <action selector="testUserDefaults:" destination="UGH-ca-d6O" eventType="touchUpInside" id="0aE-aL-QSh"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BzB-1j-s5Z" firstAttribute="centerX" secondItem="BEC-qa-WZw" secondAttribute="centerX" id="4kQ-5C-Axq"/>
-                            <constraint firstItem="IQ8-V1-oPl" firstAttribute="centerX" secondItem="BEC-qa-WZw" secondAttribute="centerX" id="aIe-BF-lbi"/>
                             <constraint firstItem="BzB-1j-s5Z" firstAttribute="centerY" secondItem="BEC-qa-WZw" secondAttribute="centerY" id="n9Z-Sp-W7G"/>
-                            <constraint firstItem="IQ8-V1-oPl" firstAttribute="centerY" secondItem="BEC-qa-WZw" secondAttribute="centerY" id="rj5-1k-cWV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3xA-MS-ZFR"/>
                     </view>
-                    <navigationItem key="navigationItem" title="NSUserDefault" id="q84-FO-6ae"/>
+                    <navigationItem key="navigationItem" title="Default&amp;cache" id="q84-FO-6ae"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IuF-8X-SVA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
