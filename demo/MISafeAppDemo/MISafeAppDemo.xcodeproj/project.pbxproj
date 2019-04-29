@@ -39,6 +39,8 @@
 		AAFB7F672275B6A400CF84B4 /* NSSet+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F662275B6A400CF84B4 /* NSSet+MiSafe.m */; };
 		AAFB7F6A22768DBA00CF84B4 /* DataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F6922768DBA00CF84B4 /* DataVC.m */; };
 		AAFB7F6D22769A2000CF84B4 /* NSData+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F6C22769A2000CF84B4 /* NSData+MiSafe.m */; };
+		AAFB7F702276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F6F2276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m */; };
+		AAFB7F762277007200CF84B4 /* NotifiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F752277007200CF84B4 /* NotifiVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +126,10 @@
 		AAFB7F6922768DBA00CF84B4 /* DataVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataVC.m; sourceTree = "<group>"; };
 		AAFB7F6B22769A2000CF84B4 /* NSData+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+MiSafe.h"; sourceTree = "<group>"; };
 		AAFB7F6C22769A2000CF84B4 /* NSData+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+MiSafe.m"; sourceTree = "<group>"; };
+		AAFB7F6E2276EB4800CF84B4 /* NSNotificationCenter+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+MiSafe.h"; sourceTree = "<group>"; };
+		AAFB7F6F2276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+MiSafe.m"; sourceTree = "<group>"; };
+		AAFB7F742277007200CF84B4 /* NotifiVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotifiVC.h; sourceTree = "<group>"; };
+		AAFB7F752277007200CF84B4 /* NotifiVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotifiVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +237,8 @@
 				AA0BB9612271979F0057DD77 /* DictVC.m */,
 				AAFB7F5B22759A0100CF84B4 /* UserDefaultVC.h */,
 				AAFB7F5C22759A0100CF84B4 /* UserDefaultVC.m */,
+				AAFB7F742277007200CF84B4 /* NotifiVC.h */,
+				AAFB7F752277007200CF84B4 /* NotifiVC.m */,
 				AAFB7F6822768DBA00CF84B4 /* DataVC.h */,
 				AAFB7F6922768DBA00CF84B4 /* DataVC.m */,
 				AA0BB9632272AFF10057DD77 /* kvckvo */,
@@ -289,6 +297,8 @@
 				AAFB7F56227549AD00CF84B4 /* NSObject+MiSafeKVO.m */,
 				AAFB7F5822754CDF00CF84B4 /* NSObject+MiSafeKVC.h */,
 				AAFB7F5922754CDF00CF84B4 /* NSObject+MiSafeKVC.m */,
+				AAFB7F6E2276EB4800CF84B4 /* NSNotificationCenter+MiSafe.h */,
+				AAFB7F6F2276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -434,9 +444,11 @@
 			files = (
 				AA0BB9622271979F0057DD77 /* DictVC.m in Sources */,
 				AA7DF6022269DC2500C29D8D /* ViewController.m in Sources */,
+				AAFB7F762277007200CF84B4 /* NotifiVC.m in Sources */,
 				AAFB7F57227549AD00CF84B4 /* NSObject+MiSafeKVO.m in Sources */,
 				AAFB7F6D22769A2000CF84B4 /* NSData+MiSafe.m in Sources */,
 				AAFB7F6A22768DBA00CF84B4 /* DataVC.m in Sources */,
+				AAFB7F702276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m in Sources */,
 				AA0BB95B2270601E0057DD77 /* NSMutableString+MiSafe.m in Sources */,
 				AA0BB95F2271978D0057DD77 /* ArrayVC.m in Sources */,
 				AA0BB9732272F4080057DD77 /* PersonObserver.m in Sources */,
@@ -632,7 +644,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CFP9KY4MGC;
 				INFOPLIST_FILE = MISafeAppDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -650,7 +662,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CFP9KY4MGC;
 				INFOPLIST_FILE = MISafeAppDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
