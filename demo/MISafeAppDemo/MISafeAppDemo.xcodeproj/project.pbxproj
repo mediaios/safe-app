@@ -37,6 +37,8 @@
 		AAFB7F6122759BFD00CF84B4 /* NSUserDefaults+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F6022759BFD00CF84B4 /* NSUserDefaults+MiSafe.m */; };
 		AAFB7F642275A90B00CF84B4 /* NSCache+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F632275A90B00CF84B4 /* NSCache+MiSafe.m */; };
 		AAFB7F672275B6A400CF84B4 /* NSSet+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F662275B6A400CF84B4 /* NSSet+MiSafe.m */; };
+		AAFB7F6A22768DBA00CF84B4 /* DataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F6922768DBA00CF84B4 /* DataVC.m */; };
+		AAFB7F6D22769A2000CF84B4 /* NSData+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F6C22769A2000CF84B4 /* NSData+MiSafe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,10 @@
 		AAFB7F632275A90B00CF84B4 /* NSCache+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSCache+MiSafe.m"; sourceTree = "<group>"; };
 		AAFB7F652275B6A400CF84B4 /* NSSet+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSSet+MiSafe.h"; sourceTree = "<group>"; };
 		AAFB7F662275B6A400CF84B4 /* NSSet+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSSet+MiSafe.m"; sourceTree = "<group>"; };
+		AAFB7F6822768DBA00CF84B4 /* DataVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataVC.h; sourceTree = "<group>"; };
+		AAFB7F6922768DBA00CF84B4 /* DataVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataVC.m; sourceTree = "<group>"; };
+		AAFB7F6B22769A2000CF84B4 /* NSData+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+MiSafe.h"; sourceTree = "<group>"; };
+		AAFB7F6C22769A2000CF84B4 /* NSData+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+MiSafe.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +231,8 @@
 				AA0BB9612271979F0057DD77 /* DictVC.m */,
 				AAFB7F5B22759A0100CF84B4 /* UserDefaultVC.h */,
 				AAFB7F5C22759A0100CF84B4 /* UserDefaultVC.m */,
+				AAFB7F6822768DBA00CF84B4 /* DataVC.h */,
+				AAFB7F6922768DBA00CF84B4 /* DataVC.m */,
 				AA0BB9632272AFF10057DD77 /* kvckvo */,
 				AA7DF6032269DC2500C29D8D /* Main.storyboard */,
 				AA7DF6062269DC2600C29D8D /* Assets.xcassets */,
@@ -266,6 +274,8 @@
 				AAFB7F662275B6A400CF84B4 /* NSSet+MiSafe.m */,
 				3DC32C9D2275E41800F5D857 /* NSOrderedSet+MiSafe.h */,
 				3DC32C9E2275E41800F5D857 /* NSOrderedSet+MiSafe.m */,
+				AAFB7F6B22769A2000CF84B4 /* NSData+MiSafe.h */,
+				AAFB7F6C22769A2000CF84B4 /* NSData+MiSafe.m */,
 			);
 			path = container;
 			sourceTree = "<group>";
@@ -425,6 +435,8 @@
 				AA0BB9622271979F0057DD77 /* DictVC.m in Sources */,
 				AA7DF6022269DC2500C29D8D /* ViewController.m in Sources */,
 				AAFB7F57227549AD00CF84B4 /* NSObject+MiSafeKVO.m in Sources */,
+				AAFB7F6D22769A2000CF84B4 /* NSData+MiSafe.m in Sources */,
+				AAFB7F6A22768DBA00CF84B4 /* DataVC.m in Sources */,
 				AA0BB95B2270601E0057DD77 /* NSMutableString+MiSafe.m in Sources */,
 				AA0BB95F2271978D0057DD77 /* ArrayVC.m in Sources */,
 				AA0BB9732272F4080057DD77 /* PersonObserver.m in Sources */,

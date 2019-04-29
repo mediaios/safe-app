@@ -73,13 +73,26 @@
                                             <segue destination="UGH-ca-d6O" kind="push" id="iY3-E2-AKz"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbJ-Ij-if9">
+                                        <rect key="frame" x="75" y="210" width="90" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="FaL-ma-SgZ"/>
+                                            <constraint firstAttribute="height" constant="30" id="Ypn-cw-nFL"/>
+                                        </constraints>
+                                        <state key="normal" title="data"/>
+                                        <connections>
+                                            <segue destination="CTh-bE-2Lh" kind="push" id="WzW-X8-DRF"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="iHF-CW-cLm" firstAttribute="centerX" secondItem="lMp-ml-3SS" secondAttribute="centerX" id="2aj-cL-K3u"/>
                                     <constraint firstItem="v2W-fg-gjY" firstAttribute="top" secondItem="nvH-g6-3ZV" secondAttribute="bottom" constant="40" id="8KF-jM-liy"/>
+                                    <constraint firstItem="EbJ-Ij-if9" firstAttribute="centerX" secondItem="lMp-ml-3SS" secondAttribute="centerX" id="9We-uj-72E"/>
                                     <constraint firstAttribute="height" constant="500" id="9wB-0G-all"/>
                                     <constraint firstAttribute="width" constant="240" id="Aie-Qo-0Ua"/>
+                                    <constraint firstItem="EbJ-Ij-if9" firstAttribute="top" secondItem="iHF-CW-cLm" secondAttribute="bottom" constant="40" id="POf-gW-vXZ"/>
                                     <constraint firstItem="iHF-CW-cLm" firstAttribute="centerX" secondItem="lMp-ml-3SS" secondAttribute="centerX" id="ZTL-r5-021"/>
                                     <constraint firstItem="nvH-g6-3ZV" firstAttribute="top" secondItem="lMp-ml-3SS" secondAttribute="top" id="Zl2-Vk-G0w"/>
                                     <constraint firstItem="nvH-g6-3ZV" firstAttribute="centerX" secondItem="lMp-ml-3SS" secondAttribute="centerX" id="cNM-zZ-Ak2"/>
@@ -119,6 +132,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGk-6e-8Pc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-14" y="74"/>
+        </scene>
+        <!--Data-->
+        <scene sceneID="Gdu-fX-4Md">
+            <objects>
+                <viewController id="CTh-bE-2Lh" customClass="DataVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Ik-rW-IMR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a73-OQ-n9o">
+                                <rect key="frame" x="47.5" y="220" width="280" height="227"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fR3-y7-9Pw">
+                                        <rect key="frame" x="68.5" y="86" width="143" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="irA-3m-SzM"/>
+                                            <constraint firstAttribute="width" constant="143" id="s3n-qh-Jfb"/>
+                                        </constraints>
+                                        <state key="normal" title="NSData"/>
+                                        <connections>
+                                            <action selector="testNSData:" destination="CTh-bE-2Lh" eventType="touchUpInside" id="jpz-pK-jaj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="fR3-y7-9Pw" firstAttribute="centerY" secondItem="a73-OQ-n9o" secondAttribute="centerY" id="DwP-g4-mYG"/>
+                                    <constraint firstAttribute="width" constant="280" id="Kdy-mS-OQs"/>
+                                    <constraint firstAttribute="height" constant="227" id="bw5-Dl-grl"/>
+                                    <constraint firstItem="fR3-y7-9Pw" firstAttribute="centerX" secondItem="a73-OQ-n9o" secondAttribute="centerX" id="hPC-Ld-qwz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="a73-OQ-n9o" firstAttribute="centerY" secondItem="1Ik-rW-IMR" secondAttribute="centerY" id="ZZ5-XC-5a9"/>
+                            <constraint firstItem="a73-OQ-n9o" firstAttribute="centerX" secondItem="1Ik-rW-IMR" secondAttribute="centerX" id="eup-ec-pwB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bUT-A7-yoU"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Data" id="Omq-nL-CMU" customClass="Data"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qmc-MT-AXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="338.39999999999998" y="342.27886056971516"/>
         </scene>
         <!--String-->
         <scene sceneID="0uy-94-nKN">

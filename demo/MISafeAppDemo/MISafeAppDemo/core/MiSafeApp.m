@@ -14,6 +14,7 @@
 #import "NSCache+MiSafe.h"
 #import "NSSet+MiSafe.h"
 #import "NSOrderedSet+MiSafe.h"
+#import "NSData+MiSafe.h"
 
 
 @implementation MiSafeApp
@@ -102,6 +103,7 @@
     [NSCache miOpenNSCacheMiSafe];
     [NSSet miOpenNSSetMiSafe];
     [NSOrderedSet miOpenNSOrderedSetMiSafe];
+    [NSData miOpenNSDataMiSafe];
 }
 
 @end
