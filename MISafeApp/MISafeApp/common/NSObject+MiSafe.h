@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)miSwizzleClassMethodWithClass:(Class)class swizzSel:(SEL)originSel toSwizzledSel:(SEL)swizzledSel;
 
+
++ (void)miOpenUnrecognizedSelMiSafe;
 @end
 
 NS_ASSUME_NONNULL_END

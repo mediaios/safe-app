@@ -108,6 +108,7 @@
     [NSData miOpenNSDataMiSafe];
     [NSNotificationCenter miOpenNotificationMiSafe];
     [NSTimer miOpenNSTimerMiSafe];
+    [NSObject miOpenUnrecognizedSelMiSafe];
 }
 
 @end

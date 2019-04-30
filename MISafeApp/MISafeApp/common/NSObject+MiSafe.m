@@ -10,6 +10,19 @@
 #import <objc/runtime.h>
 #import "MiSafeApp.h"
 
+@interface MiNoSelectorProxy:NSObject
+@end
+
+@implementation MiNoSelectorProxy
+
+- (void)miUnRecognizedMethod
+{
+    
+}
+
+@end
+
+
 @implementation NSObject (MiSafe)
 
 + (void)miSwizzleInstanceMethod:(Class)class
@@ -52,6 +65,39 @@
     class_replaceMethod(metaClass, originSel, swizzledImp, swizzledTye);
 }
 
+
++ (void)miOpenUnrecognizedSelMiSafe
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self miSwizzleInstanceMethod:[NSObject class]
+                             swizzSel:@selector(methodSignatureForSelector:)
+                        toSwizzledSel:@selector(miMethodSignatureForSelector:)];
+        [self miSwizzleInstanceMethod:[NSObject class]
+                             swizzSel:@selector(forwardInvocation:)
+                        toSwizzledSel:@selector(miForwardInvocation:)];
+        
+    });
+}
+
+
+- (NSMethodSignature *)miMethodSignatureForSelector:(SEL)aSelector
+{
+    NSMethodSignature *signature = [self miMethodSignatureForSelector:aSelector];
+    if ([self respondsToSelector:aSelector] || signature) {
+        return signature;
+    }
+    return [MiNoSelectorProxy instanceMethodSignatureForSelector:@selector(miUnRecognizedMethod)];
+}
+
+- (void)miForwardInvocation:(NSInvocation *)anInvocation
+{
+    @try {
+        [self miForwardInvocation:anInvocation];
+    } @catch (NSException *exception) {
+        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    } @finally {}
+}
 
 
 

@@ -42,6 +42,7 @@
 		AAFB7F702276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F6F2276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m */; };
 		AAFB7F762277007200CF84B4 /* NotifiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F752277007200CF84B4 /* NotifiVC.m */; };
 		AAFB7F792277F9B100CF84B4 /* NSTimer+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F782277F9B100CF84B4 /* NSTimer+MiSafe.m */; };
+		AAFB7F7C2278229F00CF84B4 /* ObjVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F7B2278229F00CF84B4 /* ObjVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,8 @@
 		AAFB7F752277007200CF84B4 /* NotifiVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotifiVC.m; sourceTree = "<group>"; };
 		AAFB7F772277F9B100CF84B4 /* NSTimer+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+MiSafe.h"; sourceTree = "<group>"; };
 		AAFB7F782277F9B100CF84B4 /* NSTimer+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+MiSafe.m"; sourceTree = "<group>"; };
+		AAFB7F7A2278229F00CF84B4 /* ObjVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjVC.h; sourceTree = "<group>"; };
+		AAFB7F7B2278229F00CF84B4 /* ObjVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +247,8 @@
 				AAFB7F752277007200CF84B4 /* NotifiVC.m */,
 				AAFB7F6822768DBA00CF84B4 /* DataVC.h */,
 				AAFB7F6922768DBA00CF84B4 /* DataVC.m */,
+				AAFB7F7A2278229F00CF84B4 /* ObjVC.h */,
+				AAFB7F7B2278229F00CF84B4 /* ObjVC.m */,
 				AA0BB9632272AFF10057DD77 /* kvckvo */,
 				AA7DF6032269DC2500C29D8D /* Main.storyboard */,
 				AA7DF6062269DC2600C29D8D /* Assets.xcassets */,
@@ -468,6 +473,7 @@
 				AA7DF5FF2269DC2500C29D8D /* AppDelegate.m in Sources */,
 				AAFB7F672275B6A400CF84B4 /* NSSet+MiSafe.m in Sources */,
 				AA0BB94B226EF3720057DD77 /* NSString+MiSafe.m in Sources */,
+				AAFB7F7C2278229F00CF84B4 /* ObjVC.m in Sources */,
 				AAFB7F792277F9B100CF84B4 /* NSTimer+MiSafe.m in Sources */,
 				AA7DF6362269DC6300C29D8D /* NSObject+MiSafe.m in Sources */,
 				AAFB7F642275A90B00CF84B4 /* NSCache+MiSafe.m in Sources */,
