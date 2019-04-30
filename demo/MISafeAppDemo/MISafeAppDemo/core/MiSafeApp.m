@@ -16,6 +16,7 @@
 #import "NSOrderedSet+MiSafe.h"
 #import "NSData+MiSafe.h"
 #import "NSNotificationCenter+MiSafe.h"
+#import "NSTimer+MiSafe.h"
 
 
 @implementation MiSafeApp
@@ -106,6 +107,7 @@
     [NSOrderedSet miOpenNSOrderedSetMiSafe];
     [NSData miOpenNSDataMiSafe];
     [NSNotificationCenter miOpenNotificationMiSafe];
+    [NSTimer miOpenNSTimerMiSafe];
 }
 
 @end

@@ -27,6 +27,14 @@
 - (void)obserNoti
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tongzhi) name:@"testNoti" object:nil];
+    
+    NSTimer *timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(testTimer) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)testTimer
+{
+    NSLog(@"%s", __func__);
 }
 
 - (void)tongzhi
@@ -63,6 +71,8 @@
 //    [[self notiObserver] obserNoti];
     _notiObserver = [[MiNotiObserver alloc] init];
     [_notiObserver obserNoti];
+    
+
 }
 
 - (IBAction)sendNoti:(id)sender {

@@ -41,6 +41,7 @@
 		AAFB7F6D22769A2000CF84B4 /* NSData+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F6C22769A2000CF84B4 /* NSData+MiSafe.m */; };
 		AAFB7F702276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F6F2276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m */; };
 		AAFB7F762277007200CF84B4 /* NotifiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F752277007200CF84B4 /* NotifiVC.m */; };
+		AAFB7F792277F9B100CF84B4 /* NSTimer+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F782277F9B100CF84B4 /* NSTimer+MiSafe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,8 @@
 		AAFB7F6F2276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+MiSafe.m"; sourceTree = "<group>"; };
 		AAFB7F742277007200CF84B4 /* NotifiVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotifiVC.h; sourceTree = "<group>"; };
 		AAFB7F752277007200CF84B4 /* NotifiVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotifiVC.m; sourceTree = "<group>"; };
+		AAFB7F772277F9B100CF84B4 /* NSTimer+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+MiSafe.h"; sourceTree = "<group>"; };
+		AAFB7F782277F9B100CF84B4 /* NSTimer+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+MiSafe.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +302,8 @@
 				AAFB7F5922754CDF00CF84B4 /* NSObject+MiSafeKVC.m */,
 				AAFB7F6E2276EB4800CF84B4 /* NSNotificationCenter+MiSafe.h */,
 				AAFB7F6F2276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m */,
+				AAFB7F772277F9B100CF84B4 /* NSTimer+MiSafe.h */,
+				AAFB7F782277F9B100CF84B4 /* NSTimer+MiSafe.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 				AA7DF5FF2269DC2500C29D8D /* AppDelegate.m in Sources */,
 				AAFB7F672275B6A400CF84B4 /* NSSet+MiSafe.m in Sources */,
 				AA0BB94B226EF3720057DD77 /* NSString+MiSafe.m in Sources */,
+				AAFB7F792277F9B100CF84B4 /* NSTimer+MiSafe.m in Sources */,
 				AA7DF6362269DC6300C29D8D /* NSObject+MiSafe.m in Sources */,
 				AAFB7F642275A90B00CF84B4 /* NSCache+MiSafe.m in Sources */,
 				AA0BB948226EC4FE0057DD77 /* NSAttributedString+MiSafe.m in Sources */,
