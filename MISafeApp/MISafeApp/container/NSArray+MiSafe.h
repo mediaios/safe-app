@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSArray (MiSafe)
-
++ (void)miOpenNSArrayMiSafe;
 @end
 
 NS_ASSUME_NONNULL_END

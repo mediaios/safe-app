@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (MiSafe)
-
++ (void)miOpenNSStringMiSafe;
 @end
 
 NS_ASSUME_NONNULL_END

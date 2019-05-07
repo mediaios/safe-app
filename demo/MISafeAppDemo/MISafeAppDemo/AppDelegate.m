@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [MiSafeApp openKVCSafe];
+    [MiSafeApp openAvoidCrashWithType:MiSafeCrashType_All];
     return YES;
 }
 

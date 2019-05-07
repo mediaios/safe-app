@@ -61,7 +61,7 @@
             }
         }
         orderedSet = [self miOrderedSetInitWithObjects:newObjects count:index];
-        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSSet crashDes:@"(__NSPlaceholderOrderedSet)[initWithObjects:count:] crash , remove nil elements"];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSOrderSet crashDes:@"(__NSPlaceholderOrderedSet)[initWithObjects:count:] crash , remove nil elements"];
     } @finally {
         return orderedSet;
     }
@@ -73,7 +73,7 @@
     @try {
         obj = [self miOrderedSetObjectAtIndex:idx];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSSet crashDes:@"(__NSOrderedSetI)[objectAtIndex:] crash , return nil"];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSOrderSet crashDes:@"(__NSOrderedSetI)[objectAtIndex:] crash , return nil"];
     } @finally {
         return obj;
     }
@@ -86,7 +86,7 @@
     @try {
         obj = [self miMutaOSetObjectAtIndex:idx];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSSet crashDes:@"(__NSOrderedSetM)[objectAtIndex:] crash , return nil"];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSOrderSet crashDes:@"(__NSOrderedSetM)[objectAtIndex:] crash , return nil"];
     } @finally {
         return obj;
     }
@@ -97,7 +97,7 @@
     @try {
         [self miMutaOSetInsertObject:anObject atIndex:index];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSSet crashDes:@"(__NSOrderedSetM)[insertObject:atIndex:] crash , ignore this method operation"];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSOrderSet crashDes:@"(__NSOrderedSetM)[insertObject:atIndex:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -106,7 +106,7 @@
     @try {
         [self miMutaOSetRemoveObjectAtIndex:index];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSSet crashDes:@"(__NSOrderedSetM)[removeObjectAtIndex:] crash , ignore this method operation"];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSOrderSet crashDes:@"(__NSOrderedSetM)[removeObjectAtIndex:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -115,7 +115,7 @@
     @try {
         [self miMutaOSetReplaceObjectAtIndex:index withObject:anObject];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSSet crashDes:@"(__NSOrderedSetM)[replaceObjectAtIndex:withObject:] crash , ignore this method operation"];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSOrderSet crashDes:@"(__NSOrderedSetM)[replaceObjectAtIndex:withObject:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -124,7 +124,7 @@
     @try {
         [self miMutaOSetAddObject:object];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSSet crashDes:@"(__NSOrderedSetM)[addObject:] crash , ignore this method operation"];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSOrderSet crashDes:@"(__NSOrderedSetM)[addObject:] crash , ignore this method operation"];
     } @finally {}
 }
 @end

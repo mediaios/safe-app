@@ -13,13 +13,13 @@
 
 @implementation NSString (MiSafe)
 
-+ (void)load
++ (void)miOpenNSStringMiSafe
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [self miSwizzleInstanceMethod:objc_getClass("NSPlaceholderString")
-                                 swizzSel:@selector(initWithString:)
-                            toSwizzledSel:@selector(miInitWithString:)];
+                             swizzSel:@selector(initWithString:)
+                        toSwizzledSel:@selector(miInitWithString:)];
         Class class_init =  NSClassFromString(@"__NSCFConstantString");
         Class class_class = NSClassFromString(@"NSTaggedPointerString");
         [self miSwizzleMethods:class_init];

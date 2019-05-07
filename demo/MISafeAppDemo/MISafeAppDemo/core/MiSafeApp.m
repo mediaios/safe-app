@@ -8,6 +8,11 @@
 
 #import "MiSafeApp.h"
 #import "MiSafeModel.h"
+#import "NSString+MiSafe.h"
+#import "NSAttributedString+MiSafe.h"
+#import "NSMutableString+MiSafe.h"
+#import "NSArray+MiSafe.h"
+#import "NSDictionary+MiSafe.h"
 #import "NSObject+MiSafeKVO.h"
 #import "NSObject+MiSafeKVC.h"
 #import "NSUserDefaults+MiSafe.h"
@@ -20,6 +25,78 @@
 
 
 @implementation MiSafeApp
+
++ (void)openAvoidCrashWithType:(MiSafeCrashType)cType
+{
+    switch (cType) {
+        case MiSafeCrashType_NSString:
+        {
+            [NSString miOpenNSStringMiSafe];
+            [NSMutableString miOpenNSMutableStringMiSafe];
+            [NSAttributedString miOpenNSAttributedStringMiSafe];
+        }
+            break;
+        case MiSafeCrashType_NSArray:
+            [NSArray miOpenNSArrayMiSafe];
+            break;
+        case MiSafeCrashType_NSDictionary:
+            [NSDictionary miOpenNSDictionaryMiSafe];
+            break;
+        case MiSafeCrashType_NSSet:
+            [NSSet miOpenNSSetMiSafe];
+            break;
+        case MiSafeCrashType_NSOrderSet:
+            [NSOrderedSet miOpenNSOrderedSetMiSafe];
+            break;
+        case MiSafeCrashType_NSData:
+            [NSData miOpenNSDataMiSafe];
+            break;
+        case MiSafeCrashType_NSCache:
+            [NSCache miOpenNSCacheMiSafe];
+            break;
+        case MiSafeCrashType_NSNotification:
+            [NSNotificationCenter miOpenNotificationMiSafe];
+            break;
+        case MiSafeCrashType_KVO:
+            [NSObject miOpenKVOMiSafe];
+            break;
+        case MiSafeCrashType_KVC:
+            [NSObject miOpenKVCMiSafe];
+            break;
+        case MiSafeCrashType_NSTimer:
+            [NSTimer miOpenNSTimerMiSafe];
+            break;
+        case MiSafeCrashType_NSUserDefaults:
+            [NSUserDefaults miOpenUserDefaultsMiSafe];
+            break;
+        case MiSafeCrashType_UnRecognizedSel:
+            [NSObject miOpenUnrecognizedSelMiSafe];
+            break;
+        case MiSafeCrashType_All:
+        {
+            [NSString miOpenNSStringMiSafe];
+            [NSMutableString miOpenNSMutableStringMiSafe];
+            [NSAttributedString miOpenNSAttributedStringMiSafe];
+            [NSArray miOpenNSArrayMiSafe];
+            [NSDictionary miOpenNSDictionaryMiSafe];
+            [NSSet miOpenNSSetMiSafe];
+            [NSOrderedSet miOpenNSOrderedSetMiSafe];
+            [NSData miOpenNSDataMiSafe];
+            [NSCache miOpenNSCacheMiSafe];
+            [NSNotificationCenter miOpenNotificationMiSafe];
+            [NSObject miOpenKVOMiSafe];
+            [NSObject miOpenKVCMiSafe];
+            [NSTimer miOpenNSTimerMiSafe];
+            [NSUserDefaults miOpenUserDefaultsMiSafe];
+            [NSObject miOpenUnrecognizedSelMiSafe];
+        }
+            break;
+        
+        default:
+            break;
+    }
+}
+
 
 /**
  *  获取堆栈主要崩溃精简化的信息<根据正则表达式匹配出来>
@@ -90,6 +167,9 @@
         case MiSafeCrashType_NSSet:
             crashDes = [NSString stringWithFormat:@"{MiSafeCrashType_NSSet: %@}",cDes];
             break;
+        case MiSafeCrashType_NSOrderSet:
+            crashDes = [NSString stringWithFormat:@"{MiSafeCrashType_NSOrderSet: %@}",cDes];
+            break;
         case MiSafeCrashType_NSData:
             crashDes = [NSString stringWithFormat:@"{MiSafeCrashType_NSData: %@}",cDes];
             break;
@@ -120,20 +200,6 @@
     }
     MiSafeCrashInfo *crashInfo = [MiSafeCrashInfo instanceWithName:exception.name reason:exception.reason location:mainCallStackSymbolMsg avoidCrashDes:crashDes callSymbolsStack:callStackSymbolsArr];
     NSLog(@"qizhang---debug-----%@",crashInfo);
-}
-
-+ (void)openKVCSafe
-{
-    [NSObject miOpenKVCMiSafe];
-    [NSObject miOpenKVOMiSafe];
-    [NSUserDefaults miOpenUserDefaultsMiSafe];
-    [NSCache miOpenNSCacheMiSafe];
-    [NSSet miOpenNSSetMiSafe];
-    [NSOrderedSet miOpenNSOrderedSetMiSafe];
-    [NSData miOpenNSDataMiSafe];
-    [NSNotificationCenter miOpenNotificationMiSafe];
-    [NSTimer miOpenNSTimerMiSafe];
-    [NSObject miOpenUnrecognizedSelMiSafe];
 }
 
 @end

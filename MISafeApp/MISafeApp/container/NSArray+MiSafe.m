@@ -12,8 +12,7 @@
 #import "MiSafeApp.h"
 
 @implementation NSArray (MiSafe)
-
-+ (void)load
++ (void)miOpenNSArrayMiSafe
 {
     static dispatch_once_t miOnceToken;
     dispatch_once(&miOnceToken, ^{
@@ -36,86 +35,86 @@
         /********** NSArray: 取元素 **********/
         // [array objectAtIndex:1000] 方式发生的crash
         [self miSwizzleInstanceMethod:array0Class
-                                 swizzSel:@selector(objectAtIndex:)
-                            toSwizzledSel:@selector(miArr0ObjectAtIndex:)];
+                             swizzSel:@selector(objectAtIndex:)
+                        toSwizzledSel:@selector(miArr0ObjectAtIndex:)];
         [self miSwizzleInstanceMethod:arrayOneClass
-                                 swizzSel:@selector(objectAtIndex:)
-                            toSwizzledSel:@selector(miArrOneObjectAtIndex:)];
+                             swizzSel:@selector(objectAtIndex:)
+                        toSwizzledSel:@selector(miArrOneObjectAtIndex:)];
         [self miSwizzleInstanceMethod:arrayIClass
-                                 swizzSel:@selector(objectAtIndex:)
-                            toSwizzledSel:@selector(miArrObjectAtIndex:)];
+                             swizzSel:@selector(objectAtIndex:)
+                        toSwizzledSel:@selector(miArrObjectAtIndex:)];
         // array[10000] 方式发生的crash (仅仅只需要hook `__NSArrayI`)
         [self miSwizzleInstanceMethod:arrayIClass
-                                 swizzSel:@selector(objectAtIndexedSubscript:)
-                            toSwizzledSel:@selector(miArrObjectAtIndexSubscript:)];
+                             swizzSel:@selector(objectAtIndexedSubscript:)
+                        toSwizzledSel:@selector(miArrObjectAtIndexSubscript:)];
         
         // [array getObjects:range:] 方式发生crash ,此时只需要hook `NSArray`,`__NSArrayI`,`__NSSingleObjectArrayI`
         Class nsarrayClass = objc_getClass("NSArray");
         [self miSwizzleInstanceMethod:nsarrayClass
-                                 swizzSel:@selector(getObjects:range:)
-                            toSwizzledSel:@selector(miGetNSArrayObjects:range:)];
+                             swizzSel:@selector(getObjects:range:)
+                        toSwizzledSel:@selector(miGetNSArrayObjects:range:)];
         [self miSwizzleInstanceMethod:arrayOneClass
-                                 swizzSel:@selector(getObjects:range:)
-                            toSwizzledSel:@selector(miGetOneArrayObjects:range:)];
+                             swizzSel:@selector(getObjects:range:)
+                        toSwizzledSel:@selector(miGetOneArrayObjects:range:)];
         [self miSwizzleInstanceMethod:arrayIClass
-                                 swizzSel:@selector(getObjects:range:)
-                            toSwizzledSel:@selector(miGetArrayIObjects:range:)];
+                             swizzSel:@selector(getObjects:range:)
+                        toSwizzledSel:@selector(miGetArrayIObjects:range:)];
         
         
         /**************************************** NSArrayMutableArray 操作 ****************************************/
         Class mutaArrayClass = objc_getClass("__NSArrayM");
         // 取元素
         [self miSwizzleInstanceMethod:mutaArrayClass
-                                 swizzSel:@selector(objectAtIndex:)
-                            toSwizzledSel:@selector(miMutaArrObjectAtIndex:)];
+                             swizzSel:@selector(objectAtIndex:)
+                        toSwizzledSel:@selector(miMutaArrObjectAtIndex:)];
         [self miSwizzleInstanceMethod:mutaArrayClass
-                                 swizzSel:@selector(objectAtIndexedSubscript:)
-                            toSwizzledSel:@selector(miMutaArrObjectAtIndexSubscript:)];
+                             swizzSel:@selector(objectAtIndexedSubscript:)
+                        toSwizzledSel:@selector(miMutaArrObjectAtIndexSubscript:)];
         [self miSwizzleInstanceMethod:mutaArrayClass
-                                 swizzSel:@selector(getObjects:range:)
-                            toSwizzledSel:@selector(miGetMutaArrayObjects:range:)];
+                             swizzSel:@selector(getObjects:range:)
+                        toSwizzledSel:@selector(miGetMutaArrayObjects:range:)];
         
         // 添加元素
         [self miSwizzleInstanceMethod:mutaArrayClass
-                                 swizzSel:@selector(setObject:atIndexedSubscript:)
-                            toSwizzledSel:@selector(miSetObject:atIndexedSubscript:)];
+                             swizzSel:@selector(setObject:atIndexedSubscript:)
+                        toSwizzledSel:@selector(miSetObject:atIndexedSubscript:)];
         
         // 插入元素： 元素为nil; index非法
         [self miSwizzleInstanceMethod:mutaArrayClass
-                                 swizzSel:@selector(insertObject:atIndex:)
-                            toSwizzledSel:@selector(miMutaInsertObject:atIndex:)];
+                             swizzSel:@selector(insertObject:atIndex:)
+                        toSwizzledSel:@selector(miMutaInsertObject:atIndex:)];
         
         /********** 删除元素 **********/
         [self miSwizzleInstanceMethod:mutaArrayClass
-                                 swizzSel:@selector(removeObjectsInRange:)
-                            toSwizzledSel:@selector(miRemoveObjectsInRange:)];
+                             swizzSel:@selector(removeObjectsInRange:)
+                        toSwizzledSel:@selector(miRemoveObjectsInRange:)];
         [self miSwizzleInstanceMethod:mutaArrayClass
-                                 swizzSel:@selector(removeObject:inRange:)
-                            toSwizzledSel:@selector(miRemoveObject:inRange:)];
+                             swizzSel:@selector(removeObject:inRange:)
+                        toSwizzledSel:@selector(miRemoveObject:inRange:)];
         [self miSwizzleInstanceMethod:mutaArrayClass
-                                 swizzSel:@selector(removeObjectIdenticalTo:inRange:)
-                            toSwizzledSel:@selector(miRemoveObjectIdenticalTo:inRange:)];
+                             swizzSel:@selector(removeObjectIdenticalTo:inRange:)
+                        toSwizzledSel:@selector(miRemoveObjectIdenticalTo:inRange:)];
         
         /********** 替换数组中元素 **********/
         [self miSwizzleInstanceMethod:mutaArrayClass
-                                 swizzSel:@selector(replaceObjectAtIndex:withObject:)
-                            toSwizzledSel:@selector(miReplaceObjectAtIndex:withObject:)];
+                             swizzSel:@selector(replaceObjectAtIndex:withObject:)
+                        toSwizzledSel:@selector(miReplaceObjectAtIndex:withObject:)];
         
         /********** 交换数组中元素 **********/
         [self miSwizzleInstanceMethod:mutaArrayClass
-                                 swizzSel:@selector(exchangeObjectAtIndex:withObjectAtIndex:)
-                            toSwizzledSel:@selector(miExchangeObjectAtIndex:withObjectAtIndex:)];
+                             swizzSel:@selector(exchangeObjectAtIndex:withObjectAtIndex:)
+                        toSwizzledSel:@selector(miExchangeObjectAtIndex:withObjectAtIndex:)];
         /********** 替换元素 **********/
         [self miSwizzleInstanceMethod:mutaArrayClass
-                                 swizzSel:@selector(replaceObjectsInRange:withObjectsFromArray:range:)
-                            toSwizzledSel:@selector(miReplaceObjectsInRange:withObjectsFromArray:range:)];
+                             swizzSel:@selector(replaceObjectsInRange:withObjectsFromArray:range:)
+                        toSwizzledSel:@selector(miReplaceObjectsInRange:withObjectsFromArray:range:)];
         [self miSwizzleInstanceMethod:mutaArrayClass
-                                 swizzSel:@selector(replaceObjectsInRange:withObjectsFromArray:)
-                            toSwizzledSel:@selector(miReplaceObjectsInRange:withObjectsFromArray:)];
+                             swizzSel:@selector(replaceObjectsInRange:withObjectsFromArray:)
+                        toSwizzledSel:@selector(miReplaceObjectsInRange:withObjectsFromArray:)];
         
         [self miSwizzleInstanceMethod:mutaArrayClass
-                                 swizzSel:@selector(integerValue)
-                            toSwizzledSel:@selector(miIntegerValue)];
+                             swizzSel:@selector(integerValue)
+                        toSwizzledSel:@selector(miIntegerValue)];
     });
 }
 

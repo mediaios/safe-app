@@ -13,7 +13,7 @@
 
 @implementation NSDictionary (MiSafe)
 
-+ (void)load
++ (void)miOpenNSDictionaryMiSafe
 {
     static dispatch_once_t miOnceToken;
     dispatch_once(&miOnceToken, ^{
@@ -21,11 +21,11 @@
         // 使用[alloc]方法的初始化只需要hook `__NSPlaceholderDictionary`的init方法即可
         Class placeHolderDict = objc_getClass("__NSPlaceholderDictionary");
         [self miSwizzleInstanceMethod:placeHolderDict
-                                 swizzSel:@selector(initWithObjects:forKeys:count:)
-                            toSwizzledSel:@selector(miInitWithObjects:forKeys:count:)];
+                             swizzSel:@selector(initWithObjects:forKeys:count:)
+                        toSwizzledSel:@selector(miInitWithObjects:forKeys:count:)];
         [self miSwizzleInstanceMethod:placeHolderDict
-                                 swizzSel:@selector(initWithObjects:forKeys:)
-                            toSwizzledSel:@selector(miInitWithObjects:forKeys:)];
+                             swizzSel:@selector(initWithObjects:forKeys:)
+                        toSwizzledSel:@selector(miInitWithObjects:forKeys:)];
         // hook 使用类方法的初始化方式
         [NSObject miSwizzleClassMethodWithClass:object_getClass(@"NSDictionary")
                                        swizzSel:@selector(dictionaryWithObjects:forKeys:count:)
@@ -33,23 +33,23 @@
         
         
         /**************************************** 字典操作 ****************************************/
-//        Class dict0Class = objc_getClass("__NSDictionary0");
+        //        Class dict0Class = objc_getClass("__NSDictionary0");
         Class dictOneClass = objc_getClass("__NSSingleEntryDictionaryI");
-//        Class dictClass = objc_getClass("__NSDictionaryI");
+        //        Class dictClass = objc_getClass("__NSDictionaryI");
         [self miSwizzleInstanceMethod:dictOneClass
                              swizzSel:@selector(valueForUndefinedKey:) toSwizzledSel:@selector(miOneEleDictValueForUndefinedKey:)];
         
         
         Class mutaDictClass = objc_getClass("__NSDictionaryM");
         [self miSwizzleInstanceMethod:mutaDictClass
-                                 swizzSel:@selector(setObject:forKey:)
-                            toSwizzledSel:@selector(miSetObject:forKey:)];
+                             swizzSel:@selector(setObject:forKey:)
+                        toSwizzledSel:@selector(miSetObject:forKey:)];
         [self miSwizzleInstanceMethod:mutaDictClass
-                                 swizzSel:@selector(setObject:forKeyedSubscript:)
-                            toSwizzledSel:@selector(miSetObject:forKeyedSubscript:)];
+                             swizzSel:@selector(setObject:forKeyedSubscript:)
+                        toSwizzledSel:@selector(miSetObject:forKeyedSubscript:)];
         [self miSwizzleInstanceMethod:mutaDictClass
-                                 swizzSel:@selector(removeObjectForKey:)
-                            toSwizzledSel:@selector(miRemoveObjectForKey:)];
+                             swizzSel:@selector(removeObjectForKey:)
+                        toSwizzledSel:@selector(miRemoveObjectForKey:)];
         
         // 对NSMutableDict做拷贝，拷贝之后字典添加元素会crash.   //待定
         Class frozenDictClass = objc_getClass("__NSFrozenDictionaryM");

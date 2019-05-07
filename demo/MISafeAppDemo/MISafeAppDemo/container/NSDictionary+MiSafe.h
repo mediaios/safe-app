@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDictionary (MiSafe)
-
++ (void)miOpenNSDictionaryMiSafe;
 @end
 
 NS_ASSUME_NONNULL_END

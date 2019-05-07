@@ -12,67 +12,68 @@
 #import "MiSafeApp.h"
 @implementation NSMutableString (MiSafe)
 
-+ (void)load
+
++ (void)miOpenNSMutableStringMiSafe
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         Class mutaPlaceHolder = objc_getClass("NSPlaceholderMutableString");
         [self miSwizzleInstanceMethod:mutaPlaceHolder
-                                 swizzSel:@selector(initWithString:)
-                            toSwizzledSel:@selector(miInitWithString:)];
+                             swizzSel:@selector(initWithString:)
+                        toSwizzledSel:@selector(miInitWithString:)];
         [self miSwizzleInstanceMethod:mutaPlaceHolder
-                                 swizzSel:@selector(initWithCString:encoding:)
-                            toSwizzledSel:@selector(miInitWithCString:encoding:)];
+                             swizzSel:@selector(initWithCString:encoding:)
+                        toSwizzledSel:@selector(miInitWithCString:encoding:)];
         [self miSwizzleInstanceMethod:mutaPlaceHolder
-                                 swizzSel:@selector(initWithUTF8String:)
-                            toSwizzledSel:@selector(miInitWithUTF8String:)];
+                             swizzSel:@selector(initWithUTF8String:)
+                        toSwizzledSel:@selector(miInitWithUTF8String:)];
         
         Class strClass = NSClassFromString(@"__NSCFString");
         [self miSwizzleInstanceMethod:strClass
-                                 swizzSel:@selector(hasPrefix:)
-                            toSwizzledSel:@selector(miCFStrHasPrefix:)];
+                             swizzSel:@selector(hasPrefix:)
+                        toSwizzledSel:@selector(miCFStrHasPrefix:)];
         [self miSwizzleInstanceMethod:strClass
-                                 swizzSel:@selector(hasSuffix:)
-                            toSwizzledSel:@selector(miCFStrHasSuffix:)];
+                             swizzSel:@selector(hasSuffix:)
+                        toSwizzledSel:@selector(miCFStrHasSuffix:)];
         [self miSwizzleInstanceMethod:strClass
-                                 swizzSel:@selector(substringFromIndex:)
-                            toSwizzledSel:@selector(miCFStrSubstringFromIndex:)];
+                             swizzSel:@selector(substringFromIndex:)
+                        toSwizzledSel:@selector(miCFStrSubstringFromIndex:)];
         [self miSwizzleInstanceMethod:strClass
-                                 swizzSel:@selector(substringToIndex:)
-                            toSwizzledSel:@selector(miCFStrSubstringToIndex:)];
+                             swizzSel:@selector(substringToIndex:)
+                        toSwizzledSel:@selector(miCFStrSubstringToIndex:)];
         [self miSwizzleInstanceMethod:strClass
-                                 swizzSel:@selector(substringWithRange:)
-                            toSwizzledSel:@selector(miCFStrSubstringWithRange:)];
+                             swizzSel:@selector(substringWithRange:)
+                        toSwizzledSel:@selector(miCFStrSubstringWithRange:)];
         
         
         [self miSwizzleInstanceMethod:strClass
-                                 swizzSel:@selector(characterAtIndex:)
-                            toSwizzledSel:@selector(miCFStrCharacterAtIndex:)];
+                             swizzSel:@selector(characterAtIndex:)
+                        toSwizzledSel:@selector(miCFStrCharacterAtIndex:)];
         [self miSwizzleInstanceMethod:strClass
-                                 swizzSel:@selector(stringByReplacingOccurrencesOfString:withString:options:range:)
-                            toSwizzledSel:@selector(miCFStrStringByReplacingOccurrencesOfString:withString:options:range:)];
+                             swizzSel:@selector(stringByReplacingOccurrencesOfString:withString:options:range:)
+                        toSwizzledSel:@selector(miCFStrStringByReplacingOccurrencesOfString:withString:options:range:)];
         [self miSwizzleInstanceMethod:strClass
-                                 swizzSel:@selector(stringByReplacingCharactersInRange:withString:)
-                            toSwizzledSel:@selector(miCFStrStringByReplacingCharactersInRange:withString:)];
+                             swizzSel:@selector(stringByReplacingCharactersInRange:withString:)
+                        toSwizzledSel:@selector(miCFStrStringByReplacingCharactersInRange:withString:)];
         
         [self miSwizzleInstanceMethod:strClass
-                                 swizzSel:@selector(replaceCharactersInRange:withString:)
-                            toSwizzledSel:@selector(miReplaceCharactersInRange:withString:)];
+                             swizzSel:@selector(replaceCharactersInRange:withString:)
+                        toSwizzledSel:@selector(miReplaceCharactersInRange:withString:)];
         [self miSwizzleInstanceMethod:strClass
-                                 swizzSel:@selector(replaceOccurrencesOfString:withString:options:range:)
-                            toSwizzledSel:@selector(miReplaceOccurrencesOfString:withString:options:range:)];
+                             swizzSel:@selector(replaceOccurrencesOfString:withString:options:range:)
+                        toSwizzledSel:@selector(miReplaceOccurrencesOfString:withString:options:range:)];
         [self miSwizzleInstanceMethod:strClass
-                                 swizzSel:@selector(insertString:atIndex:)
-                            toSwizzledSel:@selector(miInsertString:atIndex:)];
+                             swizzSel:@selector(insertString:atIndex:)
+                        toSwizzledSel:@selector(miInsertString:atIndex:)];
         [self miSwizzleInstanceMethod:strClass
-                                 swizzSel:@selector(deleteCharactersInRange:)
-                            toSwizzledSel:@selector(miDeleteCharactersInRange:)];
+                             swizzSel:@selector(deleteCharactersInRange:)
+                        toSwizzledSel:@selector(miDeleteCharactersInRange:)];
         [self miSwizzleInstanceMethod:strClass
-                                 swizzSel:@selector(appendString:)
-                            toSwizzledSel:@selector(miAppendString:)];
+                             swizzSel:@selector(appendString:)
+                        toSwizzledSel:@selector(miAppendString:)];
         [self miSwizzleInstanceMethod:strClass
-                                 swizzSel:@selector(setString:)
-                            toSwizzledSel:@selector(miSetString:)];
+                             swizzSel:@selector(setString:)
+                        toSwizzledSel:@selector(miSetString:)];
     });
 }
 

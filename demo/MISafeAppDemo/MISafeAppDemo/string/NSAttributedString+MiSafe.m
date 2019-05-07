@@ -13,38 +13,38 @@
 
 @implementation NSAttributedString (MiSafe)
 
-+ (void)load
++ (void)miOpenNSAttributedStringMiSafe
 {
     static dispatch_once_t miOnceToken;
     dispatch_once(&miOnceToken, ^{
         [self miSwizzleInstanceMethod:objc_getClass("NSConcreteAttributedString")
-                                 swizzSel:@selector(initWithString:)
-                            toSwizzledSel:@selector(miInitWithString:)];
+                             swizzSel:@selector(initWithString:)
+                        toSwizzledSel:@selector(miInitWithString:)];
         
         [self miSwizzleInstanceMethod:objc_getClass("NSConcreteMutableAttributedString")
-                                 swizzSel:@selector(initWithString:)
-                            toSwizzledSel:@selector(miInitMutaASWithString:)];
+                             swizzSel:@selector(initWithString:)
+                        toSwizzledSel:@selector(miInitMutaASWithString:)];
         [self miSwizzleInstanceMethod:objc_getClass("NSConcreteMutableAttributedString")
-                                 swizzSel:@selector(initWithString:attributes:)
-                            toSwizzledSel:@selector(miInitMutaASWithString:attributes:)];
+                             swizzSel:@selector(initWithString:attributes:)
+                        toSwizzledSel:@selector(miInitMutaASWithString:attributes:)];
         [self miSwizzleInstanceMethod:objc_getClass("NSConcreteMutableAttributedString")
-                                 swizzSel:@selector(replaceCharactersInRange:withString:)
-                            toSwizzledSel:@selector(miReplaceCharactersInRange:withString:)];
+                             swizzSel:@selector(replaceCharactersInRange:withString:)
+                        toSwizzledSel:@selector(miReplaceCharactersInRange:withString:)];
         [self miSwizzleInstanceMethod:objc_getClass("NSConcreteMutableAttributedString")
-                                 swizzSel:@selector(setAttributes:range:)
-                            toSwizzledSel:@selector(miSetAttributes:range:)];
+                             swizzSel:@selector(setAttributes:range:)
+                        toSwizzledSel:@selector(miSetAttributes:range:)];
         [self miSwizzleInstanceMethod:objc_getClass("NSConcreteMutableAttributedString")
-                                 swizzSel:@selector(addAttribute:value:range:)
-                            toSwizzledSel:@selector(miAddAttribute:value:range:)];
+                             swizzSel:@selector(addAttribute:value:range:)
+                        toSwizzledSel:@selector(miAddAttribute:value:range:)];
         [self miSwizzleInstanceMethod:objc_getClass("NSConcreteMutableAttributedString")
-                                 swizzSel:@selector(addAttributes:range:)
-                            toSwizzledSel:@selector(miAddAttributes:range:)];
+                             swizzSel:@selector(addAttributes:range:)
+                        toSwizzledSel:@selector(miAddAttributes:range:)];
         [self miSwizzleInstanceMethod:objc_getClass("NSConcreteMutableAttributedString")
-                                 swizzSel:@selector(removeAttribute:range:)
-                            toSwizzledSel:@selector(miRemoveAttribute:range:)];
+                             swizzSel:@selector(removeAttribute:range:)
+                        toSwizzledSel:@selector(miRemoveAttribute:range:)];
         [self miSwizzleInstanceMethod:objc_getClass("NSConcreteMutableAttributedString")
-                                 swizzSel:@selector(replaceCharactersInRange:withAttributedString:)
-                            toSwizzledSel:@selector(miReplaceCharactersInRange:withAttributedString:)];
+                             swizzSel:@selector(replaceCharactersInRange:withAttributedString:)
+                        toSwizzledSel:@selector(miReplaceCharactersInRange:withAttributedString:)];
     });
 }
 
