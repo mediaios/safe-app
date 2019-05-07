@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    [MiSafeApp setLogLevel:MiSafeLogLevel_Display];
     [MiSafeApp openAvoidCrashWithType:MiSafeCrashType_All];
     return YES;
 }

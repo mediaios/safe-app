@@ -23,8 +23,23 @@
 #import "NSNotificationCenter+MiSafe.h"
 #import "NSTimer+MiSafe.h"
 
+static MiSafeLogLevel gLoglevel = MiSafeLogLevel_None;
+
+#define MiSafeLog(msg)\
+({\
+    if(gLoglevel == MiSafeLogLevel_Display)\
+        NSLog(@"%@",msg);\
+})
 
 @implementation MiSafeApp
+
++ (void)setLogLevel:(MiSafeLogLevel)logLevel
+{
+    if (gLoglevel != logLevel) {
+        gLoglevel = logLevel;
+    }
+}
+
 
 + (void)openAvoidCrashWithType:(MiSafeCrashType)cType
 {
@@ -34,43 +49,80 @@
             [NSString miOpenNSStringMiSafe];
             [NSMutableString miOpenNSMutableStringMiSafe];
             [NSAttributedString miOpenNSAttributedStringMiSafe];
+            MiSafeLog(@"MisafeApp: Enable avoid NSString crash...");
         }
             break;
         case MiSafeCrashType_NSArray:
+        {
             [NSArray miOpenNSArrayMiSafe];
+            MiSafeLog(@"MisafeApp: Enable avoid NSArray crash...");
+        }
             break;
         case MiSafeCrashType_NSDictionary:
+        {
             [NSDictionary miOpenNSDictionaryMiSafe];
+            MiSafeLog(@"MisafeApp: Enable avoid NSDictionary crash...");
+        }
             break;
         case MiSafeCrashType_NSSet:
+        {
             [NSSet miOpenNSSetMiSafe];
+            MiSafeLog(@"MisafeApp: Enable avoid NSSet crash...");
+        }
             break;
         case MiSafeCrashType_NSOrderSet:
+        {
             [NSOrderedSet miOpenNSOrderedSetMiSafe];
+            MiSafeLog(@"MisafeApp: Enable avoid NSOrderSet crash...");
+        }
             break;
         case MiSafeCrashType_NSData:
+        {
             [NSData miOpenNSDataMiSafe];
+            MiSafeLog(@"MisafeApp: Enable avoid NSData crash...");
+        }
             break;
         case MiSafeCrashType_NSCache:
+        {
             [NSCache miOpenNSCacheMiSafe];
+            MiSafeLog(@"MisafeApp: Enable avoid NSCache crash...");
+        }
             break;
         case MiSafeCrashType_NSNotification:
+        {
             [NSNotificationCenter miOpenNotificationMiSafe];
+            MiSafeLog(@"MisafeApp: Enable avoid NSNotification crash...");
+        }
             break;
         case MiSafeCrashType_KVO:
+        {
             [NSObject miOpenKVOMiSafe];
+            MiSafeLog(@"MisafeApp: Enable avoid KVO crash...");
+        }
             break;
         case MiSafeCrashType_KVC:
+        {
             [NSObject miOpenKVCMiSafe];
+            MiSafeLog(@"MisafeApp: Enable avoid KVC crash...");
+        }
             break;
         case MiSafeCrashType_NSTimer:
+        {
             [NSTimer miOpenNSTimerMiSafe];
+            MiSafeLog(@"MisafeApp: Enable avoid NSTimer crash...");
+        }
             break;
         case MiSafeCrashType_NSUserDefaults:
+        {
             [NSUserDefaults miOpenUserDefaultsMiSafe];
+            MiSafeLog(@"MisafeApp: Enable avoid NSUserDefaults crash...");
+        }
             break;
         case MiSafeCrashType_UnRecognizedSel:
+        {
             [NSObject miOpenUnrecognizedSelMiSafe];
+            MiSafeLog(@"MisafeApp: Enable avoid UnRecognizedSel crash...");
+        }
             break;
         case MiSafeCrashType_All:
         {
@@ -89,6 +141,7 @@
             [NSTimer miOpenNSTimerMiSafe];
             [NSUserDefaults miOpenUserDefaultsMiSafe];
             [NSObject miOpenUnrecognizedSelMiSafe];
+            MiSafeLog(@"MisafeApp: Enable avoid All crash...");
         }
             break;
         
@@ -199,7 +252,7 @@
             break;
     }
     MiSafeCrashInfo *crashInfo = [MiSafeCrashInfo instanceWithName:exception.name reason:exception.reason location:mainCallStackSymbolMsg avoidCrashDes:crashDes callSymbolsStack:callStackSymbolsArr];
-    NSLog(@"qizhang---debug-----%@",crashInfo);
+    MiSafeLog(crashInfo);
 }
 
 @end

@@ -11,6 +11,20 @@
 
 
 /**
+ @brief 设置SDK的日志级别
+
+ @discussion 建议当应用出于debug阶段时，设置打印日志；当应用要发布时，设置不打印日志。
+ 
+ - MiSafeLogLevel_None: 不打印日志(建议release版本选择该设置)
+ - MiSafeLogLevel_Display: 打印日志(建议debug版本选择该设置)
+ */
+typedef NS_ENUM(NSUInteger,MiSafeLogLevel)
+{
+    MiSafeLogLevel_None,
+    MiSafeLogLevel_Display
+};
+
+/**
  @brief 这是一个枚举类型，定义崩溃类型
 
  - MiSafeCrashType_NSString: `NSString`相关的崩溃，包括其子类(NSMutableString等)
@@ -53,6 +67,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
+ @brief 设置SDK的日志级别
+
+ @discussion SDK默认不打印日志
+ - MiSafeLogLevel_None: 不打印日志(建议release版本选择该设置)
+ - MiSafeLogLevel_Display: 打印日志(建议debug版本选择该设置).
+ 
+ @param logLevel `MiSafeLogLevel`类型。默认不打印任何日志。
+ */
++ (void)setLogLevel:(MiSafeLogLevel)logLevel;
+
+/**
  @brief 开启防止crash
 
  @discussion
@@ -64,6 +89,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param cType `MiSafeCrashType`类型
  */
 + (void)openAvoidCrashWithType:(MiSafeCrashType)cType;
+
+
 
 
 /**
