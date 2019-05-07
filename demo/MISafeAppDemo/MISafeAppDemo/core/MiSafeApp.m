@@ -66,7 +66,9 @@
     return mainCallStackSymbolMsg;
 }
 
-+ (void)showCrashInfoWithException:(NSException *)exception avoidCrashType:(MiSafeAvoidCrashType)acType
++ (void)showCrashInfoWithException:(NSException *)exception
+                         crashType:(MiSafeCrashType)cType
+                          crashDes:(NSString *)cDes
 {
     NSArray *callStackSymbolsArr = [NSThread callStackSymbols];
     NSString *mainCallStackSymbolMsg = [MiSafeApp getMainCallStackSymbolMessageWithCallStackSymbols:callStackSymbolsArr];
@@ -74,26 +76,49 @@
     if (mainCallStackSymbolMsg == nil) {
         mainCallStackSymbolMsg = @"The crash method failed to locate. Please check the function call stack to troubleshoot the cause of the error.";
     }
-    NSString *avoidCrashDes = AvoidCrashDefaultReturnNil;
-    switch (acType) {
-        case MiSafeAvoidCrashType_ReturnNil:
-            avoidCrashDes = AvoidCrashDefaultReturnNil;
+    NSString *crashDes = nil;
+    switch (cType) {
+        case MiSafeCrashType_NSString:
+            crashDes = [NSString stringWithFormat:@"{MiSafeCrashType_NSString: %@}",cDes];
             break;
-        case MiSafeAvoidCrashType_InitArrayRemoveNil:
-            avoidCrashDes = AvoidCrashInitArrayRemoveNil;
+        case MiSafeCrashType_NSArray:
+            crashDes = [NSString stringWithFormat:@"{MiSafeCrashType_NSArray: %@}",cDes];
             break;
-        case MiSafeAvoidCrashType_InitDictRemoveNil:
-            avoidCrashDes = AvoidCrashInitDictRemoveNil;
+        case MiSafeCrashType_NSDictionary:
+            crashDes = [NSString stringWithFormat:@"{MiSafeCrashType_NSDictionary: %@}",cDes];
             break;
-        case MiSafeAvoidCrashType_Ignore:
-            avoidCrashDes = AvoidCrashDefaultIgnore;
+        case MiSafeCrashType_NSSet:
+            crashDes = [NSString stringWithFormat:@"{MiSafeCrashType_NSSet: %@}",cDes];
+            break;
+        case MiSafeCrashType_NSData:
+            crashDes = [NSString stringWithFormat:@"{MiSafeCrashType_NSData: %@}",cDes];
+            break;
+        case MiSafeCrashType_NSCache:
+            crashDes = [NSString stringWithFormat:@"{MiSafeCrashType_NSCache: %@}",cDes];
+            break;
+        case MiSafeCrashType_NSNotification:
+            crashDes = [NSString stringWithFormat:@"{MiSafeCrashType_NSNotification: %@}",cDes];
+            break;
+        case MiSafeCrashType_KVO:
+            crashDes = [NSString stringWithFormat:@"{MiSafeCrashType_KVO: %@}",cDes];
+            break;
+        case MiSafeCrashType_KVC:
+            crashDes = [NSString stringWithFormat:@"{MiSafeCrashType_KVC: %@}",cDes];
+            break;
+        case MiSafeCrashType_NSTimer:
+            crashDes = [NSString stringWithFormat:@"{MiSafeCrashType_NSTimer: %@}",cDes];
+            break;
+        case MiSafeCrashType_NSUserDefaults:
+            crashDes = [NSString stringWithFormat:@"{MiSafeCrashType_NSUserDefaults: %@}",cDes];
+            break;
+        case MiSafeCrashType_UnRecognizedSel:
+            crashDes = [NSString stringWithFormat:@"{MiSafeCrashType_UnRecognizedSel: %@}",cDes];
             break;
             
         default:
             break;
     }
-    
-    MiSafeCrashInfo *crashInfo = [MiSafeCrashInfo instanceWithName:exception.name reason:exception.reason location:mainCallStackSymbolMsg avoidCrashDes:avoidCrashDes callSymbolsStack:callStackSymbolsArr];
+    MiSafeCrashInfo *crashInfo = [MiSafeCrashInfo instanceWithName:exception.name reason:exception.reason location:mainCallStackSymbolMsg avoidCrashDes:crashDes callSymbolsStack:callStackSymbolsArr];
     NSLog(@"qizhang---debug-----%@",crashInfo);
 }
 

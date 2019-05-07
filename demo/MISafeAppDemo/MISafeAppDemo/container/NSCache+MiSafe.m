@@ -36,7 +36,7 @@
     }
     
     NSException *exception = [NSException exceptionWithName:@"MINSCacheException" reason:@"[setObject:forKey:], key is nil" userInfo:@{@"errorInfo":@"[setObject:forKey:] error"}];
-    [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSCache crashDes:@"(NSCache)[setObject:forKey:] crash , ignore this method operation"];
 }
 
 - (void)miCacheSetObject:(id)obj forKey:(id)key cost:(NSUInteger)g
@@ -46,7 +46,7 @@
         return;
     }
     NSException *exception = [NSException exceptionWithName:@"MINSCacheException" reason:@"[setObject:forKey:cost:], key is nil" userInfo:@{@"errorInfo":@"[setObject:forKey:cost:] error"}];
-    [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSCache crashDes:@"(NSCache)[setObject:forKey:cost:] crash , ignore this method operation"];
     
 }
 @end

@@ -40,7 +40,7 @@
     @try {
         [self miKVCSetValue:value forKey:key];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_KVO crashDes:@"(NSObject)[setValue:forKey:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -49,7 +49,7 @@
     @try {
         [self miKVCSetValue:value forKeyPath:keyPath];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_KVO crashDes:@"(NSObject)[setValue:forKeyPath:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -58,7 +58,7 @@
     @try {
         [self miKVCSetValuesForKeysWithDictionary:keyedValues];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_KVO crashDes:@"(NSObject)[setValuesForKeysWithDictionary:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -67,7 +67,7 @@
     @try {
         [self miKVCSetValue:value forUndefinedKey:key];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_KVO crashDes:@"(NSObject)[setValue:forUndefinedKey:] crash , ignore this method operation"];
     } @finally {}
 }
 

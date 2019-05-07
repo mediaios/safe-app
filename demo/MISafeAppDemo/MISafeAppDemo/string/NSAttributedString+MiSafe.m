@@ -54,7 +54,7 @@
     @try {
         instance = [self miInitWithString:str];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSConcreteAttributedString)[initWithString:] crash , return nil"];
         instance = nil;
     } @finally {
         return instance;
@@ -67,7 +67,7 @@
     @try {
         instance = [self miInitMutaASWithString:str];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSConcreteMutableAttributedString)[initWithString:] crash , return nil"];
         instance = nil;
     } @finally {
         return instance;
@@ -80,7 +80,7 @@
     @try {
         instance = [self miInitMutaASWithString:str attributes:attrs];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSConcreteAttributedString)[initWithString:attributes:] crash , return nil"];
         instance = nil;
     } @finally {
         return instance;
@@ -92,7 +92,7 @@
     @try {
         [self miReplaceCharactersInRange:range withString:str];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSConcreteAttributedString)[replaceCharactersInRange:withString:] crash , ignore this method operation"];
     } @finally {}
     
 }
@@ -103,7 +103,7 @@
     @try{
         [self miSetAttributes:attrs range:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSConcreteAttributedString)[setAttributes:range:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -112,7 +112,8 @@
     @try{
         [self miAddAttribute:name value:value range:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSConcreteAttributedString)[addAttribute:value:range:] crash , ignore this method operation"];
+        
     } @finally {}
 }
 
@@ -121,7 +122,7 @@
     @try{
         [self miAddAttributes:attrs range:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSConcreteAttributedString)[addAttributes:range:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -130,7 +131,7 @@
     @try{
         [self miRemoveAttribute:name range:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSConcreteAttributedString)[removeAttribute:range:] crash , ignore this method operation"];
     } @finally {}
     
 }
@@ -140,7 +141,7 @@
     @try{
         [self miReplaceCharactersInRange:range withAttributedString:attrString];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSConcreteAttributedString)[replaceCharactersInRange:withAttributedString:] crash , ignore this method operation"];
     } @finally {}
 }
 

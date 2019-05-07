@@ -42,7 +42,7 @@
         return;
     }
     NSException *exception = [NSException exceptionWithName:@"MINSUserDefaultsException" reason:@"[setObject:forKey:], key is nil" userInfo:@{@"errorInfo":@"setObject:forKey error"}];
-    [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSUserDefaults crashDes:@"[setObject:forKey:], key is nil"];
 }
 
 - (nullable id)miObjectForKey:(NSString *)defaultName
@@ -51,7 +51,7 @@
         return [self miObjectForKey:defaultName];
     }
     NSException *exception = [NSException exceptionWithName:@"MINSUserDefaultsException" reason:@"[objectForKey:], key is nil" userInfo:@{@"errorInfo":@"objectForKey: error"}];
-    [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSUserDefaults crashDes:@"[objectForKey:], key is nil,return nil"];
     return nil;
     
 }
@@ -63,7 +63,7 @@
     }
     NSInteger obj=0;
     NSException *exception = [NSException exceptionWithName:@"MINSUserDefaultsException" reason:@"[integerForKey:], key is nil" userInfo:@{@"errorInfo":@"integerForKey: error"}];
-    [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSUserDefaults crashDes:@"[integerForKey:], key is nil,return 0"];
     return obj;
 }
 
@@ -72,8 +72,8 @@
     if (defaultName) {
         return [self miBoolForKey:defaultName];
     }
-    NSException *exception = [NSException exceptionWithName:@"MINSUserDefaultsException" reason:@"[miBoolForKey:], key is nil" userInfo:@{@"errorInfo":@"[miBoolForKey:] error"}];
-    [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+    NSException *exception = [NSException exceptionWithName:@"MINSUserDefaultsException" reason:@"[boolForKey:], key is nil" userInfo:@{@"errorInfo":@"[miBoolForKey:] error"}];
+    [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSUserDefaults crashDes:@"[boolForKey:], key is nil,return NO"];
     return NO;
     
 }

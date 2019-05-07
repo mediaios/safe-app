@@ -30,9 +30,6 @@
         [self miSwizzleInstanceMethod:mutaSetClass
                              swizzSel:@selector(removeObject:)
                         toSwizzledSel:@selector(miSetRemoveObject:)];
-        
-        
-        
     });
 }
 
@@ -46,7 +43,6 @@
     } @catch (NSException *exception) {
         NSInteger newObjsIndex = 0;
         id   newObjects[cnt];
-        
         for (int i = 0; i < cnt; i++) {
             if (objects[i] != nil) {
                 newObjects[newObjsIndex] = objects[i];
@@ -54,7 +50,7 @@
             }
         }
         instance = [self miSetInitWithObjects:newObjects count:newObjsIndex];
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSSet crashDes:@"(__NSPlaceholderSet)[initWithObjects:count:] crash , remove nil elements"];
     } @finally {
         return instance;
     }
@@ -66,17 +62,16 @@
     @try {
         [self miSetAddObject:object];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSSet crashDes:@"(__NSSetM)[addObject:] crash , ignore this method operation"];
     } @finally {}
 }
 
 - (void)miSetRemoveObject:(id)object
 {
-    
     @try {
         [self miSetRemoveObject:object];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSSet crashDes:@"(__NSSetM)[removeObject:] crash , ignore this method operation"];
     } @finally {
         
     }

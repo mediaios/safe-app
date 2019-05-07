@@ -95,7 +95,7 @@
     @try {
         [self miForwardInvocation:anInvocation];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_UnRecognizedSel crashDes:@"(NSObject)[forwardInvocation:] crash , ignore this method operation"];
     } @finally {}
 }
 

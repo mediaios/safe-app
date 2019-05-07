@@ -127,7 +127,7 @@
     @try {
         array = [self miInitWithObjects:objects count:cnt];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_InitArrayRemoveNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSPlaceholderArray)[initWithObjects:count:] crash , remove nil elements"];
         BOOL hasNilObject = NO;
         for (NSUInteger i = 0; i < cnt; i++) {
             if ([objects[i] isKindOfClass:[NSArray class]]) {
@@ -153,26 +153,13 @@
 }
 
 #pragma mark - 从数组中取元素
-- (id)miEmptyObjAtIndex:(NSUInteger)index
-{
-    
-    id ele = nil;
-    @try {
-        ele = [self miEmptyObjAtIndex:index];
-    } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
-    } @finally {
-        return ele;
-    }
-}
-
 - (id)miArr0ObjectAtIndex:(NSUInteger)index
 {
     id ele = nil;
     @try {
         ele = [self miArr0ObjectAtIndex:index];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArray0)[objectAtIndex:] crash , return nil"];
     } @finally {
         return ele;
     }
@@ -184,7 +171,7 @@
     @try {
         ele = [self miArrOneObjectAtIndex:index];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSSingleObjectArrayI)[objectAtIndex:] crash , return nil"];
     } @finally {
         return ele;
     }
@@ -196,7 +183,7 @@
     @try {
         ele = [self miArrObjectAtIndex:index];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayI)[objectAtIndex:] crash , return nil"];
     } @finally {
         return ele;
     }
@@ -204,17 +191,15 @@
 
 - (id)miMutaArrObjectAtIndex:(NSUInteger)index
 {
-    
     id ele = nil;
     @try {
         ele = [self miMutaArrObjectAtIndex:index];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayM)[objectAtIndex:] crash , return nil"];
     } @finally {
         return ele;
     }
 }
-
 
 - (id)miArrObjectAtIndexSubscript:(NSUInteger)index
 {
@@ -222,7 +207,7 @@
     @try {
         ele = [self miArrObjectAtIndexSubscript:index];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayI)[objectAtIndexedSubscript:] crash , return nil"];
     } @finally {
         return ele;
     }
@@ -230,12 +215,11 @@
 
 - (id)miMutaArrObjectAtIndexSubscript:(NSUInteger)index
 {
-    
     id ele = nil;
     @try {
         ele = [self miMutaArrObjectAtIndex:index];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayM)[objectAtIndexedSubscript:] crash , return nil"];
     } @finally {
         return ele;
     }
@@ -246,7 +230,7 @@
     @try {
         [self miGetNSArrayObjects:objects range:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(NSArray)[getObjects:range:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -255,7 +239,7 @@
     @try {
         [self miGetOneArrayObjects:objects range:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSSingleObjectArrayI)[getObjects:range:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -264,7 +248,7 @@
     @try {
         [self miGetArrayIObjects:objects range:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayI)[getObjects:range:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -273,7 +257,7 @@
     @try {
         [self miGetMutaArrayObjects:objects range:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayM)[getObjects:range:] crash , ignore this method operation"];
     } @finally {}
 }
 #pragma mark - 添加元素
@@ -282,7 +266,7 @@
     @try {
         [self miSetObject:obj atIndexedSubscript:idx];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayM)[setObject:atIndexedSubscript:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -292,9 +276,8 @@
     @try {
         [self miMutaInsertObject:object atIndex:index];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayM)[insertObject:atIndex:] crash , ignore this method operation"];
     } @finally {}
-    
 }
 
 #pragma mark - 删除元素
@@ -303,7 +286,7 @@
     @try {
         [self miRemoveObjectsInRange:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+         [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayM)[removeObjectsInRange:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -312,7 +295,7 @@
     @try {
          [self miRemoveObject:anObject inRange:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayM)[removeObject:inRange:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -321,7 +304,7 @@
     @try {
         [self miRemoveObjectIdenticalTo:anObject inRange:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayM)[removeObjectIdenticalTo:inRange:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -331,7 +314,7 @@
     @try {
         [self miReplaceObjectAtIndex:index withObject:anObject];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayM)[replaceObjectAtIndex:withObject:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -340,7 +323,7 @@
     @try {
         [self miReplaceObjectsInRange:range withObjectsFromArray:otherArray range:otherRange];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayM)[replaceObjectsInRange:withObjectsFromArray:range:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -350,7 +333,7 @@
     @try {
         [self miReplaceObjectsInRange:range withObjectsFromArray:otherArray];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayM)[replaceObjectsInRange:withObjectsFromArray:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -360,7 +343,7 @@
     @try {
         [self miExchangeObjectAtIndex:idx1 withObjectAtIndex:idx2];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayM)[exchangeObjectAtIndex:withObjectAtIndex:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -370,7 +353,7 @@
     @try {
        iV = [self miIntegerValue];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSArray crashDes:@"(__NSArrayM)[integerValue] crash , return 0"];
     } @finally {
         return iV;
     }

@@ -78,7 +78,7 @@
     @try {
         obj = [self miZeroDataSubdataWithRange:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSData crashDes:@"(_NSZeroData)[subdataWithRange:] crash , return nil"];
     } @finally {
         return obj;
     }
@@ -90,7 +90,7 @@
     @try {
         rg = [self miZeroDataRangeOfData:dataToFind options:mask range:searchRange];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSData crashDes:@"(_NSZeroData)[rangeOfData:options:range:] crash , return (0,0)"];
     } @finally {
         return rg;
     }
@@ -102,7 +102,7 @@
     @try {
         obj = [self miConcreteDataSubdataWithRange:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSData crashDes:@"(NSConcreteData)[subdataWithRange:] crash , return nil"];
     } @finally {
         return obj;
     }
@@ -114,7 +114,7 @@
     @try {
         rg = [self miConcreteDataRangeOfData:dataToFind options:mask range:searchRange];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSData crashDes:@"(NSConcreteData)[rangeOfData:options:range:] crash , return (0,0)"];
     } @finally {
         return rg;
     }
@@ -126,7 +126,7 @@
     @try {
         obj = [self miInlineDataSubdataWithRange:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSData crashDes:@"(_NSInlineData)[subdataWithRange:] crash , return nil"];
     } @finally {
         return obj;
     }
@@ -138,7 +138,7 @@
     @try {
         rg = [self miInlineDataRangeOfData:dataToFind options:mask range:searchRange];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSData crashDes:@"(_NSInlineData)[rangeOfData:options:range:] crash , return (0,0)"];
     } @finally {
         return rg;
     }
@@ -150,7 +150,7 @@
     @try {
         obj = [self miCfDataSubdataWithRange:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSData crashDes:@"(__NSCFData)[subdataWithRange:] crash , return nil"];
     } @finally {
         return obj;
     }
@@ -162,7 +162,7 @@
     @try {
         rg = [self miCfDataRangeOfData:dataToFind options:mask range:searchRange];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSData crashDes:@"(__NSCFData)[rangeOfData:options:range:] crash , return (0,0)"];
     } @finally {
         return rg;
     }
@@ -175,7 +175,7 @@
     @try {
         obj = [self miMutaDataSubdataWithRange:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSData crashDes:@"(NSConcreteMutableData)[subdataWithRange:] crash , return nil"];
     } @finally {
         return obj;
     }
@@ -187,7 +187,7 @@
     @try {
         rg = [self miMutaDataRangeOfData:dataToFind options:mask range:searchRange];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSData crashDes:@"(NSConcreteMutableData)[rangeOfData:options:range:] crash , return nil"];
     } @finally {
         return rg;
     }
@@ -198,7 +198,7 @@
     @try {
         [self miMutaDataResetBytesInRange:range];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSData crashDes:@"(NSConcreteMutableData)[resetBytesInRange:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -209,11 +209,11 @@
             [self miMutaDataReplaceBytesInRange:range withBytes:bytes];
         }else{
             NSException *exception = [NSException exceptionWithName:@"MINSMutaDataException" reason:@"[replaceBytesInRange:withBytes:], key is nil" userInfo:@{@"errorInfo":@"[replaceBytesInRange:withBytes:] error"}];
-            [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+            [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSData crashDes:@"(NSConcreteMutableData)[replaceBytesInRange:withBytes:] crash , ignore this method operation"];
         }
         
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSData crashDes:@"(NSConcreteMutableData)[replaceBytesInRange:withBytes:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -222,7 +222,7 @@
     @try {
         [self miMutaDataReplaceBytesInRange:range withBytes:replacementBytes length:replacementLength];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSData crashDes:@"(NSConcreteMutableData)[replaceBytesInRange:withBytes:length:] crash , ignore this method operation"];
     } @finally {}
 }
 

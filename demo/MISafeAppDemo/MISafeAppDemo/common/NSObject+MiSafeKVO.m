@@ -45,12 +45,11 @@
         if (observer && keyPath && ![self kvoOperationEffective:keyPath observer:observer]) {
             [self miKVOAddObserver:observer forKeyPath:keyPath options:options context:context];
         }else{
-            NSException *exception = [NSException exceptionWithName:@"KVOException" reason:@"param error" userInfo:@{@"errorInfo":@"add KVO observer error"}];
-            [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
-            NSLog(@"添加监听时，参数非法");
+            NSException *exception = [NSException exceptionWithName:@"MIKVOException" reason:@"param error" userInfo:@{@"errorInfo":@"add KVO observer error"}];
+            [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_KVO crashDes:@"(NSObject)[addObserver:forKeyPath:options:context:] crash , ignore this method operation"];
         }
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_KVO crashDes:@"(NSObject)[addObserver:forKeyPath:options:context:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -61,11 +60,10 @@
             [self miKVORemoveObserver:observer forKeyPath:keyPath];
         }else{
             NSException *exception = [NSException exceptionWithName:@"KVOException" reason:@"param error" userInfo:@{@"errorInfo":@"remove KVO observer error"}];
-            [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
-            NSLog(@"移除监听时，参数非法");
+            [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_KVO crashDes:@"(NSObject)[removeObserver:forKeyPath:] crash , ignore this method operation"];
         }
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_KVO crashDes:@"(NSObject)[removeObserver:forKeyPath:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -76,11 +74,10 @@
             [self miKVORemoveObserver:observer forKeyPath:keyPath context:context];
         }else{
             NSException *exception = [NSException exceptionWithName:@"KVOException" reason:@"param error" userInfo:@{@"errorInfo":@"remove KVO observer error"}];
-            [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
-            NSLog(@"移除监听时，参数非法");
+            [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_KVO crashDes:@"(NSObject)[removeObserver:forKeyPath:context:] crash , ignore this method operation"];
         }
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_KVO crashDes:@"(NSObject)[removeObserver:forKeyPath:context:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -89,7 +86,7 @@
     @try {
         [self miKVOObserveValueForKeyPath:keyPath ofObject:object change:change context:context];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_KVO crashDes:@"(NSObject)[observeValueForKeyPath:ofObject:change:context:] crash , ignore this method operation"];
     } @finally {}
 }
 

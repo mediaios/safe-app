@@ -30,7 +30,7 @@
 ////    NSMutableDictionary *mdict1 = [[NSMutableDictionary alloc] init];
 ////    [mdict1 setObject:@1 forKey:@"key1"];
     
-    
+    return;
     /*** NSString analysis ***/
     NSString *str1 = [NSString alloc];        // NSPlaceholderString
     NSString *str2 = [[NSString alloc] init];  // __NSCFConstantString : 不可变字符串，可节省内存，提高性能
@@ -44,8 +44,8 @@
     
     
     NSLog(@"test");
-    return;
-    [self test_NSDictionary];
+
+    [self test_NSAttributedString];
     
 }
 

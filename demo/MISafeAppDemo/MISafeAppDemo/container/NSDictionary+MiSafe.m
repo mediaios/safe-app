@@ -76,7 +76,7 @@
     @try {
         dict = [self miInitWithObjects:objects forKeys:keys];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_InitDictRemoveNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSDictionary crashDes:@"(__NSPlaceholderDictionary)[initWithObjects:forKeys:] crash , remove nil elements"];
         if (objects && keys) {
             NSUInteger count = objects.count >= keys.count ? keys.count : objects.count;
             NSMutableArray *new_objs = [NSMutableArray array];
@@ -100,7 +100,7 @@
     @try {
         dict = [self miInitWithObjects:objects forKeys:keys count:cnt];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_InitDictRemoveNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSDictionary crashDes:@"(__NSPlaceholderDictionary)[initWithObjects:forKeys:count:] crash , remove nil elements"];
         id tempObjects[cnt];
         id tempKeys[cnt];
         NSUInteger validCount = 0;
@@ -130,7 +130,7 @@
         instance = [self miDictionaryWithObjects:objects forKeys:keys count:cnt];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_InitArrayRemoveNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSDictionary crashDes:@"(__NSPlaceholderDictionary)[dictionaryWithObjects:forKeys:count:] crash , remove nil elements"];
         NSUInteger index = 0;
         id  _Nonnull __unsafe_unretained newObjects[cnt];
         id  _Nonnull __unsafe_unretained newkeys[cnt];
@@ -156,7 +156,7 @@
     @try {
         instance = [self miOneEleDictValueForUndefinedKey:key];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSDictionary crashDes:@"(__NSSingleEntryDictionaryI)[valueForUndefinedKey:] crash , return nil"];
     } @finally {
         return instance;
     }
@@ -167,26 +167,32 @@
     @try {
         [self miSetObject:anObject forKey:aKey];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSDictionary crashDes:@"(__NSDictionaryM)[setObject:forKey:] crash , ignore this method operation"];
     } @finally {}
 }
 
 - (void)miFrozenDictSetObject:(id)anObject forKey:(id <NSCopying>)aKey
 {
-    @try {
-
-    } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
-    } @finally {}
+//    @try {
+////        [self miFrozenDictSetObject:anObject forKey:aKey];
+//    } @catch (NSException *exception) {
+//        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSDictionary crashDes:@"(__NSFrozenDictionaryM)[setObject:forKey:] crash , ignore this method operation"];
+//    } @finally {}
+    
+    NSException *exception = [NSException exceptionWithName:@"MINSDictionaryException" reason:@"[setObject:forKey:], a copy dict be set object" userInfo:@{@"errorInfo":@"setObject:forKey: a copy dict be set object"}];
+    [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSDictionary crashDes:@"(__NSFrozenDictionaryM)[setObject:forKey:] crash , ignore this method operation"];
 }
 
 - (void)miSetFrozenDictSetObject:(id)anObject forKeyedSubscript:(id <NSCopying>)aKey
 {
-    @try {
-        
-    } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
-    } @finally {}
+//    @try {
+////        [self miSetFrozenDictSetObject:anObject forKeyedSubscript:aKey];
+//    } @catch (NSException *exception) {
+//        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSDictionary crashDes:@"(__NSFrozenDictionaryM)[setObject:forKeyedSubscript:] crash , ignore this method operation"];
+//    } @finally {}
+    
+    NSException *exception = [NSException exceptionWithName:@"MINSDictionaryException" reason:@"[setObject:forKeyedSubscript:], a copy dict be set object" userInfo:@{@"errorInfo":@"setObject:forKey: a copy dict be set object"}];
+    [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSDictionary crashDes:@"(__NSFrozenDictionaryM)[setObject:forKeyedSubscript:] crash , ignore this method operation"];
 }
 
 - (void)miSetObject:(id)obj forKeyedSubscript:(id <NSCopying>)key
@@ -194,9 +200,8 @@
     @try {
         [self miSetObject:obj forKeyedSubscript:key];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSDictionary crashDes:@"(__NSCFDictionary)[setObject:forKeyedSubscript:] crash , ignore this method operation"];
     } @finally {}
-    
 }
 
 - (void)miRemoveObjectForKey:(id)key
@@ -204,7 +209,7 @@
     @try {
         [self miRemoveObjectForKey:key];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSDictionary crashDes:@"(__NSCFDictionary)[removeObjectForKey:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -213,7 +218,7 @@
     @try {
         [self miSetCFDictObject:anObject forKey:aKey];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSDictionary crashDes:@"(__NSCFDictionary)[setObject:forKey:] crash , ignore this method operation"];
     } @finally {}
 }
 
@@ -222,7 +227,7 @@
     @try {
         [self miRemoveCFDictObjectForKey:key];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSDictionary crashDes:@"(__NSCFDictionary)[removeObjectForKey:] crash , ignore this method operation"];
     } @finally {}
     
 }

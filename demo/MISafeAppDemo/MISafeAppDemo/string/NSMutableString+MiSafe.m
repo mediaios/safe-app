@@ -83,7 +83,7 @@
         instance = [self miInitWithString:aString];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSPlaceholderMutableString)[initWithString:] crash , return nil"];
     }
     @finally {
         return instance;
@@ -98,7 +98,7 @@
         has = [self miCFStrHasPrefix:str];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(__NSCFString)[hasPrefix:] crash , return NO"];
     }
     @finally {
         return has;
@@ -112,7 +112,7 @@
         has = [self miCFStrHasSuffix:str];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(__NSCFString)[hasSuffix:] crash , return NO"];
     }
     @finally {
         return has;
@@ -120,14 +120,12 @@
 }
 
 - (NSString *)miCFStrSubstringFromIndex:(NSUInteger)from {
-    
     NSString *subString = nil;
     @try {
         subString = [self miCFStrSubstringFromIndex:from];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
-        subString = nil;
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(__NSCFString)[substringFromIndex:] crash , return nil"];
     }
     @finally {
         return subString;
@@ -135,15 +133,12 @@
 }
 
 - (NSString *)miCFStrSubstringToIndex:(NSUInteger)index {
-    
     NSString *subString = nil;
-    
     @try {
         subString = [self miCFStrSubstringToIndex:index];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
-        subString = nil;
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(__NSCFString)[substringToIndex:] crash , return nil"];
     }
     @finally {
         return subString;
@@ -157,8 +152,7 @@
         subString = [self miCFStrSubstringWithRange:range];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
-        subString = nil;
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(__NSCFString)[substringWithRange:] crash , return nil"];
     }
     @finally {
         return subString;
@@ -172,7 +166,7 @@
         characteristic = [self miCFStrCharacterAtIndex:index];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(__NSCFString)[characterAtIndex:] crash , return nil"];
     }
     @finally {
         return characteristic;
@@ -181,15 +175,13 @@
 
 
 - (NSString *)miCFStrStringByReplacingOccurrencesOfString:(NSString *)target withString:(NSString *)replacement options:(NSStringCompareOptions)options range:(NSRange)searchRange {
-    
     NSString *newStr = nil;
-    
     @try {
         newStr = [self miCFStrStringByReplacingOccurrencesOfString:target withString:replacement options:options range:searchRange];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
-        newStr = nil;
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(__NSCFString)[stringByReplacingOccurrencesOfString:withString:options:range:] crash , return nil"];
+
     }
     @finally {
         return newStr;
@@ -204,7 +196,7 @@
         newStr = [self miCFStrStringByReplacingCharactersInRange:range withString:replacement];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(__NSCFString)[stringByReplacingCharactersInRange:withString:] crash , return nil"];
         newStr = nil;
     }
     @finally {
@@ -213,25 +205,13 @@
 }
 
 #pragma mark - NSPlaceholderMutableString
-//- (instancetype)miInitWithString:(NSString *)aString
-//{
-//    id str = nil;
-//    @try {
-//        str = [self miInitWithString:aString];
-//    } @catch (NSException *exception) {
-//        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
-//    } @finally {
-//        return str;
-//    }
-//}
-
 - (instancetype)miInitWithUTF8String:(const char *)nullTerminatedCString
 {
     id str = nil;
     @try {
         str = [self miInitWithUTF8String:nullTerminatedCString];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSPlaceholderMutableString)[initWithUTF8String:] crash , return nil"];
     } @finally {
         return str;
     }
@@ -243,7 +223,7 @@
     @try {
         str = [self miInitWithCString:nullTerminatedCString encoding:encoding];
     } @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_ReturnNil];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSPlaceholderMutableString)[initWithCString:encoding:] crash , return nil"];
     } @finally {
         return str;
     }
@@ -257,7 +237,7 @@
         [self miReplaceCharactersInRange:range withString:aString];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSMutableString)[replaceCharactersInRange:withString:] crash , ignore this method operation"];
     }
     @finally {
     }
@@ -271,7 +251,7 @@
         index= [self miReplaceOccurrencesOfString:target withString:replacement options:options range:searchRange];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSMutableString)[replaceOccurrencesOfString:withString:options:range:] crash , ignore this method operation"];
     }
     @finally {
         return index;
@@ -286,7 +266,7 @@
         [self miInsertString:aString atIndex:loc];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSMutableString)[insertString:atIndex:] crash , ignore this method operation"];
     }
     @finally {
     }
@@ -299,7 +279,7 @@
         [self miDeleteCharactersInRange:range];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSMutableString)[deleteCharactersInRange:] crash , ignore this method operation"];
     }
     @finally {
     }
@@ -312,7 +292,7 @@
         [self miAppendString:aString];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSMutableString)[appendString:] crash , ignore this method operation"];
     }
     @finally {
     }
@@ -324,7 +304,7 @@
         [self miSetString:aString];
     }
     @catch (NSException *exception) {
-        [MiSafeApp showCrashInfoWithException:exception avoidCrashType:MiSafeAvoidCrashType_Ignore];
+        [MiSafeApp showCrashInfoWithException:exception crashType:MiSafeCrashType_NSString crashDes:@"(NSMutableString)[setString:] crash , ignore this method operation"];
     }
     @finally {
     }

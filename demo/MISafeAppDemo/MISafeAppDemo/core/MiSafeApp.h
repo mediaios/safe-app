@@ -19,24 +19,25 @@
 #define AvoidCrashNotification @"AvoidCrashNotification"
 #define AvoidCrashIsiOS(version) ([[UIDevice currentDevice].systemVersion floatValue] >= version)
 
-
-//user can ignore below define
-#define AvoidCrashDefaultReturnNil      @"MiSafeApp default is to return nil to avoid crash."
-#define AvoidCrashInitArrayRemoveNil    @"MiSafeApp default is to remove nil obj when instance array."
-#define AvoidCrashInitDictRemoveNil    @"MiSafeApp default is to remove nil obj when instance dict."
-#define AvoidCrashDefaultIgnore         @"MiSafeApp default is to ignore this operation to avoid crash."
-
 #define AvoidCrashSeparator         @"================================================================"
 #define AvoidCrashSeparatorWithFlag @"========================AvoidCrash Log=========================="
 
 
-typedef enum MiSafeAvoidCrashType
+typedef enum MiSafeCrashType
 {
-    MiSafeAvoidCrashType_ReturnNil = 0,
-    MiSafeAvoidCrashType_InitArrayRemoveNil,
-    MiSafeAvoidCrashType_InitDictRemoveNil,
-    MiSafeAvoidCrashType_Ignore
-}MiSafeAvoidCrashType;
+    MiSafeCrashType_NSString = 0,
+    MiSafeCrashType_NSArray,
+    MiSafeCrashType_NSDictionary,
+    MiSafeCrashType_NSSet,
+    MiSafeCrashType_NSData,
+    MiSafeCrashType_NSCache,
+    MiSafeCrashType_NSNotification,
+    MiSafeCrashType_KVO,
+    MiSafeCrashType_KVC,
+    MiSafeCrashType_NSTimer,
+    MiSafeCrashType_NSUserDefaults,
+    MiSafeCrashType_UnRecognizedSel
+}MiSafeCrashType;
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -44,7 +45,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MiSafeApp : NSObject
 
 
-+ (void)showCrashInfoWithException:(NSException *)exception avoidCrashType:(MiSafeAvoidCrashType)acType;
++ (void)showCrashInfoWithException:(NSException *)exception
+                         crashType:(MiSafeCrashType)cType
+                          crashDes:(NSString *)cDes;
 
 + (void)openKVCSafe;
 
