@@ -12,7 +12,7 @@
 		AA633A9E2282852F0083DB8F /* MiSafeApp.h in Headers */ = {isa = PBXBuildFile; fileRef = AA633A992282852F0083DB8F /* MiSafeApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA633A9F2282852F0083DB8F /* MiSafeApp.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633A9A2282852F0083DB8F /* MiSafeApp.m */; };
 		AA633AA02282852F0083DB8F /* MiSafeModel.h in Headers */ = {isa = PBXBuildFile; fileRef = AA633A9B2282852F0083DB8F /* MiSafeModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA633AA12282852F0083DB8F /* MiSafeAppHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AA633A9C2282852F0083DB8F /* MiSafeAppHelper.h */; };
+		AA633AA12282852F0083DB8F /* MiSafeAppHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AA633A9C2282852F0083DB8F /* MiSafeAppHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA633AA22282852F0083DB8F /* MiSafeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633A9D2282852F0083DB8F /* MiSafeModel.m */; };
 		AA633AAA228285630083DB8F /* NSString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AA4228285630083DB8F /* NSString+MiSafe.m */; };
 		AA633AAB228285630083DB8F /* NSMutableString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AA5228285630083DB8F /* NSMutableString+MiSafe.m */; };
@@ -136,9 +136,9 @@
 			children = (
 				AA633A992282852F0083DB8F /* MiSafeApp.h */,
 				AA633A9A2282852F0083DB8F /* MiSafeApp.m */,
-				AA633A9C2282852F0083DB8F /* MiSafeAppHelper.h */,
 				AA633A9B2282852F0083DB8F /* MiSafeModel.h */,
 				AA633A9D2282852F0083DB8F /* MiSafeModel.m */,
+				AA633A9C2282852F0083DB8F /* MiSafeAppHelper.h */,
 			);
 			path = public;
 			sourceTree = "<group>";
@@ -237,6 +237,7 @@
 			files = (
 				AA633A9E2282852F0083DB8F /* MiSafeApp.h in Headers */,
 				AA633AA02282852F0083DB8F /* MiSafeModel.h in Headers */,
+				AA633AA12282852F0083DB8F /* MiSafeAppHelper.h in Headers */,
 				AA633AAD228285630083DB8F /* NSAttributedString+MiSafe.h in Headers */,
 				AA633ACB228285BC0083DB8F /* NSDictionary+MiSafe.h in Headers */,
 				AA633AD1228285BC0083DB8F /* NSCache+MiSafe.h in Headers */,
@@ -249,7 +250,6 @@
 				AA633ABC2282858F0083DB8F /* NSNotificationCenter+MiSafe.h in Headers */,
 				AA633ACD228285BC0083DB8F /* NSOrderedSet+MiSafe.h in Headers */,
 				AA633AD2228285BC0083DB8F /* NSData+MiSafe.h in Headers */,
-				AA633AA12282852F0083DB8F /* MiSafeAppHelper.h in Headers */,
 				AA633AAF228285630083DB8F /* NSString+MiSafe.h in Headers */,
 				AA633AD0228285BC0083DB8F /* NSSet+MiSafe.h in Headers */,
 				AA633ABF2282858F0083DB8F /* NSTimer+MiSafe.h in Headers */,

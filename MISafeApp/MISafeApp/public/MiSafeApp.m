@@ -7,7 +7,6 @@
 //
 
 #import "MiSafeApp.h"
-#import "MiSafeModel.h"
 #import "NSString+MiSafe.h"
 #import "NSAttributedString+MiSafe.h"
 #import "NSMutableString+MiSafe.h"
@@ -35,13 +34,22 @@ static MiSafeLogLevel gLoglevel = MiSafeLogLevel_None;
 
 @implementation MiSafeApp
 
+static MiSafeApp *msApp_instance = nil;
++ (instancetype)shareInstance
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        msApp_instance = [[MiSafeApp alloc] init];
+    });
+    return msApp_instance;
+}
+
 + (void)setLogLevel:(MiSafeLogLevel)logLevel
 {
     if (gLoglevel != logLevel) {
         gLoglevel = logLevel;
     }
 }
-
 
 + (void)openAvoidCrashWithType:(MiSafeCrashType)cType
 {
@@ -152,7 +160,6 @@ static MiSafeLogLevel gLoglevel = MiSafeLogLevel_None;
     }
 }
 
-
 /**
  *  获取堆栈主要崩溃精简化的信息<根据正则表达式匹配出来>
  *
@@ -255,6 +262,10 @@ static MiSafeLogLevel gLoglevel = MiSafeLogLevel_None;
     }
     MiSafeCrashInfo *crashInfo = [MiSafeCrashInfo instanceWithName:exception.name reason:exception.reason location:mainCallStackSymbolMsg avoidCrashDes:crashDes callSymbolsStack:callStackSymbolsArr];
     MiSafeLog(crashInfo);
+    
+    // 往上层回显crash日志信息
+    MiSafeApp *miSafeApp = [MiSafeApp shareInstance];
+    [miSafeApp.delegate miSafeApp:miSafeApp crashInfo:crashInfo];
 }
 
 @end

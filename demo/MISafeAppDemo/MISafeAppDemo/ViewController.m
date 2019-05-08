@@ -8,9 +8,10 @@
 
 #import "ViewController.h"
 #import <objc/runtime.h>
+#import "MiSafeApp.h"
 
 
-@interface ViewController ()
+@interface ViewController ()<MiSafeAppDelegate>
 
 @end
 
@@ -18,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [MiSafeApp shareInstance].delegate =  self;
+    
     // Do any additional setup after loading the view, typically from a nib.
    /*** NSDictionary analysis  ***/
 //    NSDictionary *dict1 = [NSDictionary alloc];
@@ -113,6 +116,12 @@
     dic1[@"d"]=value;
 }
 
-
+#pragma mark -MiSafeAppDelegate
+- (void)miSafeApp:(MiSafeApp *)msApp crashInfo:(MiSafeCrashInfo *)msCrashInfo
+{
+    if (msCrashInfo) {
+        NSLog(@"%@",msCrashInfo);
+    }
+}
 
 @end
