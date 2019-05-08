@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7892D935272824519F1C111A /* libPods-MISafeAppDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F83569551E9FCAEBC4C214D /* libPods-MISafeAppDemo.a */; };
 		AA0BB959227045B30057DD77 /* StringVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB958227045B30057DD77 /* StringVC.m */; };
 		AA0BB95F2271978D0057DD77 /* ArrayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB95E2271978D0057DD77 /* ArrayVC.m */; };
 		AA0BB9622271979F0057DD77 /* DictVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB9612271979F0057DD77 /* DictVC.m */; };
@@ -14,23 +15,6 @@
 		AA0BB9692272B1A30057DD77 /* TestKVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB9682272B1A30057DD77 /* TestKVCViewController.m */; };
 		AA0BB96C2272B5FC0057DD77 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB96B2272B5FC0057DD77 /* Car.m */; };
 		AA0BB9732272F4080057DD77 /* PersonObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB9722272F4080057DD77 /* PersonObserver.m */; };
-		AA633ADC22829AB20083DB8F /* MiSafeApp.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AD822829AB10083DB8F /* MiSafeApp.m */; };
-		AA633ADD22829AB20083DB8F /* MiSafeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633ADB22829AB10083DB8F /* MiSafeModel.m */; };
-		AA633AE422829AC80083DB8F /* NSString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633ADE22829AC80083DB8F /* NSString+MiSafe.m */; };
-		AA633AE522829AC80083DB8F /* NSMutableString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633ADF22829AC80083DB8F /* NSMutableString+MiSafe.m */; };
-		AA633AE622829AC80083DB8F /* NSAttributedString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AE022829AC80083DB8F /* NSAttributedString+MiSafe.m */; };
-		AA633AED22829AD30083DB8F /* NSObject+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AE722829AD20083DB8F /* NSObject+MiSafe.m */; };
-		AA633AEE22829AD30083DB8F /* NSObject+MiSafeKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AE922829AD20083DB8F /* NSObject+MiSafeKVC.m */; };
-		AA633AEF22829AD30083DB8F /* NSObject+MiSafeKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AEB22829AD20083DB8F /* NSObject+MiSafeKVO.m */; };
-		AA633AF622829AE00083DB8F /* NSUserDefaults+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AF022829ADF0083DB8F /* NSUserDefaults+MiSafe.m */; };
-		AA633AF722829AE00083DB8F /* NSNotificationCenter+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AF222829AE00083DB8F /* NSNotificationCenter+MiSafe.m */; };
-		AA633AF822829AE00083DB8F /* NSTimer+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AF422829AE00083DB8F /* NSTimer+MiSafe.m */; };
-		AA633B0522829AEB0083DB8F /* NSDictionary+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AF922829AEA0083DB8F /* NSDictionary+MiSafe.m */; };
-		AA633B0622829AEB0083DB8F /* NSOrderedSet+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AFB22829AEA0083DB8F /* NSOrderedSet+MiSafe.m */; };
-		AA633B0722829AEB0083DB8F /* NSSet+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AFD22829AEA0083DB8F /* NSSet+MiSafe.m */; };
-		AA633B0822829AEB0083DB8F /* NSCache+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AFE22829AEA0083DB8F /* NSCache+MiSafe.m */; };
-		AA633B0922829AEB0083DB8F /* NSArray+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633B0322829AEB0083DB8F /* NSArray+MiSafe.m */; };
-		AA633B0A22829AEB0083DB8F /* NSData+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633B0422829AEB0083DB8F /* NSData+MiSafe.m */; };
 		AA7DF5FF2269DC2500C29D8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */; };
 		AA7DF6022269DC2500C29D8D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF6012269DC2500C29D8D /* ViewController.m */; };
 		AA7DF6052269DC2500C29D8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7DF6032269DC2500C29D8D /* Main.storyboard */; };
@@ -63,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		340A2CEB79C50E8C18A6FBBD /* Pods-MISafeAppDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MISafeAppDemo.debug.xcconfig"; path = "Target Support Files/Pods-MISafeAppDemo/Pods-MISafeAppDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		37D7F64AA75DFD93EE06A90C /* Pods-MISafeAppDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MISafeAppDemo.release.xcconfig"; path = "Target Support Files/Pods-MISafeAppDemo/Pods-MISafeAppDemo.release.xcconfig"; sourceTree = "<group>"; };
+		6F83569551E9FCAEBC4C214D /* libPods-MISafeAppDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MISafeAppDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0BB957227045B30057DD77 /* StringVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringVC.h; sourceTree = "<group>"; };
 		AA0BB958227045B30057DD77 /* StringVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringVC.m; sourceTree = "<group>"; };
 		AA0BB95D2271978D0057DD77 /* ArrayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrayVC.h; sourceTree = "<group>"; };
@@ -77,41 +64,6 @@
 		AA0BB96B2272B5FC0057DD77 /* Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		AA0BB9712272F4080057DD77 /* PersonObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonObserver.h; sourceTree = "<group>"; };
 		AA0BB9722272F4080057DD77 /* PersonObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonObserver.m; sourceTree = "<group>"; };
-		AA633AD722829AB10083DB8F /* MiSafeApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiSafeApp.h; path = ../../../../MISafeApp/MISafeApp/public/MiSafeApp.h; sourceTree = "<group>"; };
-		AA633AD822829AB10083DB8F /* MiSafeApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MiSafeApp.m; path = ../../../../MISafeApp/MISafeApp/public/MiSafeApp.m; sourceTree = "<group>"; };
-		AA633AD922829AB10083DB8F /* MiSafeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiSafeModel.h; path = ../../../../MISafeApp/MISafeApp/public/MiSafeModel.h; sourceTree = "<group>"; };
-		AA633ADA22829AB10083DB8F /* MiSafeAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiSafeAppHelper.h; path = ../../../../MISafeApp/MISafeApp/public/MiSafeAppHelper.h; sourceTree = "<group>"; };
-		AA633ADB22829AB10083DB8F /* MiSafeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MiSafeModel.m; path = ../../../../MISafeApp/MISafeApp/public/MiSafeModel.m; sourceTree = "<group>"; };
-		AA633ADE22829AC80083DB8F /* NSString+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/string/NSString+MiSafe.m"; sourceTree = "<group>"; };
-		AA633ADF22829AC80083DB8F /* NSMutableString+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableString+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/string/NSMutableString+MiSafe.m"; sourceTree = "<group>"; };
-		AA633AE022829AC80083DB8F /* NSAttributedString+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/string/NSAttributedString+MiSafe.m"; sourceTree = "<group>"; };
-		AA633AE122829AC80083DB8F /* NSAttributedString+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/string/NSAttributedString+MiSafe.h"; sourceTree = "<group>"; };
-		AA633AE222829AC80083DB8F /* NSMutableString+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableString+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/string/NSMutableString+MiSafe.h"; sourceTree = "<group>"; };
-		AA633AE322829AC80083DB8F /* NSString+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/string/NSString+MiSafe.h"; sourceTree = "<group>"; };
-		AA633AE722829AD20083DB8F /* NSObject+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/obj/NSObject+MiSafe.m"; sourceTree = "<group>"; };
-		AA633AE822829AD20083DB8F /* NSObject+MiSafeKVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+MiSafeKVC.h"; path = "../../../../MISafeApp/MISafeApp/obj/NSObject+MiSafeKVC.h"; sourceTree = "<group>"; };
-		AA633AE922829AD20083DB8F /* NSObject+MiSafeKVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MiSafeKVC.m"; path = "../../../../MISafeApp/MISafeApp/obj/NSObject+MiSafeKVC.m"; sourceTree = "<group>"; };
-		AA633AEA22829AD20083DB8F /* NSObject+MiSafeKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+MiSafeKVO.h"; path = "../../../../MISafeApp/MISafeApp/obj/NSObject+MiSafeKVO.h"; sourceTree = "<group>"; };
-		AA633AEB22829AD20083DB8F /* NSObject+MiSafeKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MiSafeKVO.m"; path = "../../../../MISafeApp/MISafeApp/obj/NSObject+MiSafeKVO.m"; sourceTree = "<group>"; };
-		AA633AEC22829AD20083DB8F /* NSObject+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/obj/NSObject+MiSafe.h"; sourceTree = "<group>"; };
-		AA633AF022829ADF0083DB8F /* NSUserDefaults+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/common/NSUserDefaults+MiSafe.m"; sourceTree = "<group>"; };
-		AA633AF122829ADF0083DB8F /* NSNotificationCenter+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/common/NSNotificationCenter+MiSafe.h"; sourceTree = "<group>"; };
-		AA633AF222829AE00083DB8F /* NSNotificationCenter+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/common/NSNotificationCenter+MiSafe.m"; sourceTree = "<group>"; };
-		AA633AF322829AE00083DB8F /* NSTimer+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSTimer+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/common/NSTimer+MiSafe.h"; sourceTree = "<group>"; };
-		AA633AF422829AE00083DB8F /* NSTimer+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSTimer+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/common/NSTimer+MiSafe.m"; sourceTree = "<group>"; };
-		AA633AF522829AE00083DB8F /* NSUserDefaults+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/common/NSUserDefaults+MiSafe.h"; sourceTree = "<group>"; };
-		AA633AF922829AEA0083DB8F /* NSDictionary+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/container/NSDictionary+MiSafe.m"; sourceTree = "<group>"; };
-		AA633AFA22829AEA0083DB8F /* NSDictionary+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/container/NSDictionary+MiSafe.h"; sourceTree = "<group>"; };
-		AA633AFB22829AEA0083DB8F /* NSOrderedSet+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSOrderedSet+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/container/NSOrderedSet+MiSafe.m"; sourceTree = "<group>"; };
-		AA633AFC22829AEA0083DB8F /* NSOrderedSet+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSOrderedSet+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/container/NSOrderedSet+MiSafe.h"; sourceTree = "<group>"; };
-		AA633AFD22829AEA0083DB8F /* NSSet+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSSet+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/container/NSSet+MiSafe.m"; sourceTree = "<group>"; };
-		AA633AFE22829AEA0083DB8F /* NSCache+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSCache+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/container/NSCache+MiSafe.m"; sourceTree = "<group>"; };
-		AA633AFF22829AEA0083DB8F /* NSSet+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSSet+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/container/NSSet+MiSafe.h"; sourceTree = "<group>"; };
-		AA633B0022829AEA0083DB8F /* NSArray+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/container/NSArray+MiSafe.h"; sourceTree = "<group>"; };
-		AA633B0122829AEB0083DB8F /* NSCache+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSCache+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/container/NSCache+MiSafe.h"; sourceTree = "<group>"; };
-		AA633B0222829AEB0083DB8F /* NSData+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/container/NSData+MiSafe.h"; sourceTree = "<group>"; };
-		AA633B0322829AEB0083DB8F /* NSArray+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/container/NSArray+MiSafe.m"; sourceTree = "<group>"; };
-		AA633B0422829AEB0083DB8F /* NSData+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/container/NSData+MiSafe.m"; sourceTree = "<group>"; };
 		AA7DF5FA2269DC2500C29D8D /* MISafeAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MISafeAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7DF5FD2269DC2500C29D8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -143,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7892D935272824519F1C111A /* libPods-MISafeAppDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +116,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13F5F48FBB16D8983295CCA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F83569551E9FCAEBC4C214D /* libPods-MISafeAppDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		675C1CFF182600BABF6660EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				340A2CEB79C50E8C18A6FBBD /* Pods-MISafeAppDemo.debug.xcconfig */,
+				37D7F64AA75DFD93EE06A90C /* Pods-MISafeAppDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AA0BB9632272AFF10057DD77 /* kvckvo */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,48 +148,6 @@
 			path = kvckvo;
 			sourceTree = "<group>";
 		};
-		AA633AD622829A950083DB8F /* MISafeApp */ = {
-			isa = PBXGroup;
-			children = (
-				AA633AD722829AB10083DB8F /* MiSafeApp.h */,
-				AA633AD822829AB10083DB8F /* MiSafeApp.m */,
-				AA633ADA22829AB10083DB8F /* MiSafeAppHelper.h */,
-				AA633AD922829AB10083DB8F /* MiSafeModel.h */,
-				AA633ADB22829AB10083DB8F /* MiSafeModel.m */,
-				AA633AE122829AC80083DB8F /* NSAttributedString+MiSafe.h */,
-				AA633AE022829AC80083DB8F /* NSAttributedString+MiSafe.m */,
-				AA633AE222829AC80083DB8F /* NSMutableString+MiSafe.h */,
-				AA633ADF22829AC80083DB8F /* NSMutableString+MiSafe.m */,
-				AA633AE322829AC80083DB8F /* NSString+MiSafe.h */,
-				AA633ADE22829AC80083DB8F /* NSString+MiSafe.m */,
-				AA633AEC22829AD20083DB8F /* NSObject+MiSafe.h */,
-				AA633AE722829AD20083DB8F /* NSObject+MiSafe.m */,
-				AA633AE822829AD20083DB8F /* NSObject+MiSafeKVC.h */,
-				AA633AE922829AD20083DB8F /* NSObject+MiSafeKVC.m */,
-				AA633AEA22829AD20083DB8F /* NSObject+MiSafeKVO.h */,
-				AA633AEB22829AD20083DB8F /* NSObject+MiSafeKVO.m */,
-				AA633AF122829ADF0083DB8F /* NSNotificationCenter+MiSafe.h */,
-				AA633AF222829AE00083DB8F /* NSNotificationCenter+MiSafe.m */,
-				AA633AF322829AE00083DB8F /* NSTimer+MiSafe.h */,
-				AA633AF422829AE00083DB8F /* NSTimer+MiSafe.m */,
-				AA633AF522829AE00083DB8F /* NSUserDefaults+MiSafe.h */,
-				AA633AF022829ADF0083DB8F /* NSUserDefaults+MiSafe.m */,
-				AA633B0022829AEA0083DB8F /* NSArray+MiSafe.h */,
-				AA633B0322829AEB0083DB8F /* NSArray+MiSafe.m */,
-				AA633B0122829AEB0083DB8F /* NSCache+MiSafe.h */,
-				AA633AFE22829AEA0083DB8F /* NSCache+MiSafe.m */,
-				AA633B0222829AEB0083DB8F /* NSData+MiSafe.h */,
-				AA633B0422829AEB0083DB8F /* NSData+MiSafe.m */,
-				AA633AFA22829AEA0083DB8F /* NSDictionary+MiSafe.h */,
-				AA633AF922829AEA0083DB8F /* NSDictionary+MiSafe.m */,
-				AA633AFC22829AEA0083DB8F /* NSOrderedSet+MiSafe.h */,
-				AA633AFB22829AEA0083DB8F /* NSOrderedSet+MiSafe.m */,
-				AA633AFF22829AEA0083DB8F /* NSSet+MiSafe.h */,
-				AA633AFD22829AEA0083DB8F /* NSSet+MiSafe.m */,
-			);
-			path = MISafeApp;
-			sourceTree = "<group>";
-		};
 		AA7DF5F12269DC2500C29D8D = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +155,8 @@
 				AA7DF6152269DC2600C29D8D /* MISafeAppDemoTests */,
 				AA7DF6202269DC2600C29D8D /* MISafeAppDemoUITests */,
 				AA7DF5FB2269DC2500C29D8D /* Products */,
+				675C1CFF182600BABF6660EA /* Pods */,
+				13F5F48FBB16D8983295CCA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -243,7 +173,6 @@
 		AA7DF5FC2269DC2500C29D8D /* MISafeAppDemo */ = {
 			isa = PBXGroup;
 			children = (
-				AA633AD622829A950083DB8F /* MISafeApp */,
 				AA7DF5FD2269DC2500C29D8D /* AppDelegate.h */,
 				AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */,
 				AA7DF6002269DC2500C29D8D /* ViewController.h */,
@@ -297,6 +226,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA7DF6262269DC2600C29D8D /* Build configuration list for PBXNativeTarget "MISafeAppDemo" */;
 			buildPhases = (
+				B1644F95587807B7DF37527C /* [CP] Check Pods Manifest.lock */,
 				AA7DF5F62269DC2500C29D8D /* Sources */,
 				AA7DF5F72269DC2500C29D8D /* Frameworks */,
 				AA7DF5F82269DC2500C29D8D /* Resources */,
@@ -415,41 +345,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B1644F95587807B7DF37527C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MISafeAppDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA7DF5F62269DC2500C29D8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AA0BB9622271979F0057DD77 /* DictVC.m in Sources */,
-				AA633AF722829AE00083DB8F /* NSNotificationCenter+MiSafe.m in Sources */,
 				AA7DF6022269DC2500C29D8D /* ViewController.m in Sources */,
-				AA633B0522829AEB0083DB8F /* NSDictionary+MiSafe.m in Sources */,
-				AA633ADC22829AB20083DB8F /* MiSafeApp.m in Sources */,
 				AAFB7F762277007200CF84B4 /* NotifiVC.m in Sources */,
 				AAFB7F6A22768DBA00CF84B4 /* DataVC.m in Sources */,
-				AA633AEF22829AD30083DB8F /* NSObject+MiSafeKVO.m in Sources */,
-				AA633AE422829AC80083DB8F /* NSString+MiSafe.m in Sources */,
 				AA0BB95F2271978D0057DD77 /* ArrayVC.m in Sources */,
 				AA0BB9732272F4080057DD77 /* PersonObserver.m in Sources */,
-				AA633AED22829AD30083DB8F /* NSObject+MiSafe.m in Sources */,
 				AA0BB959227045B30057DD77 /* StringVC.m in Sources */,
-				AA633AEE22829AD30083DB8F /* NSObject+MiSafeKVC.m in Sources */,
 				AA0BB9692272B1A30057DD77 /* TestKVCViewController.m in Sources */,
 				AAFB7F5D22759A0100CF84B4 /* UserDefaultVC.m in Sources */,
-				AA633B0622829AEB0083DB8F /* NSOrderedSet+MiSafe.m in Sources */,
-				AA633AF622829AE00083DB8F /* NSUserDefaults+MiSafe.m in Sources */,
 				AA7DF60D2269DC2600C29D8D /* main.m in Sources */,
-				AA633B0822829AEB0083DB8F /* NSCache+MiSafe.m in Sources */,
-				AA633B0A22829AEB0083DB8F /* NSData+MiSafe.m in Sources */,
 				AA7DF5FF2269DC2500C29D8D /* AppDelegate.m in Sources */,
-				AA633AE522829AC80083DB8F /* NSMutableString+MiSafe.m in Sources */,
 				AAFB7F7C2278229F00CF84B4 /* ObjVC.m in Sources */,
 				AA0BB9662272B05A0057DD77 /* Person.m in Sources */,
-				AA633AF822829AE00083DB8F /* NSTimer+MiSafe.m in Sources */,
-				AA633B0922829AEB0083DB8F /* NSArray+MiSafe.m in Sources */,
-				AA633ADD22829AB20083DB8F /* MiSafeModel.m in Sources */,
-				AA633AE622829AC80083DB8F /* NSAttributedString+MiSafe.m in Sources */,
-				AA633B0722829AEB0083DB8F /* NSSet+MiSafe.m in Sources */,
 				AA0BB96C2272B5FC0057DD77 /* Car.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,6 +557,7 @@
 		};
 		AA7DF6272269DC2600C29D8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 340A2CEB79C50E8C18A6FBBD /* Pods-MISafeAppDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -628,12 +567,15 @@
 					"$(PROJECT_DIR)/MISafeAppDemo",
 				);
 				INFOPLIST_FILE = MISafeAppDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.MISafeAppDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -642,6 +584,7 @@
 		};
 		AA7DF6282269DC2600C29D8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37D7F64AA75DFD93EE06A90C /* Pods-MISafeAppDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -651,12 +594,15 @@
 					"$(PROJECT_DIR)/MISafeAppDemo",
 				);
 				INFOPLIST_FILE = MISafeAppDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.MISafeAppDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

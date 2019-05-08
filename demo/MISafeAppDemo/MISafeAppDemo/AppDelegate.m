@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MiSafeApp.h"
+#import <MISafeApp/MiSafeApp.h>
 
 
 @interface AppDelegate ()
@@ -19,7 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//    [MiSafeApp setLogLevel:MiSafeLogLevel_Display];
+    
+    [MiSafeApp setLogLevel:MiSafeLogLevel_Display];
     [MiSafeApp openAvoidCrashWithType:MiSafeCrashType_All];
     return YES;
 }
