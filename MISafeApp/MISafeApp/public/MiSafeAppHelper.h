@@ -63,5 +63,6 @@ typedef NS_ENUM(NSUInteger,MiSafeCrashType)
 
 #define MiCrashSeparatorBegin        @"===================================MiSafeApp Detected A Crash======================================="
 #define MiCrashSeparatorEnd          @"================================================End================================================="
+#define MISafeAppVersion             @"1.0.1"
 
 #endif /* MiSafeAppHelper_h */
