@@ -7,20 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3DC32C9F2275E41800F5D857 /* NSOrderedSet+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC32C9E2275E41800F5D857 /* NSOrderedSet+MiSafe.m */; };
-		AA0BB943226DAFE60057DD77 /* NSDictionary+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB942226DAFE60057DD77 /* NSDictionary+MiSafe.m */; };
-		AA0BB948226EC4FE0057DD77 /* NSAttributedString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB947226EC4FE0057DD77 /* NSAttributedString+MiSafe.m */; };
-		AA0BB94B226EF3720057DD77 /* NSString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB94A226EF3720057DD77 /* NSString+MiSafe.m */; };
-		AA0BB952226FF1900057DD77 /* MiSafeApp.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB951226FF1900057DD77 /* MiSafeApp.m */; };
-		AA0BB955226FFE670057DD77 /* MiSafeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB954226FFE670057DD77 /* MiSafeModel.m */; };
 		AA0BB959227045B30057DD77 /* StringVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB958227045B30057DD77 /* StringVC.m */; };
-		AA0BB95B2270601E0057DD77 /* NSMutableString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB95A2270601E0057DD77 /* NSMutableString+MiSafe.m */; };
 		AA0BB95F2271978D0057DD77 /* ArrayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB95E2271978D0057DD77 /* ArrayVC.m */; };
 		AA0BB9622271979F0057DD77 /* DictVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB9612271979F0057DD77 /* DictVC.m */; };
 		AA0BB9662272B05A0057DD77 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB9652272B05A0057DD77 /* Person.m */; };
 		AA0BB9692272B1A30057DD77 /* TestKVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB9682272B1A30057DD77 /* TestKVCViewController.m */; };
 		AA0BB96C2272B5FC0057DD77 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB96B2272B5FC0057DD77 /* Car.m */; };
 		AA0BB9732272F4080057DD77 /* PersonObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0BB9722272F4080057DD77 /* PersonObserver.m */; };
+		AA633ADC22829AB20083DB8F /* MiSafeApp.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AD822829AB10083DB8F /* MiSafeApp.m */; };
+		AA633ADD22829AB20083DB8F /* MiSafeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633ADB22829AB10083DB8F /* MiSafeModel.m */; };
+		AA633AE422829AC80083DB8F /* NSString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633ADE22829AC80083DB8F /* NSString+MiSafe.m */; };
+		AA633AE522829AC80083DB8F /* NSMutableString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633ADF22829AC80083DB8F /* NSMutableString+MiSafe.m */; };
+		AA633AE622829AC80083DB8F /* NSAttributedString+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AE022829AC80083DB8F /* NSAttributedString+MiSafe.m */; };
+		AA633AED22829AD30083DB8F /* NSObject+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AE722829AD20083DB8F /* NSObject+MiSafe.m */; };
+		AA633AEE22829AD30083DB8F /* NSObject+MiSafeKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AE922829AD20083DB8F /* NSObject+MiSafeKVC.m */; };
+		AA633AEF22829AD30083DB8F /* NSObject+MiSafeKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AEB22829AD20083DB8F /* NSObject+MiSafeKVO.m */; };
+		AA633AF622829AE00083DB8F /* NSUserDefaults+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AF022829ADF0083DB8F /* NSUserDefaults+MiSafe.m */; };
+		AA633AF722829AE00083DB8F /* NSNotificationCenter+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AF222829AE00083DB8F /* NSNotificationCenter+MiSafe.m */; };
+		AA633AF822829AE00083DB8F /* NSTimer+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AF422829AE00083DB8F /* NSTimer+MiSafe.m */; };
+		AA633B0522829AEB0083DB8F /* NSDictionary+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AF922829AEA0083DB8F /* NSDictionary+MiSafe.m */; };
+		AA633B0622829AEB0083DB8F /* NSOrderedSet+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AFB22829AEA0083DB8F /* NSOrderedSet+MiSafe.m */; };
+		AA633B0722829AEB0083DB8F /* NSSet+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AFD22829AEA0083DB8F /* NSSet+MiSafe.m */; };
+		AA633B0822829AEB0083DB8F /* NSCache+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633AFE22829AEA0083DB8F /* NSCache+MiSafe.m */; };
+		AA633B0922829AEB0083DB8F /* NSArray+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633B0322829AEB0083DB8F /* NSArray+MiSafe.m */; };
+		AA633B0A22829AEB0083DB8F /* NSData+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA633B0422829AEB0083DB8F /* NSData+MiSafe.m */; };
 		AA7DF5FF2269DC2500C29D8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */; };
 		AA7DF6022269DC2500C29D8D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF6012269DC2500C29D8D /* ViewController.m */; };
 		AA7DF6052269DC2500C29D8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7DF6032269DC2500C29D8D /* Main.storyboard */; };
@@ -29,19 +39,9 @@
 		AA7DF60D2269DC2600C29D8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF60C2269DC2600C29D8D /* main.m */; };
 		AA7DF6172269DC2600C29D8D /* MISafeAppDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF6162269DC2600C29D8D /* MISafeAppDemoTests.m */; };
 		AA7DF6222269DC2600C29D8D /* MISafeAppDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF6212269DC2600C29D8D /* MISafeAppDemoUITests.m */; };
-		AA7DF6322269DC5100C29D8D /* NSArray+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF6302269DC5100C29D8D /* NSArray+MiSafe.m */; };
-		AA7DF6362269DC6300C29D8D /* NSObject+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7DF6342269DC6300C29D8D /* NSObject+MiSafe.m */; };
-		AAFB7F57227549AD00CF84B4 /* NSObject+MiSafeKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F56227549AD00CF84B4 /* NSObject+MiSafeKVO.m */; };
-		AAFB7F5A22754CDF00CF84B4 /* NSObject+MiSafeKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F5922754CDF00CF84B4 /* NSObject+MiSafeKVC.m */; };
 		AAFB7F5D22759A0100CF84B4 /* UserDefaultVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F5C22759A0100CF84B4 /* UserDefaultVC.m */; };
-		AAFB7F6122759BFD00CF84B4 /* NSUserDefaults+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F6022759BFD00CF84B4 /* NSUserDefaults+MiSafe.m */; };
-		AAFB7F642275A90B00CF84B4 /* NSCache+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F632275A90B00CF84B4 /* NSCache+MiSafe.m */; };
-		AAFB7F672275B6A400CF84B4 /* NSSet+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F662275B6A400CF84B4 /* NSSet+MiSafe.m */; };
 		AAFB7F6A22768DBA00CF84B4 /* DataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F6922768DBA00CF84B4 /* DataVC.m */; };
-		AAFB7F6D22769A2000CF84B4 /* NSData+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F6C22769A2000CF84B4 /* NSData+MiSafe.m */; };
-		AAFB7F702276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F6F2276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m */; };
 		AAFB7F762277007200CF84B4 /* NotifiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F752277007200CF84B4 /* NotifiVC.m */; };
-		AAFB7F792277F9B100CF84B4 /* NSTimer+MiSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F782277F9B100CF84B4 /* NSTimer+MiSafe.m */; };
 		AAFB7F7C2278229F00CF84B4 /* ObjVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F7B2278229F00CF84B4 /* ObjVC.m */; };
 /* End PBXBuildFile section */
 
@@ -63,23 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3DC32C9D2275E41800F5D857 /* NSOrderedSet+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSOrderedSet+MiSafe.h"; sourceTree = "<group>"; };
-		3DC32C9E2275E41800F5D857 /* NSOrderedSet+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSOrderedSet+MiSafe.m"; sourceTree = "<group>"; };
-		AA0BB941226DAFE60057DD77 /* NSDictionary+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MiSafe.h"; sourceTree = "<group>"; };
-		AA0BB942226DAFE60057DD77 /* NSDictionary+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MiSafe.m"; sourceTree = "<group>"; };
-		AA0BB946226EC4FE0057DD77 /* NSAttributedString+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+MiSafe.h"; sourceTree = "<group>"; };
-		AA0BB947226EC4FE0057DD77 /* NSAttributedString+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+MiSafe.m"; sourceTree = "<group>"; };
-		AA0BB949226EF3720057DD77 /* NSString+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+MiSafe.h"; sourceTree = "<group>"; };
-		AA0BB94A226EF3720057DD77 /* NSString+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+MiSafe.m"; sourceTree = "<group>"; };
-		AA0BB950226FF1900057DD77 /* MiSafeApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiSafeApp.h; sourceTree = "<group>"; };
-		AA0BB951226FF1900057DD77 /* MiSafeApp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiSafeApp.m; sourceTree = "<group>"; };
-		AA0BB953226FFE670057DD77 /* MiSafeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiSafeModel.h; sourceTree = "<group>"; };
-		AA0BB954226FFE670057DD77 /* MiSafeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiSafeModel.m; sourceTree = "<group>"; };
-		AA0BB956227015D00057DD77 /* MiSafeAppHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiSafeAppHelper.h; sourceTree = "<group>"; };
 		AA0BB957227045B30057DD77 /* StringVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringVC.h; sourceTree = "<group>"; };
 		AA0BB958227045B30057DD77 /* StringVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringVC.m; sourceTree = "<group>"; };
-		AA0BB95A2270601E0057DD77 /* NSMutableString+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+MiSafe.m"; sourceTree = "<group>"; };
-		AA0BB95C227060460057DD77 /* NSMutableString+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+MiSafe.h"; sourceTree = "<group>"; };
 		AA0BB95D2271978D0057DD77 /* ArrayVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrayVC.h; sourceTree = "<group>"; };
 		AA0BB95E2271978D0057DD77 /* ArrayVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrayVC.m; sourceTree = "<group>"; };
 		AA0BB9602271979F0057DD77 /* DictVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DictVC.h; sourceTree = "<group>"; };
@@ -92,6 +77,41 @@
 		AA0BB96B2272B5FC0057DD77 /* Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		AA0BB9712272F4080057DD77 /* PersonObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonObserver.h; sourceTree = "<group>"; };
 		AA0BB9722272F4080057DD77 /* PersonObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonObserver.m; sourceTree = "<group>"; };
+		AA633AD722829AB10083DB8F /* MiSafeApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiSafeApp.h; path = ../../../../MISafeApp/MISafeApp/public/MiSafeApp.h; sourceTree = "<group>"; };
+		AA633AD822829AB10083DB8F /* MiSafeApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MiSafeApp.m; path = ../../../../MISafeApp/MISafeApp/public/MiSafeApp.m; sourceTree = "<group>"; };
+		AA633AD922829AB10083DB8F /* MiSafeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiSafeModel.h; path = ../../../../MISafeApp/MISafeApp/public/MiSafeModel.h; sourceTree = "<group>"; };
+		AA633ADA22829AB10083DB8F /* MiSafeAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiSafeAppHelper.h; path = ../../../../MISafeApp/MISafeApp/public/MiSafeAppHelper.h; sourceTree = "<group>"; };
+		AA633ADB22829AB10083DB8F /* MiSafeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MiSafeModel.m; path = ../../../../MISafeApp/MISafeApp/public/MiSafeModel.m; sourceTree = "<group>"; };
+		AA633ADE22829AC80083DB8F /* NSString+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/string/NSString+MiSafe.m"; sourceTree = "<group>"; };
+		AA633ADF22829AC80083DB8F /* NSMutableString+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableString+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/string/NSMutableString+MiSafe.m"; sourceTree = "<group>"; };
+		AA633AE022829AC80083DB8F /* NSAttributedString+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/string/NSAttributedString+MiSafe.m"; sourceTree = "<group>"; };
+		AA633AE122829AC80083DB8F /* NSAttributedString+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/string/NSAttributedString+MiSafe.h"; sourceTree = "<group>"; };
+		AA633AE222829AC80083DB8F /* NSMutableString+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableString+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/string/NSMutableString+MiSafe.h"; sourceTree = "<group>"; };
+		AA633AE322829AC80083DB8F /* NSString+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/string/NSString+MiSafe.h"; sourceTree = "<group>"; };
+		AA633AE722829AD20083DB8F /* NSObject+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/obj/NSObject+MiSafe.m"; sourceTree = "<group>"; };
+		AA633AE822829AD20083DB8F /* NSObject+MiSafeKVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+MiSafeKVC.h"; path = "../../../../MISafeApp/MISafeApp/obj/NSObject+MiSafeKVC.h"; sourceTree = "<group>"; };
+		AA633AE922829AD20083DB8F /* NSObject+MiSafeKVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MiSafeKVC.m"; path = "../../../../MISafeApp/MISafeApp/obj/NSObject+MiSafeKVC.m"; sourceTree = "<group>"; };
+		AA633AEA22829AD20083DB8F /* NSObject+MiSafeKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+MiSafeKVO.h"; path = "../../../../MISafeApp/MISafeApp/obj/NSObject+MiSafeKVO.h"; sourceTree = "<group>"; };
+		AA633AEB22829AD20083DB8F /* NSObject+MiSafeKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MiSafeKVO.m"; path = "../../../../MISafeApp/MISafeApp/obj/NSObject+MiSafeKVO.m"; sourceTree = "<group>"; };
+		AA633AEC22829AD20083DB8F /* NSObject+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/obj/NSObject+MiSafe.h"; sourceTree = "<group>"; };
+		AA633AF022829ADF0083DB8F /* NSUserDefaults+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/common/NSUserDefaults+MiSafe.m"; sourceTree = "<group>"; };
+		AA633AF122829ADF0083DB8F /* NSNotificationCenter+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/common/NSNotificationCenter+MiSafe.h"; sourceTree = "<group>"; };
+		AA633AF222829AE00083DB8F /* NSNotificationCenter+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/common/NSNotificationCenter+MiSafe.m"; sourceTree = "<group>"; };
+		AA633AF322829AE00083DB8F /* NSTimer+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSTimer+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/common/NSTimer+MiSafe.h"; sourceTree = "<group>"; };
+		AA633AF422829AE00083DB8F /* NSTimer+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSTimer+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/common/NSTimer+MiSafe.m"; sourceTree = "<group>"; };
+		AA633AF522829AE00083DB8F /* NSUserDefaults+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/common/NSUserDefaults+MiSafe.h"; sourceTree = "<group>"; };
+		AA633AF922829AEA0083DB8F /* NSDictionary+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/container/NSDictionary+MiSafe.m"; sourceTree = "<group>"; };
+		AA633AFA22829AEA0083DB8F /* NSDictionary+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/container/NSDictionary+MiSafe.h"; sourceTree = "<group>"; };
+		AA633AFB22829AEA0083DB8F /* NSOrderedSet+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSOrderedSet+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/container/NSOrderedSet+MiSafe.m"; sourceTree = "<group>"; };
+		AA633AFC22829AEA0083DB8F /* NSOrderedSet+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSOrderedSet+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/container/NSOrderedSet+MiSafe.h"; sourceTree = "<group>"; };
+		AA633AFD22829AEA0083DB8F /* NSSet+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSSet+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/container/NSSet+MiSafe.m"; sourceTree = "<group>"; };
+		AA633AFE22829AEA0083DB8F /* NSCache+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSCache+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/container/NSCache+MiSafe.m"; sourceTree = "<group>"; };
+		AA633AFF22829AEA0083DB8F /* NSSet+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSSet+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/container/NSSet+MiSafe.h"; sourceTree = "<group>"; };
+		AA633B0022829AEA0083DB8F /* NSArray+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/container/NSArray+MiSafe.h"; sourceTree = "<group>"; };
+		AA633B0122829AEB0083DB8F /* NSCache+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSCache+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/container/NSCache+MiSafe.h"; sourceTree = "<group>"; };
+		AA633B0222829AEB0083DB8F /* NSData+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/container/NSData+MiSafe.h"; sourceTree = "<group>"; };
+		AA633B0322829AEB0083DB8F /* NSArray+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/container/NSArray+MiSafe.m"; sourceTree = "<group>"; };
+		AA633B0422829AEB0083DB8F /* NSData+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/container/NSData+MiSafe.m"; sourceTree = "<group>"; };
 		AA7DF5FA2269DC2500C29D8D /* MISafeAppDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MISafeAppDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7DF5FD2269DC2500C29D8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -108,32 +128,12 @@
 		AA7DF61D2269DC2600C29D8D /* MISafeAppDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MISafeAppDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7DF6212269DC2600C29D8D /* MISafeAppDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MISafeAppDemoUITests.m; sourceTree = "<group>"; };
 		AA7DF6232269DC2600C29D8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA7DF6302269DC5100C29D8D /* NSArray+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/container/NSArray+MiSafe.m"; sourceTree = "<group>"; };
-		AA7DF6312269DC5100C29D8D /* NSArray+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/container/NSArray+MiSafe.h"; sourceTree = "<group>"; };
-		AA7DF6342269DC6300C29D8D /* NSObject+MiSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MiSafe.m"; path = "../../../../MISafeApp/MISafeApp/common/NSObject+MiSafe.m"; sourceTree = "<group>"; };
-		AA7DF6352269DC6300C29D8D /* NSObject+MiSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+MiSafe.h"; path = "../../../../MISafeApp/MISafeApp/common/NSObject+MiSafe.h"; sourceTree = "<group>"; };
-		AAFB7F55227549AD00CF84B4 /* NSObject+MiSafeKVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+MiSafeKVO.h"; sourceTree = "<group>"; };
-		AAFB7F56227549AD00CF84B4 /* NSObject+MiSafeKVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MiSafeKVO.m"; sourceTree = "<group>"; };
-		AAFB7F5822754CDF00CF84B4 /* NSObject+MiSafeKVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+MiSafeKVC.h"; sourceTree = "<group>"; };
-		AAFB7F5922754CDF00CF84B4 /* NSObject+MiSafeKVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MiSafeKVC.m"; sourceTree = "<group>"; };
 		AAFB7F5B22759A0100CF84B4 /* UserDefaultVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDefaultVC.h; sourceTree = "<group>"; };
 		AAFB7F5C22759A0100CF84B4 /* UserDefaultVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDefaultVC.m; sourceTree = "<group>"; };
-		AAFB7F5F22759BFD00CF84B4 /* NSUserDefaults+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+MiSafe.h"; sourceTree = "<group>"; };
-		AAFB7F6022759BFD00CF84B4 /* NSUserDefaults+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+MiSafe.m"; sourceTree = "<group>"; };
-		AAFB7F622275A90B00CF84B4 /* NSCache+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSCache+MiSafe.h"; sourceTree = "<group>"; };
-		AAFB7F632275A90B00CF84B4 /* NSCache+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSCache+MiSafe.m"; sourceTree = "<group>"; };
-		AAFB7F652275B6A400CF84B4 /* NSSet+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSSet+MiSafe.h"; sourceTree = "<group>"; };
-		AAFB7F662275B6A400CF84B4 /* NSSet+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSSet+MiSafe.m"; sourceTree = "<group>"; };
 		AAFB7F6822768DBA00CF84B4 /* DataVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataVC.h; sourceTree = "<group>"; };
 		AAFB7F6922768DBA00CF84B4 /* DataVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataVC.m; sourceTree = "<group>"; };
-		AAFB7F6B22769A2000CF84B4 /* NSData+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+MiSafe.h"; sourceTree = "<group>"; };
-		AAFB7F6C22769A2000CF84B4 /* NSData+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+MiSafe.m"; sourceTree = "<group>"; };
-		AAFB7F6E2276EB4800CF84B4 /* NSNotificationCenter+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+MiSafe.h"; sourceTree = "<group>"; };
-		AAFB7F6F2276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+MiSafe.m"; sourceTree = "<group>"; };
 		AAFB7F742277007200CF84B4 /* NotifiVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotifiVC.h; sourceTree = "<group>"; };
 		AAFB7F752277007200CF84B4 /* NotifiVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotifiVC.m; sourceTree = "<group>"; };
-		AAFB7F772277F9B100CF84B4 /* NSTimer+MiSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+MiSafe.h"; sourceTree = "<group>"; };
-		AAFB7F782277F9B100CF84B4 /* NSTimer+MiSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+MiSafe.m"; sourceTree = "<group>"; };
 		AAFB7F7A2278229F00CF84B4 /* ObjVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjVC.h; sourceTree = "<group>"; };
 		AAFB7F7B2278229F00CF84B4 /* ObjVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,31 +163,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA0BB945226EC4BC0057DD77 /* string */ = {
-			isa = PBXGroup;
-			children = (
-				AA0BB946226EC4FE0057DD77 /* NSAttributedString+MiSafe.h */,
-				AA0BB947226EC4FE0057DD77 /* NSAttributedString+MiSafe.m */,
-				AA0BB949226EF3720057DD77 /* NSString+MiSafe.h */,
-				AA0BB94A226EF3720057DD77 /* NSString+MiSafe.m */,
-				AA0BB95C227060460057DD77 /* NSMutableString+MiSafe.h */,
-				AA0BB95A2270601E0057DD77 /* NSMutableString+MiSafe.m */,
-			);
-			path = string;
-			sourceTree = "<group>";
-		};
-		AA0BB94F226FF1700057DD77 /* core */ = {
-			isa = PBXGroup;
-			children = (
-				AA0BB950226FF1900057DD77 /* MiSafeApp.h */,
-				AA0BB951226FF1900057DD77 /* MiSafeApp.m */,
-				AA0BB953226FFE670057DD77 /* MiSafeModel.h */,
-				AA0BB954226FFE670057DD77 /* MiSafeModel.m */,
-				AA0BB956227015D00057DD77 /* MiSafeAppHelper.h */,
-			);
-			path = core;
-			sourceTree = "<group>";
-		};
 		AA0BB9632272AFF10057DD77 /* kvckvo */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +176,48 @@
 				AA0BB9682272B1A30057DD77 /* TestKVCViewController.m */,
 			);
 			path = kvckvo;
+			sourceTree = "<group>";
+		};
+		AA633AD622829A950083DB8F /* MISafeApp */ = {
+			isa = PBXGroup;
+			children = (
+				AA633AD722829AB10083DB8F /* MiSafeApp.h */,
+				AA633AD822829AB10083DB8F /* MiSafeApp.m */,
+				AA633ADA22829AB10083DB8F /* MiSafeAppHelper.h */,
+				AA633AD922829AB10083DB8F /* MiSafeModel.h */,
+				AA633ADB22829AB10083DB8F /* MiSafeModel.m */,
+				AA633AE122829AC80083DB8F /* NSAttributedString+MiSafe.h */,
+				AA633AE022829AC80083DB8F /* NSAttributedString+MiSafe.m */,
+				AA633AE222829AC80083DB8F /* NSMutableString+MiSafe.h */,
+				AA633ADF22829AC80083DB8F /* NSMutableString+MiSafe.m */,
+				AA633AE322829AC80083DB8F /* NSString+MiSafe.h */,
+				AA633ADE22829AC80083DB8F /* NSString+MiSafe.m */,
+				AA633AEC22829AD20083DB8F /* NSObject+MiSafe.h */,
+				AA633AE722829AD20083DB8F /* NSObject+MiSafe.m */,
+				AA633AE822829AD20083DB8F /* NSObject+MiSafeKVC.h */,
+				AA633AE922829AD20083DB8F /* NSObject+MiSafeKVC.m */,
+				AA633AEA22829AD20083DB8F /* NSObject+MiSafeKVO.h */,
+				AA633AEB22829AD20083DB8F /* NSObject+MiSafeKVO.m */,
+				AA633AF122829ADF0083DB8F /* NSNotificationCenter+MiSafe.h */,
+				AA633AF222829AE00083DB8F /* NSNotificationCenter+MiSafe.m */,
+				AA633AF322829AE00083DB8F /* NSTimer+MiSafe.h */,
+				AA633AF422829AE00083DB8F /* NSTimer+MiSafe.m */,
+				AA633AF522829AE00083DB8F /* NSUserDefaults+MiSafe.h */,
+				AA633AF022829ADF0083DB8F /* NSUserDefaults+MiSafe.m */,
+				AA633B0022829AEA0083DB8F /* NSArray+MiSafe.h */,
+				AA633B0322829AEB0083DB8F /* NSArray+MiSafe.m */,
+				AA633B0122829AEB0083DB8F /* NSCache+MiSafe.h */,
+				AA633AFE22829AEA0083DB8F /* NSCache+MiSafe.m */,
+				AA633B0222829AEB0083DB8F /* NSData+MiSafe.h */,
+				AA633B0422829AEB0083DB8F /* NSData+MiSafe.m */,
+				AA633AFA22829AEA0083DB8F /* NSDictionary+MiSafe.h */,
+				AA633AF922829AEA0083DB8F /* NSDictionary+MiSafe.m */,
+				AA633AFC22829AEA0083DB8F /* NSOrderedSet+MiSafe.h */,
+				AA633AFB22829AEA0083DB8F /* NSOrderedSet+MiSafe.m */,
+				AA633AFF22829AEA0083DB8F /* NSSet+MiSafe.h */,
+				AA633AFD22829AEA0083DB8F /* NSSet+MiSafe.m */,
+			);
+			path = MISafeApp;
 			sourceTree = "<group>";
 		};
 		AA7DF5F12269DC2500C29D8D = {
@@ -226,11 +243,7 @@
 		AA7DF5FC2269DC2500C29D8D /* MISafeAppDemo */ = {
 			isa = PBXGroup;
 			children = (
-				AAFB7F5E22759BE000CF84B4 /* foundation */,
-				AA0BB94F226FF1700057DD77 /* core */,
-				AA0BB945226EC4BC0057DD77 /* string */,
-				AA7DF6332269DC5800C29D8D /* common */,
-				AA7DF62F2269DC3C00C29D8D /* container */,
+				AA633AD622829A950083DB8F /* MISafeApp */,
 				AA7DF5FD2269DC2500C29D8D /* AppDelegate.h */,
 				AA7DF5FE2269DC2500C29D8D /* AppDelegate.m */,
 				AA7DF6002269DC2500C29D8D /* ViewController.h */,
@@ -275,51 +288,6 @@
 				AA7DF6232269DC2600C29D8D /* Info.plist */,
 			);
 			path = MISafeAppDemoUITests;
-			sourceTree = "<group>";
-		};
-		AA7DF62F2269DC3C00C29D8D /* container */ = {
-			isa = PBXGroup;
-			children = (
-				AA7DF6312269DC5100C29D8D /* NSArray+MiSafe.h */,
-				AA7DF6302269DC5100C29D8D /* NSArray+MiSafe.m */,
-				AA0BB941226DAFE60057DD77 /* NSDictionary+MiSafe.h */,
-				AA0BB942226DAFE60057DD77 /* NSDictionary+MiSafe.m */,
-				AAFB7F622275A90B00CF84B4 /* NSCache+MiSafe.h */,
-				AAFB7F632275A90B00CF84B4 /* NSCache+MiSafe.m */,
-				AAFB7F652275B6A400CF84B4 /* NSSet+MiSafe.h */,
-				AAFB7F662275B6A400CF84B4 /* NSSet+MiSafe.m */,
-				3DC32C9D2275E41800F5D857 /* NSOrderedSet+MiSafe.h */,
-				3DC32C9E2275E41800F5D857 /* NSOrderedSet+MiSafe.m */,
-				AAFB7F6B22769A2000CF84B4 /* NSData+MiSafe.h */,
-				AAFB7F6C22769A2000CF84B4 /* NSData+MiSafe.m */,
-			);
-			path = container;
-			sourceTree = "<group>";
-		};
-		AA7DF6332269DC5800C29D8D /* common */ = {
-			isa = PBXGroup;
-			children = (
-				AA7DF6352269DC6300C29D8D /* NSObject+MiSafe.h */,
-				AA7DF6342269DC6300C29D8D /* NSObject+MiSafe.m */,
-				AAFB7F55227549AD00CF84B4 /* NSObject+MiSafeKVO.h */,
-				AAFB7F56227549AD00CF84B4 /* NSObject+MiSafeKVO.m */,
-				AAFB7F5822754CDF00CF84B4 /* NSObject+MiSafeKVC.h */,
-				AAFB7F5922754CDF00CF84B4 /* NSObject+MiSafeKVC.m */,
-				AAFB7F6E2276EB4800CF84B4 /* NSNotificationCenter+MiSafe.h */,
-				AAFB7F6F2276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m */,
-				AAFB7F772277F9B100CF84B4 /* NSTimer+MiSafe.h */,
-				AAFB7F782277F9B100CF84B4 /* NSTimer+MiSafe.m */,
-			);
-			path = common;
-			sourceTree = "<group>";
-		};
-		AAFB7F5E22759BE000CF84B4 /* foundation */ = {
-			isa = PBXGroup;
-			children = (
-				AAFB7F5F22759BFD00CF84B4 /* NSUserDefaults+MiSafe.h */,
-				AAFB7F6022759BFD00CF84B4 /* NSUserDefaults+MiSafe.m */,
-			);
-			path = foundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,36 +421,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA0BB9622271979F0057DD77 /* DictVC.m in Sources */,
+				AA633AF722829AE00083DB8F /* NSNotificationCenter+MiSafe.m in Sources */,
 				AA7DF6022269DC2500C29D8D /* ViewController.m in Sources */,
+				AA633B0522829AEB0083DB8F /* NSDictionary+MiSafe.m in Sources */,
+				AA633ADC22829AB20083DB8F /* MiSafeApp.m in Sources */,
 				AAFB7F762277007200CF84B4 /* NotifiVC.m in Sources */,
-				AAFB7F57227549AD00CF84B4 /* NSObject+MiSafeKVO.m in Sources */,
-				AAFB7F6D22769A2000CF84B4 /* NSData+MiSafe.m in Sources */,
 				AAFB7F6A22768DBA00CF84B4 /* DataVC.m in Sources */,
-				AAFB7F702276EB4800CF84B4 /* NSNotificationCenter+MiSafe.m in Sources */,
-				AA0BB95B2270601E0057DD77 /* NSMutableString+MiSafe.m in Sources */,
+				AA633AEF22829AD30083DB8F /* NSObject+MiSafeKVO.m in Sources */,
+				AA633AE422829AC80083DB8F /* NSString+MiSafe.m in Sources */,
 				AA0BB95F2271978D0057DD77 /* ArrayVC.m in Sources */,
 				AA0BB9732272F4080057DD77 /* PersonObserver.m in Sources */,
-				AAFB7F6122759BFD00CF84B4 /* NSUserDefaults+MiSafe.m in Sources */,
+				AA633AED22829AD30083DB8F /* NSObject+MiSafe.m in Sources */,
 				AA0BB959227045B30057DD77 /* StringVC.m in Sources */,
-				3DC32C9F2275E41800F5D857 /* NSOrderedSet+MiSafe.m in Sources */,
+				AA633AEE22829AD30083DB8F /* NSObject+MiSafeKVC.m in Sources */,
 				AA0BB9692272B1A30057DD77 /* TestKVCViewController.m in Sources */,
 				AAFB7F5D22759A0100CF84B4 /* UserDefaultVC.m in Sources */,
-				AA0BB943226DAFE60057DD77 /* NSDictionary+MiSafe.m in Sources */,
-				AA0BB952226FF1900057DD77 /* MiSafeApp.m in Sources */,
+				AA633B0622829AEB0083DB8F /* NSOrderedSet+MiSafe.m in Sources */,
+				AA633AF622829AE00083DB8F /* NSUserDefaults+MiSafe.m in Sources */,
 				AA7DF60D2269DC2600C29D8D /* main.m in Sources */,
+				AA633B0822829AEB0083DB8F /* NSCache+MiSafe.m in Sources */,
+				AA633B0A22829AEB0083DB8F /* NSData+MiSafe.m in Sources */,
 				AA7DF5FF2269DC2500C29D8D /* AppDelegate.m in Sources */,
-				AAFB7F672275B6A400CF84B4 /* NSSet+MiSafe.m in Sources */,
-				AA0BB94B226EF3720057DD77 /* NSString+MiSafe.m in Sources */,
+				AA633AE522829AC80083DB8F /* NSMutableString+MiSafe.m in Sources */,
 				AAFB7F7C2278229F00CF84B4 /* ObjVC.m in Sources */,
-				AAFB7F792277F9B100CF84B4 /* NSTimer+MiSafe.m in Sources */,
-				AA7DF6362269DC6300C29D8D /* NSObject+MiSafe.m in Sources */,
-				AAFB7F642275A90B00CF84B4 /* NSCache+MiSafe.m in Sources */,
-				AA0BB948226EC4FE0057DD77 /* NSAttributedString+MiSafe.m in Sources */,
 				AA0BB9662272B05A0057DD77 /* Person.m in Sources */,
+				AA633AF822829AE00083DB8F /* NSTimer+MiSafe.m in Sources */,
+				AA633B0922829AEB0083DB8F /* NSArray+MiSafe.m in Sources */,
+				AA633ADD22829AB20083DB8F /* MiSafeModel.m in Sources */,
+				AA633AE622829AC80083DB8F /* NSAttributedString+MiSafe.m in Sources */,
+				AA633B0722829AEB0083DB8F /* NSSet+MiSafe.m in Sources */,
 				AA0BB96C2272B5FC0057DD77 /* Car.m in Sources */,
-				AA0BB955226FFE670057DD77 /* MiSafeModel.m in Sources */,
-				AA7DF6322269DC5100C29D8D /* NSArray+MiSafe.m in Sources */,
-				AAFB7F5A22754CDF00CF84B4 /* NSObject+MiSafeKVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,12 +623,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CFP9KY4MGC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MISafeAppDemo",
+				);
 				INFOPLIST_FILE = MISafeAppDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.MISafeAppDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -673,12 +646,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CFP9KY4MGC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MISafeAppDemo",
+				);
 				INFOPLIST_FILE = MISafeAppDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.ucloud.MISafeAppDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
