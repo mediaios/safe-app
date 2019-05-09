@@ -17,37 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSString *str = @"hello";
-    id array1 = [NSArray alloc];
-    id array2 = [NSArray alloc];
-    
-    id array3 = [[NSArray alloc] init];
-    
-    NSArray *placeholder  = [NSArray alloc];
-    NSArray *array4 = [placeholder init];
-    
-    NSArray *array5 = [placeholder initWithObjects:@0, nil];
-    NSLog(@"array5: %s",object_getClassName(array5));
-    
-    NSArray *array6 = [placeholder initWithObjects:@0,@2, nil];
-    NSLog(@"array6: %s",object_getClassName(array5));
-    
-    
-    NSMutableArray *mutaArray1 = [NSMutableArray alloc];
-    NSLog(@"mutaArray1: %s",object_getClassName(mutaArray1));
-    NSMutableArray *muta2 = [[NSMutableArray alloc] init];
-    NSLog(@"muta2: %s",object_getClassName(muta2));
-    NSMutableArray *muta3 = [[NSMutableArray alloc] initWithObjects:@1, nil];
-    NSLog(@"muta3: %s",object_getClassName(muta3));
-    NSMutableArray *muta4 = [NSMutableArray array];
-    NSLog(@"muta4: %s",object_getClassName(muta4));
-    self.view.backgroundColor = [UIColor redColor];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSLog(@"test");
-    });
-    
-    
-    
 }
 
 - (IBAction)testNSString:(id)sender {
