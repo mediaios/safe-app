@@ -170,33 +170,252 @@ eg： 为应用设置避免`NSString`，`NSArray`，`KVO`操作的Crash
 
 ### unrecognized selector
 
-### NSString
+崩溃原因： 调用了一个对象不存在的方法
 
-### NSMutableString
+解决方法： 利用`runtime`修改消息转发逻辑
 
-### NSAttributedString
+### 关于使用foundation中的方法所导致的crash
 
-### NSMutableString
+在使用Foundation中的各种类的方法时，有可能会导致应用崩溃。我们下面详细说明。 
 
-### NSArray 
+#### NSString及NSMutableString
 
-### NSMutableArray
+关于字符串(包含可变字符串)引起应用crash的问题，一般可以总结为以下几点： 
 
-### NSDictionary
-### NSMutableDictionary
+* 初始化时crash(参数非法) 
+* 字符串操作crash，一般的字符串操作有截取，查找，追加(参数越界等)
+
+所以我们可以通过利用`runtime`机制重写原生的方法实现。但是在进行方法替换是，我们要清楚的知道当你创建一个字符串对象时，它所属的`class`是谁。因为OC在运行时对NSString对象做了很多内存的优化。下面我们验证一下： 
+
+```
+// 以下代码最后的输出都是打印对象的class即 [obj class]
+NSString *str1 = [NSString alloc];        // 打印[str1 class]的结果是NSPlaceholderString
+NSString *str2 = [[NSString alloc] init];  // __NSCFConstantString 
+NSString *str3 = [NSString string];       // __NSCFConstantString
+NSString *str4 = [str3 copy];
+NSString *str5  = @"1234";
+NSString *str6  = [NSString stringWithFormat:@"123456789"];   // NSTaggedPointerString 
+NSString *str7 = [NSString stringWithFormat:@"1234567890"];   // __NSCFString 
+NSMutableString *mutaStr1  = [NSMutableString alloc];         // NSPlaceholderMutableString
+NSMutableString *mutaStr2 = [[NSMutableString alloc] init];   // __NSCFString
+```
+
+ * `__NSPlaceholderString` : NSString只alloc，没有init
+ * `__NSCFConstantString` : init后或使用类方法创建的NSString。不可变字符，可节省内存提高性能。
+ * `NSTaggedPointerString`: 数字、英文、符号等的ASCII字符组成字符串，长度小于等于9的时候会自动成为NSTaggedPointerString类型,其专门用来存储小对象
+ * `__NSCFString` : NSCFString对象是一种NSString子类，存储在堆上，不属于字符串常量对象。该对象创建之后和其他的Obj对象一样引用计数为1，对其执行retain和release将改变其retainCount。
+ * `NSPlaceholderMutableString`: NSMutableString只alloc没有init
+
+由此，我们得出以下结论： 
+
+* 替换NSString中的方法时，只需要替换`NSPlaceholderString`,`__NSCFConstantString`,`NSTaggedPointerString`这几个类。
+* 替换NSMutableString中的方法时，只需要替换`NSPlaceholderMutableString `和`__NSCFString `两个类。
+
+`MISafeApp`替换了NSString和NSMutableString中的下列方法，因此可以防止这些方法的崩溃:
+
+* NSString
+	* `- (instancetype)initWithString:(NSString *)aString`
+	* `- (NSString *)substringFromIndex:(NSUInteger)from`
+	* `- (NSString *)substringToIndex:(NSUInteger)to`
+	* `- (NSString *)substringWithRange:(NSRange)range`
+	* `- (unichar)characterAtIndex:(NSUInteger)index`
+	* `- (NSString *)stringByReplacingOccurrencesOfString:(NSString *)target withString:(NSString *)replacement options:(NSStringCompareOptions)options range:(NSRange)searchRange`
+	* `- (NSString *)stringByReplacingCharactersInRange:(NSRange)range withString:(NSString *)replacement`
+	* `- (BOOL)hasPrefix:(NSString *)str`
+	* `- (BOOL)hasSuffix:(NSString *)str`
+* NSMutableString
+	* `- (BOOL)hasPrefix:(NSString *)str`
+	* `- (BOOL)hasSuffix:(NSString *)str`
+	* `- (NSString *)substringFromIndex:(NSUInteger)from`
+	* `- (NSString *)substringToIndex:(NSUInteger)to`
+	* `- (NSString *)substringWithRange:(NSRange)range`
+	* `- (unichar)characterAtIndex:(NSUInteger)index`
+	* `- (NSString *)stringByReplacingOccurrencesOfString:(NSString *)target withString:(NSString *)replacement options:(NSStringCompareOptions)options range:(NSRange)searchRange`
+	* `- (NSString *)stringByReplacingCharactersInRange:(NSRange)range withString:(NSString *)replacement`
+	* `- (void)replaceCharactersInRange:(NSRange)range withString:(NSString *)aString`
+	* `- (NSUInteger)replaceOccurrencesOfString:(NSString *)target withString:(NSString *)replacement options:(NSStringCompareOptions)options range:(NSRange)searchRange`
+	* `- (void)insertString:(NSString *)aString atIndex:(NSUInteger)loc`
+	* `- (void)deleteCharactersInRange:(NSRange)range`
+	* `- (void)appendString:(NSString *)aString`
+	* `- (void)setString:(NSString *)aString`
+
+#### NSAttributedString及NSMutableAttributedString
+
+同理，对于NSAttributedString和NSMutableAttributedString我们用同样的方式验证，得出以下结论： 
+
+* 替换NSAttributedString中的方法时，只需要替换`NSConcreteAttributedString`
+* 替换NSMutableAttributedString中的方法时，只需要替换`NSConcreteMutableAttributedString`
+
+`MISafeApp`替换了NSAttributedString和NSMutableAttributedString中的下列方法，因此可以防止这些方法的崩溃:
+
+* NSAttributedString
+	* `- (instancetype)initWithString:(NSString *)str;`
+	* `- (instancetype)initWithString:(NSString *)str attributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attrs;`
+	* `- (instancetype)initWithAttributedString:(NSAttributedString *)attrStr;` 
+*  NSMutableAttributedString
+	* `- (instancetype)initWithString:(NSString *)str;`
+	* `- (instancetype)initWithString:(NSString *)str attributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attrs;`
+	* `- (void)replaceCharactersInRange:(NSRange)range withString:(NSString *)str;`
+	* `- (void)setAttributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attrs range:(NSRange)range;`
+	* `- (void)addAttribute:(NSAttributedStringKey)name value:(id)value range:(NSRange)range;`
+	* `- (void)addAttributes:(NSDictionary<NSAttributedStringKey, id> *)attrs range:(NSRange)range;`
+	* `- (void)removeAttribute:(NSAttributedStringKey)name range:(NSRange)range;`
+	* `- (void)replaceCharactersInRange:(NSRange)range withAttributedString:(NSAttributedString *)attrString;`
+
+#### NSArray及NSMutableArray
+
+对于NSArray:
+
+* `__NSPlaceholderArray` 是`NSArray` alloc 之后所得的类
+* `__NSArray0` 是`NSArray`初始化后只有0个元素所得的类
+* `__NSSingleObjectArrayI` 当数组仅有一个元素时
+* `__NSArrayI` 当数组大于一个元素时
+
+对于`NSMutableArray`:
+
+* `__NSPlaceholderArray` 是`NSMutableArray` alloc 之后所得的类
+* `__NSArrayM` 是init之后所得到的类
+
+结论：
+
+* 替换NSArray中的方法时，需要替换`__NSPlaceholderArray`,`__NSArray0 `,`__NSSingleObjectArrayI `,`__NSArrayI `
+* 替换NSMutableArray中的方法时，需要替换`__NSPlaceholderArray `,`__NSArrayM `
+
+`MISafeApp`替换了NSArray和NSMutableArray中的下列方法，因此可以防止这些方法的崩溃:
+
+* NSArray
+	* `- (instancetype)initWithObjects:(const ObjectType _Nonnull [_Nullable])objects count:(NSUInteger)cnt`
+	* `- (ObjectType)objectAtIndex:(NSUInteger)index;`
+	* `- (ObjectType)objectAtIndexedSubscript:(NSUInteger)idx`
+	* `- (void)getObjects:(ObjectType _Nonnull __unsafe_unretained [_Nonnull])objects range:(NSRange)range`
+* NSMutableArray
+	* `- (ObjectType)objectAtIndex:(NSUInteger)index;`
+	* `- (ObjectType)objectAtIndexedSubscript:(NSUInteger)idx`
+	* `- (void)getObjects:(ObjectType _Nonnull __unsafe_unretained [_Nonnull])objects range:(NSRange)range`
+	* `- (void)setObject:(ObjectType)obj atIndexedSubscript:(NSUInteger)idx`
+	* `- (void)insertObject:(ObjectType)object atIndex:(NSUInteger)idx`
+	* `- (void)removeObjectsInRange:(NSRange)range;`
+	* `- (void)removeObject:(ObjectType)anObject inRange:(NSRange)range;`
+	* `- (void)removeObjectIdenticalTo:(ObjectType)anObject inRange:(NSRange)range;`
+	* `- (void)replaceObjectAtIndex:(NSUInteger)index withObject:(ObjectType)anObject;`
+	* `- (void)exchangeObjectAtIndex:(NSUInteger)idx1 withObjectAtIndex:(NSUInteger)idx2;`
+	* `- (void)replaceObjectsInRange:(NSRange)range withObjectsFromArray:(NSArray<ObjectType> *)otherArray range:(NSRange)otherRange;`
+	* `- (void)replaceObjectsInRange:(NSRange)range withObjectsFromArray:(NSArray<ObjectType> *)otherArray;`
+	* `- @property (readonly) NSInteger integerValue`
+
+#### NSDictionary及NSMutableDictionary
+
+针对于NSDictionary:
+
+* `__NSPlaceholderDictionary` : 只alloc，没有init 
+* `__NSDictionary0` : 字典没有元素时
+* `__NSSingleEntryDictionaryI` : 只有一个元素 
+* `__NSDictionaryI` : 字典又多个元素时(普通的字典)
+
+对于NSMutableDictionary:
+* `__NSPlaceholderDictionary`: 只alloc，没有init 
+* `__NSDictionaryM` : NSMutableDictionary实例化之后
+* `__NSFrozenDictionaryM`: 对NSMutableDict做拷贝，拷贝之后字典的类型
+
+结论：
+
+* 替换NSDictionary中的方法时，需要替换`__NSPlaceholderDictionary `,`__NSDictionary0 `,`__NSSingleEntryDictionaryI `,`__NSDictionaryI `
+* 替换NSMutableArray中的方法时，需要替换`__NSPlaceholderArray `,`__NSArrayM ,`__NSCFDictionary`
+
+`MISafeApp`替换了NSDictionary和NSMutableDictionary中的下列方法，因此可以防止这些方法的崩溃:
+
+* NSDictionary
+	* `- (instancetype)initWithObjects:(const ObjectType _Nonnull [_Nullable])objects forKeys:(const KeyType <NSCopying> _Nonnull [_Nullable])keys count:(NSUInteger)cnt`
+	* `- (instancetype)initWithObjects:(NSArray<ObjectType> *)objects forKeys:(NSArray<KeyType <NSCopying>> *)keys;`
+	* `+ (instancetype)dictionaryWithObjects:(const ObjectType _Nonnull [_Nullable])objects forKeys:(const KeyType <NSCopying> _Nonnull [_Nullable])keys count:(NSUInteger)cnt;`
+	* `- (nullable id)valueForUndefinedKey:(NSString *)key;`
+* NSMutableDictionary
+	* `- (void)setObject:(nullable id)value forKey:(NSString *)defaultName;`
+	* `- (void)setObject:(nullable ObjectType)obj forKeyedSubscript:(KeyType <NSCopying>)key`
+	* `- (void)removeObjectForKey:(KeyType)aKey;`
+
+#### NSSet及NSMutableSet
+
+* NSSet
+ * `- (instancetype)initWithObjects:(const ObjectType _Nonnull [_Nullable])objects count:(NSUInteger)cnt`
+* NSMutableSet
+	* `- (void)addObject:(ObjectType)object;`
+	* `- (void)removeObject:(ObjectType)object;`
+
+#### NSOrderedSet及NSMutableOrderedSet
+
+* NSOrderedSet
+	* `- (instancetype)initWithObjects:(const ObjectType _Nonnull [_Nullable])objects count:(NSUInteger)cnt`
+	* `- (ObjectType)objectAtIndex:(NSUInteger)idx;`
+* NSMutableOrderedSet
+	* `- (ObjectType)objectAtIndex:(NSUInteger)idx;`
+	* `- (void)insertObject:(ObjectType)object atIndex:(NSUInteger)idx;`
+	* `- (void)removeObjectAtIndex:(NSUInteger)idx;`
+	* `- (void)replaceObjectAtIndex:(NSUInteger)idx withObject:(ObjectType)object;`
+	* `- (void)addObject:(ObjectType)object;`
+
+### NSData及NSMutableData
+
+* NSData
+	* `- (NSData *)subdataWithRange:(NSRange)range;`
+	* `- (NSRange)rangeOfData:(NSData *)dataToFind options:(NSDataSearchOptions)mask range:(NSRange)searchRange`
+* NSMutableData
+	* `- (NSData *)subdataWithRange:(NSRange)range;`
+	* `- (NSRange)rangeOfData:(NSData *)dataToFind options:(NSDataSearchOptions)mask range:(NSRange)searchRange`
+	* `- (void)resetBytesInRange:(NSRange)range;`
+	* `- (void)replaceBytesInRange:(NSRange)range withBytes:(const void *)bytes;`
+	* `- (void)replaceBytesInRange:(NSRange)range withBytes:(nullable const void *)replacementBytes length:(NSUInteger)replacementLength;`
 
 ### KVC
 
+原因： 给不存在的key设置value。 
+
+`MISafeApp`替换了NSObject的下列方法，因此可以防止KVC操作的崩溃:
+
+* `- (void)setValue:(id)value forKey:(NSString *)key` 
+* `- (void)setValue:(id)value forKeyPath:(NSString *)keyPath`
+* `- (void)setValuesForKeysWithDictionary:(NSDictionary<NSString *,id> *)keyedValues`
+* `- (void)setValue:(id)value forUndefinedKey:(NSString *)key`
+
+
 ### KVO
 
+崩溃发生的情况有： 
+
+1. 移除未注册的观察者
+2. 重复移除观察者
+3. 添加了观察者但是没有实现observeValueForKeyPath:ofObject:change:context方法
+4. 添加移除keypath=nil
+5. 添加移除observer = nil
+6. dealloc是自动移除观察者，俗称KVO释放
+
 ### NSUserDefaults
-### NSSet
-### NSOrderedSet
-### NSMutableOrderedSet
-### NSData
-### NSMutableData
+
+* `- (void)setObject:(nullable id)value forKey:(NSString *)defaultName;`
+* `- (NSInteger)integerForKey:(NSString *)defaultName;`
+* `- (BOOL)boolForKey:(NSString *)defaultName;`
+* `- (nullable id)objectForKey:(NSString *)defaultName;`
+
+
 ### NSNotification
+
+触发时机： 
+
+一个对象注册了通知，但是在对象销毁时没有取消注册。
+
+注册通知的最合适时机就是在init方法里面注册，在dealloc方法中取消注册。
+
+从ios9.0开始，如果没有移除注册的通知，则也不会引起crash。 
+
 ### NSTimer
+
+原因： 
+
+在使用`NSTimer`的以`scheduleTimer`开头的方法创建的NSTimer对象，会强引用target，target又会强引用timer。在我们没有正确关闭timer的时候，timer会一直持有target导致内存泄漏等问题。
+
+解决方案： 
+
+利用runtime新创建一个代理将target和selector信息保存到Proxy里，修改引用target的方式为weak。当target为nil时，如果再执行timer的时候，如果发现此时target为nil，则自动停止timer。 
 
 ## 联系我们
 
